@@ -1,0 +1,159 @@
+/* ============================================================
+   aeOS — Design Token Layer (Dark Theme)
+   ============================================================ */
+
+:root {
+  /* ----------------------------------------------------------
+     Colour System
+  ---------------------------------------------------------- */
+
+  /* Base surfaces (darkest → lightest) */
+  --color-bg:          #0a0a0f;
+  --color-surface-1:   #0f0f18;
+  --color-surface-2:   #14141f;
+  --color-surface-3:   #1a1a2a;
+  --color-surface-4:   #222236;
+  --color-surface-5:   #2a2a44;
+
+  /* Border / divider */
+  --color-border:      #2a2a3d;
+  --color-border-soft: #1e1e30;
+
+  /* Text */
+  --color-text-primary:   #e8e8f0;
+  --color-text-secondary: #9090b0;
+  --color-text-muted:     #555570;
+  --color-text-inverse:   #0a0a0f;
+
+  /* Accent palette */
+  --color-accent-blue:   #4d9fff;
+  --color-accent-purple: #a855f7;
+  --color-accent-cyan:   #22d3ee;
+  --color-accent-green:  #4ade80;
+  --color-accent-yellow: #facc15;
+  --color-accent-orange: #fb923c;
+  --color-accent-pink:   #f472b6;
+  --color-accent-teal:   #2dd4bf;
+  --color-accent-indigo: #818cf8;
+  --color-accent-red:    #f87171;
+  --color-accent-lime:   #a3e635;
+  --color-accent-amber:  #fbbf24;
+
+  /* Primary interactive */
+  --color-primary:          #4d9fff;
+  --color-primary-hover:    #69aeff;
+  --color-primary-active:   #3a8fee;
+  --color-primary-subtle:   rgba(77, 159, 255, 0.08);
+  --color-primary-border:   rgba(77, 159, 255, 0.25);
+
+  /* Status */
+  --color-success:   #4ade80;
+  --color-warning:   #facc15;
+  --color-error:     #f87171;
+  --color-info:      #22d3ee;
+
+  /* Glow / shadow values */
+  --glow-blue:   0 0 20px rgba(77, 159, 255, 0.35);
+  --glow-purple: 0 0 20px rgba(168, 85, 247, 0.35);
+  --glow-cyan:   0 0 20px rgba(34, 211, 238, 0.35);
+
+  /* ----------------------------------------------------------
+     Typography
+  ---------------------------------------------------------- */
+  --font-sans:  'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:  'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  --text-xs:   0.75rem;    /* 12px */
+  --text-sm:   0.875rem;   /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg:   1.125rem;   /* 18px */
+  --text-xl:   1.25rem;    /* 20px */
+  --text-2xl:  1.5rem;     /* 24px */
+  --text-3xl:  1.875rem;   /* 30px */
+
+  --font-normal:   400;
+  --font-medium:   500;
+  --font-semibold: 600;
+  --font-bold:     700;
+
+  --leading-tight:  1.25;
+  --leading-normal: 1.5;
+  --leading-relaxed:1.75;
+
+  /* ----------------------------------------------------------
+     Spacing (4-pt grid)
+  ---------------------------------------------------------- */
+  --space-1:  0.25rem;   /* 4px  */
+  --space-2:  0.5rem;    /* 8px  */
+  --space-3:  0.75rem;   /* 12px */
+  --space-4:  1rem;      /* 16px */
+  --space-5:  1.25rem;   /* 20px */
+  --space-6:  1.5rem;    /* 24px */
+  --space-8:  2rem;      /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+
+  /* ----------------------------------------------------------
+     Border Radius
+  ---------------------------------------------------------- */
+  --radius-sm:   0.25rem;   /* 4px  */
+  --radius-md:   0.5rem;    /* 8px  */
+  --radius-lg:   0.75rem;   /* 12px */
+  --radius-xl:   1rem;      /* 16px */
+  --radius-2xl:  1.5rem;    /* 24px */
+  --radius-full: 9999px;
+
+  /* ----------------------------------------------------------
+     Shadows
+  ---------------------------------------------------------- */
+  --shadow-sm:  0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md:  0 4px 12px rgba(0,0,0,0.6), 0 2px 4px rgba(0,0,0,0.4);
+  --shadow-lg:  0 10px 30px rgba(0,0,0,0.7), 0 4px 8px rgba(0,0,0,0.5);
+  --shadow-xl:  0 20px 50px rgba(0,0,0,0.8);
+
+  /* ----------------------------------------------------------
+     Layout
+  ---------------------------------------------------------- */
+  --sidebar-width:        240px;
+  --sidebar-collapsed-w:  64px;
+  --topbar-height:        56px;
+  --panel-gap:            var(--space-4);
+
+  /* ----------------------------------------------------------
+     Motion
+  ---------------------------------------------------------- */
+  --ease-out:    cubic-bezier(0.0, 0.0, 0.2, 1);
+  --ease-in:     cubic-bezier(0.4, 0.0, 1, 1);
+  --ease-in-out: cubic-bezier(0.4, 0.0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --duration-fast:   120ms;
+  --duration-normal: 200ms;
+  --duration-slow:   350ms;
+
+  /* ----------------------------------------------------------
+     Z-Index Scale
+  ---------------------------------------------------------- */
+  --z-sidebar:  100;
+  --z-topbar:   200;
+  --z-modal:    500;
+  --z-toast:    900;
+  --z-overlay:  800;
+}
+
+/* Light theme stub — aeOS defaults dark; this is for future use */
+[data-theme='light'] {
+  --color-bg:          #f5f5fa;
+  --color-surface-1:   #ffffff;
+  --color-surface-2:   #f0f0f8;
+  --color-surface-3:   #e8e8f4;
+  --color-surface-4:   #dcdcee;
+  --color-surface-5:   #d0d0e8;
+  --color-border:      #d4d4e8;
+  --color-border-soft: #e0e0f0;
+  --color-text-primary:   #1a1a2e;
+  --color-text-secondary: #5050708;
+  --color-text-muted:     #9090b0;
+  --color-text-inverse:   #e8e8f0;
+}
