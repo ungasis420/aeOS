@@ -1,0 +1,4 @@
+# SQLite binary database files (regenerate from aeOS_PERSIST_v1.0.sql)
+*.db
+*.db-wal
+*.db-shm
