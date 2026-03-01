@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "aeOS Cartridge Schema",
+  "description": "Schema for COGNITIVE_CORE intelligence cartridges.",
+  "type": "object",
+  "required": [
+    "cartridge_id",
+    "version",
+    "domain",
+    "description",
+    "dependencies",
+    "ethical_guardrail",
+    "rules",
+    "cross_references"
+  ],
+  "properties": {
+    "cartridge_id": {
+      "type": "string",
+      "description": "Unique identifier for this cartridge."
+    },
+    "version": {
+      "type": "string",
+      "description": "Semantic version of the cartridge."
+    },
+    "domain": {
+      "type": "string",
+      "description": "Knowledge domain this cartridge covers."
+    },
+    "description": {
+      "type": "string",
+      "description": "Human-readable summary of the cartridge purpose."
+    },
+    "dependencies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of cartridge_ids this cartridge depends on."
+    },
+    "ethical_guardrail": {
+      "type": "string",
+      "description": "Ethical boundary that constrains all rules in this cartridge."
+    },
+    "rules": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/rule" },
+      "description": "Ordered list of intelligence rules."
+    },
+    "cross_references": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "description": "Mapping of external domains to related cartridge_ids."
+    }
+  },
+  "additionalProperties": false,
+  "definitions": {
+    "rule": {
+      "type": "object",
+      "required": [
+        "rule_id",
+        "name",
+        "principle",
+        "detection_triggers",
+        "insight_template",
+        "connects_to",
+        "confidence_weight",
+        "sovereign_need_served",
+        "tags"
+      ],
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "description": "Unique identifier for this rule within the cartridge."
+        },
+        "name": {
+          "type": "string",
+          "description": "Short human-readable rule name."
+        },
+        "principle": {
+          "type": "string",
+          "description": "Core philosophical or analytical principle."
+        },
+        "detection_triggers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Context keywords or phrases that activate this rule."
+        },
+        "insight_template": {
+          "type": "string",
+          "description": "Template string with {variable} placeholders for generated insights."
+        },
+        "connects_to": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Rule IDs this rule can chain into."
+        },
+        "confidence_weight": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Base confidence score (0-1) for insights from this rule."
+        },
+        "sovereign_need_served": {
+          "type": "string",
+          "description": "The fundamental human need this rule addresses."
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Classification tags for indexing and filtering."
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "cartridge_id": "stoic",
+  "version": "1.0.0",
+  "domain": "philosophy.stoicism",
+  "description": "Stoic philosophy cartridge — ten core principles for resilience, clarity, and sovereign decision-making.",
+  "dependencies": [],
+  "ethical_guardrail": "Never weaponize discomfort as justification for neglecting self-care or the well-being of others.",
+  "rules": [
+    {
+      "rule_id": "stoic-001",
+      "name": "Dichotomy of Control",
+      "principle": "Distinguish what is within your control (your choices, judgments, actions) from what is not (others' opinions, external events).",
+      "detection_triggers": ["frustrated", "helpless", "out of control", "can't change", "stuck", "powerless"],
+      "insight_template": "Focus on what you can control in this situation: your response to {situation}. Release attachment to outcomes beyond your influence.",
+      "connects_to": ["stoic-002", "stoic-005"],
+      "confidence_weight": 0.92,
+      "sovereign_need_served": "autonomy",
+      "tags": ["control", "agency", "core-principle"]
+    },
+    {
+      "rule_id": "stoic-002",
+      "name": "Memento Mori",
+      "principle": "Reflect on mortality to clarify priorities and eliminate trivial concerns.",
+      "detection_triggers": ["wasting time", "procrastinating", "meaningless", "life is short", "mortality", "urgency"],
+      "insight_template": "Time is finite. Ask: if this were your last day, would {situation} still matter? Let mortality sharpen your focus.",
+      "connects_to": ["stoic-003", "stoic-006"],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "purpose",
+      "tags": ["mortality", "priority", "urgency"]
+    },
+    {
+      "rule_id": "stoic-003",
+      "name": "Amor Fati",
+      "principle": "Love your fate — embrace everything that happens, including hardship, as necessary and beneficial.",
+      "detection_triggers": ["bad luck", "unfair", "why me", "suffering", "setback", "loss", "disaster"],
+      "insight_template": "Rather than resisting {situation}, ask: what strength or insight can only be forged through this exact difficulty?",
+      "connects_to": ["stoic-001", "stoic-004"],
+      "confidence_weight": 0.85,
+      "sovereign_need_served": "resilience",
+      "tags": ["acceptance", "resilience", "growth"]
+    },
+    {
+      "rule_id": "stoic-004",
+      "name": "Voluntary Discomfort",
+      "principle": "Deliberately practice hardship to build resilience and reduce fear of loss.",
+      "detection_triggers": ["comfort zone", "afraid", "avoiding", "soft", "complacent", "easy path", "fear of failure"],
+      "insight_template": "Growth lives outside comfort. Consider deliberately facing {situation} to strengthen your capacity for adversity.",
+      "connects_to": ["stoic-003", "stoic-005"],
+      "confidence_weight": 0.80,
+      "sovereign_need_served": "resilience",
+      "tags": ["discipline", "hardship", "training"]
+    },
+    {
+      "rule_id": "stoic-005",
+      "name": "Premeditatio Malorum",
+      "principle": "Pre-meditate on potential adversities so you are never caught off-guard.",
+      "detection_triggers": ["anxious", "worried", "what if", "worst case", "uncertainty", "fear", "risk"],
+      "insight_template": "Visualize the worst outcome of {situation}. Once you have faced it mentally, you are prepared — and the fear loses its grip.",
+      "connects_to": ["stoic-001", "stoic-004"],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "security",
+      "tags": ["preparation", "anxiety", "visualization"]
+    },
+    {
+      "rule_id": "stoic-006",
+      "name": "Present Moment Awareness",
+      "principle": "The present is all you possess. Do not squander it reliving the past or dreading the future.",
+      "detection_triggers": ["regret", "dwelling", "past mistakes", "future anxiety", "distracted", "not present", "overthinking"],
+      "insight_template": "Your attention is on {situation}, but only this moment is real. Return to what is actionable right now.",
+      "connects_to": ["stoic-002", "stoic-007"],
+      "confidence_weight": 0.83,
+      "sovereign_need_served": "clarity",
+      "tags": ["mindfulness", "presence", "focus"]
+    },
+    {
+      "rule_id": "stoic-007",
+      "name": "Virtue as the Sole Good",
+      "principle": "External goods (wealth, fame, pleasure) are preferred indifferents. Only virtue — wisdom, courage, justice, temperance — is truly good.",
+      "detection_triggers": ["greedy", "jealous", "status", "money problems", "envy", "comparison", "material"],
+      "insight_template": "The pursuit of {situation} may be a preferred indifferent. Ask: does this path cultivate wisdom, courage, justice, or temperance?",
+      "connects_to": ["stoic-008", "stoic-010"],
+      "confidence_weight": 0.90,
+      "sovereign_need_served": "integrity",
+      "tags": ["virtue", "values", "ethics"]
+    },
+    {
+      "rule_id": "stoic-008",
+      "name": "Sympatheia (Interconnectedness)",
+      "principle": "All things are woven together. Your actions ripple through a connected whole.",
+      "detection_triggers": ["isolated", "alone", "disconnected", "selfish", "impact on others", "community", "relationship"],
+      "insight_template": "You are part of a larger whole. Consider how your response to {situation} affects the web of relationships around you.",
+      "connects_to": ["stoic-007", "stoic-009"],
+      "confidence_weight": 0.82,
+      "sovereign_need_served": "belonging",
+      "tags": ["interconnection", "community", "perspective"]
+    },
+    {
+      "rule_id": "stoic-009",
+      "name": "The Inner Citadel",
+      "principle": "Your mind is an impregnable fortress. No external event can disturb you without your consent.",
+      "detection_triggers": ["overwhelmed", "attacked", "criticized", "emotional", "reactive", "triggered", "hurt"],
+      "insight_template": "External events around {situation} have no power over your inner state unless you grant it. Guard your ruling faculty.",
+      "connects_to": ["stoic-001", "stoic-006"],
+      "confidence_weight": 0.91,
+      "sovereign_need_served": "autonomy",
+      "tags": ["mental-fortress", "equanimity", "self-mastery"]
+    },
+    {
+      "rule_id": "stoic-010",
+      "name": "The View from Above",
+      "principle": "Zoom out to a cosmic perspective. Most troubles shrink to insignificance when viewed from sufficient distance.",
+      "detection_triggers": ["overwhelmed", "catastrophizing", "big deal", "end of the world", "panic", "crisis", "perspective"],
+      "insight_template": "Step back from {situation}. Viewed from above — across years, continents, lifetimes — how significant is this truly?",
+      "connects_to": ["stoic-002", "stoic-008"],
+      "confidence_weight": 0.84,
+      "sovereign_need_served": "clarity",
+      "tags": ["perspective", "cosmic", "equanimity"]
+    }
+  ],
+  "cross_references": {
+    "psychology": ["cbt", "emotional_regulation"],
+    "philosophy": ["existentialism", "buddhism"],
+    "productivity": ["deep_work", "essentialism"]
+  }
+}
