@@ -1,0 +1,18 @@
+{
+  "cartridge_id": "CART-CAREER",
+  "domain": "career",
+  "version": "1.0",
+  "rule_count": 10,
+  "rules": [
+    {"id": "CAR-001", "name": "Skill Stacking", "principle": "Rare skill combinations create monopolies. Stack 3 complementary skills instead of mastering one.", "insight_template": "What two skills combined with {current_skill} would make you the only person in the room?"},
+    {"id": "CAR-002", "name": "Leverage Migration", "principle": "Migrate from time-for-money to asset-for-money as fast as possible.", "insight_template": "What part of your current work could become a product, system, or content that earns without your hours?"},
+    {"id": "CAR-003", "name": "Reputation Compounding", "principle": "Reputation compounds faster than any financial asset. Invest in it early.", "insight_template": "What one visible win this quarter would most strengthen your reputation in {domain}?"},
+    {"id": "CAR-004", "name": "Adjacent Possible", "principle": "The best next move is usually one step adjacent to current strength, not a full pivot.", "insight_template": "What opportunity is directly adjacent to your current skills that you haven't pursued?"},
+    {"id": "CAR-005", "name": "Sponsor Not Mentor", "principle": "Mentors advise. Sponsors advocate. Actively seek sponsors who will put their name behind you.", "insight_template": "Who in your network has the authority and trust to open the door to {opportunity}?"},
+    {"id": "CAR-006", "name": "Market Rate Awareness", "principle": "Never negotiate from ignorance. Know your market rate before every conversation.", "insight_template": "When did you last benchmark your market rate for {role}? What does current data say?"},
+    {"id": "CAR-007", "name": "Portfolio Thinking", "principle": "Treat your career as a portfolio of bets, not a single linear path.", "insight_template": "Which career bet has the highest asymmetric upside you're currently underweighting?"},
+    {"id": "CAR-008", "name": "Visible Work", "principle": "Invisible good work is indistinguishable from no work. Make output visible.", "insight_template": "How would you make your work on {project} visible to the people who matter?"},
+    {"id": "CAR-009", "name": "10-Year Horizon", "principle": "Most people overestimate 1 year and underestimate 10. Optimize for the decade.", "insight_template": "What decision looks obviously right from 10 years ahead that you're hesitating on today?"},
+    {"id": "CAR-010", "name": "Exit Readiness", "principle": "Always be quietly ready to leave. Security comes from options, not loyalty.", "insight_template": "If your current role ended tomorrow, how strong is your position? What would you do?"}
+  ]
+}
