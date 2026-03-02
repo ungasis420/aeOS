@@ -403,3 +403,167 @@ class SafetyGate:
             "data": data,
         }
         print(json.dumps(event, ensure_ascii=False, sort_keys=True))
+
+
+# =========================
+# SafetyGuard (Phase 3 extension)
+# =========================
+
+class SafetyGuard:
+    """Operational guardrails for aeOS.
+
+    Rate limiting, PII detection, cost caps. Extends the existing
+    safety primitives (RateLimiter, CostGuard, PIIDetector) into
+    a unified guard with structured return dicts.
+    """
+
+    def __init__(
+        self,
+        rate_limit: int = 10,
+        daily_cap: float = 10.0,
+        monthly_cap: float = 100.0,
+    ) -> None:
+        self._rate_limiters: Dict[str, List[float]] = {}
+        self._default_rate_limit = int(rate_limit)
+        self._pii_detector = PIIDetector()
+        self._daily_cap = float(daily_cap)
+        self._monthly_cap = float(monthly_cap)
+        self._daily_spend: float = 0.0
+        self._monthly_spend: float = 0.0
+        self._current_day: date = date.today()
+        self._current_month: int = date.today().month
+        self._safety_events: List[Dict[str, Any]] = []
+
+    def _rollover(self) -> None:
+        today = date.today()
+        if today != self._current_day:
+            self._current_day = today
+            self._daily_spend = 0.0
+        if today.month != self._current_month:
+            self._current_month = today.month
+            self._monthly_spend = 0.0
+
+    def check_rate_limit(
+        self, endpoint: str, window_seconds: int = 60
+    ) -> Dict[str, Any]:
+        """Check rate limit for an endpoint.
+
+        Returns:
+            {allowed: bool, remaining: int, reset_at: float}
+        Default: 10 calls/minute per endpoint.
+        """
+        now = time.time()
+        if endpoint not in self._rate_limiters:
+            self._rate_limiters[endpoint] = []
+
+        # Prune expired timestamps
+        cutoff = now - window_seconds
+        self._rate_limiters[endpoint] = [
+            ts for ts in self._rate_limiters[endpoint] if ts > cutoff
+        ]
+
+        current_count = len(self._rate_limiters[endpoint])
+        allowed = current_count < self._default_rate_limit
+
+        if allowed:
+            self._rate_limiters[endpoint].append(now)
+            remaining = self._default_rate_limit - current_count - 1
+        else:
+            remaining = 0
+
+        oldest = (
+            self._rate_limiters[endpoint][0]
+            if self._rate_limiters[endpoint]
+            else now
+        )
+        reset_at = oldest + window_seconds
+
+        return {
+            "allowed": allowed,
+            "remaining": max(remaining, 0),
+            "reset_at": reset_at,
+        }
+
+    def detect_pii(self, text: str) -> Dict[str, Any]:
+        """Scan text for PII before external transmission.
+
+        Detects: email, phone, SSN, credit card, API keys.
+
+        Returns:
+            {has_pii: bool, detected_types: list[str], sanitized: str}
+        Replaces detected PII with [REDACTED_TYPE].
+        """
+        if not isinstance(text, str):
+            return {
+                "has_pii": False,
+                "detected_types": [],
+                "sanitized": str(text),
+            }
+        has_pii, types = self._pii_detector.scan(text)
+        sanitized = self._pii_detector.redact(text) if has_pii else text
+        return {
+            "has_pii": has_pii,
+            "detected_types": types,
+            "sanitized": sanitized,
+        }
+
+    def check_cost_guard(
+        self, model: str, estimated_tokens: int
+    ) -> Dict[str, Any]:
+        """Validate AI call against daily/monthly cost caps.
+
+        Returns:
+            {approved: bool, reason: str, daily_remaining: float,
+             monthly_remaining: float}
+        Caps configurable in config. Defaults: $10/day, $100/month.
+        """
+        self._rollover()
+        # Cost estimation: rough $0.003 per 1K tokens for sonnet, $0.015 for opus
+        rate_per_1k = 0.015 if "opus" in str(model).lower() else 0.003
+        estimated_cost = (int(estimated_tokens) / 1000.0) * rate_per_1k
+
+        daily_remaining = self._daily_cap - self._daily_spend
+        monthly_remaining = self._monthly_cap - self._monthly_spend
+
+        if estimated_cost > daily_remaining:
+            return {
+                "approved": False,
+                "reason": f"Daily cap exceeded: ${self._daily_spend:.2f} + ${estimated_cost:.4f} > ${self._daily_cap:.2f}",
+                "daily_remaining": max(daily_remaining, 0.0),
+                "monthly_remaining": max(monthly_remaining, 0.0),
+            }
+        if estimated_cost > monthly_remaining:
+            return {
+                "approved": False,
+                "reason": f"Monthly cap exceeded: ${self._monthly_spend:.2f} + ${estimated_cost:.4f} > ${self._monthly_cap:.2f}",
+                "daily_remaining": max(daily_remaining, 0.0),
+                "monthly_remaining": max(monthly_remaining, 0.0),
+            }
+
+        self._daily_spend += estimated_cost
+        self._monthly_spend += estimated_cost
+
+        return {
+            "approved": True,
+            "reason": "Within budget",
+            "daily_remaining": max(self._daily_cap - self._daily_spend, 0.0),
+            "monthly_remaining": max(
+                self._monthly_cap - self._monthly_spend, 0.0
+            ),
+        }
+
+    def log_safety_event(
+        self, event_type: str, details: Dict[str, Any]
+    ) -> None:
+        """Write safety event to internal log."""
+        self._safety_events.append(
+            {
+                "event_type": str(event_type),
+                "details": dict(details) if isinstance(details, dict) else {},
+                "timestamp": time.time(),
+            }
+        )
+
+    def get_safety_events(self) -> List[Dict[str, Any]]:
+        """Return all logged safety events."""
+        return list(self._safety_events)
