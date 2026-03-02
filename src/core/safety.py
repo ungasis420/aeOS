@@ -406,15 +406,19 @@ class SafetyGate:
 
 
 # =========================
-# SafetyGuard (Phase 3 extension)
+# SafetyGuard (Phase 3 extension + CryptoGuard F0.3)
 # =========================
 
-class SafetyGuard:
+from src.cognitive.crypto_guard import CryptoGuard
+
+
+class SafetyGuard(CryptoGuard):
     """Operational guardrails for aeOS.
 
-    Rate limiting, PII detection, cost caps. Extends the existing
-    safety primitives (RateLimiter, CostGuard, PIIDetector) into
-    a unified guard with structured return dicts.
+    Rate limiting, PII detection, cost caps, cognitive state encryption.
+    Extends CryptoGuard (F0.3) for AES-256-GCM encrypted cognitive state.
+    Extends the existing safety primitives (RateLimiter, CostGuard,
+    PIIDetector) into a unified guard with structured return dicts.
     """
 
     def __init__(
@@ -423,6 +427,7 @@ class SafetyGuard:
         daily_cap: float = 10.0,
         monthly_cap: float = 100.0,
     ) -> None:
+        super().__init__()
         self._rate_limiters: Dict[str, List[float]] = {}
         self._default_rate_limit = int(rate_limit)
         self._pii_detector = PIIDetector()

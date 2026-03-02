@@ -15,11 +15,13 @@ class DecisionEngine:
 
     Combines pain scores, pipeline, runway, project health.
     Learns from outcome feedback via Calibration_Feedback_Loop.
+    Wired to FlywheelLogger for compound intelligence accumulation.
     """
 
-    def __init__(self) -> None:
+    def __init__(self, flywheel_logger: Any = None) -> None:
         self._history: List[dict] = []
         self._feedback: Dict[str, dict] = {}
+        self._flywheel_logger = flywheel_logger
 
     def recommend(self, context: dict) -> dict:
         """Given current system state, return top 3 recommended actions.
@@ -127,6 +129,20 @@ class DecisionEngine:
             "generated_at": generated_at,
         }
         self._history.append(entry)
+
+        # FlywheelLogger: record each recommendation as a decision
+        if self._flywheel_logger:
+            for rec in recommendations:
+                try:
+                    self._flywheel_logger.log_decision(
+                        context=rec.get("action", ""),
+                        cartridges_fired=[rec.get("sovereign_need", "")],
+                        reasoning_summary=rec.get("expected_impact", ""),
+                        confidence=rec.get("confidence", 0.5),
+                        domain="business",
+                    )
+                except Exception:
+                    pass  # don't break recommendations if logging fails
 
         return {
             "recommendations": recommendations,

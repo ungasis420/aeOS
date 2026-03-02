@@ -1,130 +1,243 @@
-"""CausalInferenceEngine — Stub for F1.6 causal graph interface.
-
-Provides a lightweight directed graph for tracking causal relationships
-between events, metrics, and decisions within aeOS.
 """
-from __future__ import annotations
-
-import time
-import uuid
-from typing import Any, Dict, List, Optional, Tuple
-
-
-class CausalInferenceEngine:
-    """Causal graph engine for tracking cause-effect relationships.
-
-    Maintains an in-memory directed graph of causal edges with weights
-    and evidence. Designed for later persistence to Causal_Graph_Log.
+aeOS v9.0 — Causal Inference Engine (F1.6) — STUB
+===================================================
+INTERFACE DEFINED NOW. Implementation fills in Month 1.
+Separates aeOS from every correlation-based AI.
+Not "people who did X also did Y" — but "X CAUSES Y in YOUR life."
+Depends on: FlywheelLogger (data source), COGNITIVE_CORE (reasoning substrate)
+Feeds into: Cognitive Digital Twin (F2.5), Predictive Life Engine (F1.1),
+            Psychophysiological State Fusion (F4.5)
+Data contract defined here so FlywheelLogger can start writing
+compatible records from Day 1.
+"""
+from dataclasses import dataclass, field
+from typing import Optional
+from enum import Enum
+# ------------------------------------------------------------------
+# Data contracts (defined now, used by FlywheelLogger immediately)
+# ------------------------------------------------------------------
+class CausalStrength(Enum):
+    STRONG   = "strong"    # p < 0.01, effect size > 0.5
+    MODERATE = "moderate"  # p < 0.05, effect size 0.2–0.5
+    WEAK     = "weak"      # p < 0.10, effect size < 0.2
+    UNKNOWN  = "unknown"   # insufficient data (< 30 samples)
+@dataclass
+class CausalEdge:
     """
-
-    def __init__(self) -> None:
-        self._edges: List[dict] = []
-
-    def add_edge(
-        self,
-        cause: str,
-        effect: str,
-        weight: float = 0.5,
-        evidence: str = "",
-        domain: str = "general",
-    ) -> str:
-        """Add a causal edge to the graph.
-
+    A directed causal relationship: cause → effect.
+    Populated by CausalInferenceEngine after sufficient data accumulates.
+    """
+    cause_variable: str            # e.g. "hrv_low", "sleep_hours", "cartridge:negotiation"
+    effect_variable: str           # e.g. "decision_quality", "outcome_valence"
+    strength: CausalStrength = CausalStrength.UNKNOWN
+    effect_size: float = 0.0       # Cohen's d or equivalent
+    confidence: float = 0.0        # 0.0–1.0
+    sample_count: int = 0
+    domain: str = "unknown"
+    evidence_decision_ids: list[str] = field(default_factory=list)
+@dataclass
+class CounterfactualResult:
+    """
+    Result of a counterfactual query:
+    "What would have happened if I had done X differently?"
+    """
+    query: str
+    factual_outcome: str
+    counterfactual_outcome: str
+    confidence: float
+    supporting_evidence: list[str] = field(default_factory=list)
+    caveat: str = ""
+@dataclass
+class InterventionRecommendation:
+    """
+    Result of do-calculus:
+    "If I change THIS variable, what happens to THAT outcome?"
+    """
+    target_variable: str           # what you want to change
+    current_value: str
+    recommended_intervention: str  # what to do differently
+    predicted_effect: str
+    effect_magnitude: float        # 0.0–1.0
+    confidence: float
+    prerequisite_conditions: list[str] = field(default_factory=list)
+    contraindications: list[str] = field(default_factory=list)
+# ------------------------------------------------------------------
+# Engine stub — interface defined, implementation Month 1
+# ------------------------------------------------------------------
+class CausalInferenceEngine:
+    """
+    Personal causal inference over accumulated FlywheelLogger data.
+    Moves aeOS from:
+      "Users who do X tend to do Y" (population correlation)
+    To:
+      "When YOUR [variable] changes, YOUR [outcome] changes by [magnitude]"
+      (personal causation)
+    Requires minimum 30 decisions with outcomes before producing
+    reliable causal estimates. Returns UNKNOWN strength below that.
+    Implementation uses:
+      - do-calculus for intervention analysis
+      - Counterfactual reasoning via SCM (Structural Causal Models)
+      - Pearl's backdoor criterion for confound control
+    """
+    def __init__(self, flywheel_logger=None):
+        """
         Args:
-            cause: Cause node identifier.
-            effect: Effect node identifier.
-            weight: Edge weight (0.0–1.0), strength of causal link.
-            evidence: Supporting evidence text.
-            domain: Domain tag.
-
-        Returns:
-            edge_id (str).
+            flywheel_logger: FlywheelLogger instance. If None, creates own instance.
         """
-        if not isinstance(cause, str) or not cause.strip():
-            raise ValueError("cause must be a non-empty string")
-        if not isinstance(effect, str) or not effect.strip():
-            raise ValueError("effect must be a non-empty string")
-        w = float(weight)
-        if w < 0.0 or w > 1.0:
-            raise ValueError("weight must be between 0.0 and 1.0")
-
-        edge_id = str(uuid.uuid4())
-        self._edges.append({
-            "edge_id": edge_id,
-            "cause": cause.strip(),
-            "effect": effect.strip(),
-            "weight": w,
-            "evidence": str(evidence),
-            "domain": str(domain),
-            "created_at": time.time(),
-        })
-        return edge_id
-
-    def get_causes(self, effect: str) -> List[dict]:
-        """Get all cause nodes for a given effect."""
-        return [e for e in self._edges if e["effect"] == effect]
-
-    def get_effects(self, cause: str) -> List[dict]:
-        """Get all effect nodes for a given cause."""
-        return [e for e in self._edges if e["cause"] == cause]
-
-    def get_all_edges(self) -> List[dict]:
-        """Return all edges in the graph."""
-        return list(self._edges)
-
-    def get_nodes(self) -> List[str]:
-        """Return all unique node identifiers."""
-        nodes = set()
-        for e in self._edges:
-            nodes.add(e["cause"])
-            nodes.add(e["effect"])
-        return sorted(nodes)
-
-    def compute_influence_score(self, node: str) -> float:
-        """Compute influence score for a node (sum of outgoing weights).
-
-        Returns:
-            Influence score (float >= 0).
+        self._logger = flywheel_logger
+        self._causal_graph: dict[str, list[CausalEdge]] = {}
+        self._min_samples_for_inference = 30
+        self._initialized = False
+    def build_causal_graph(self, domain: Optional[str] = None) -> dict:
         """
-        return sum(e["weight"] for e in self._edges if e["cause"] == node)
-
-    def find_path(self, start: str, end: str, max_depth: int = 10) -> Optional[List[str]]:
-        """Find a causal path from start to end using BFS.
-
+        Build causal graph from FlywheelLogger data.
+        Identifies variables that causally influence outcomes.
+        Args:
+            domain: Limit graph to specific life domain. None = all domains.
         Returns:
-            List of node names forming the path, or None if no path found.
+            {
+              "edges": list[CausalEdge],
+              "nodes": list[str],
+              "confidence": float,
+              "data_sufficiency": str,
+              "recommendation": str
+            }
+        NOTE: Returns empty graph with guidance when < 30 samples available.
+        Stub — full implementation Month 1.
         """
-        if start == end:
-            return [start]
-        visited = set()
-        queue: List[Tuple[str, List[str]]] = [(start, [start])]
-        while queue:
-            current, path = queue.pop(0)
-            if current in visited:
-                continue
-            visited.add(current)
-            if len(path) > max_depth:
-                continue
-            for edge in self._edges:
-                if edge["cause"] == current and edge["effect"] not in visited:
-                    new_path = path + [edge["effect"]]
-                    if edge["effect"] == end:
-                        return new_path
-                    queue.append((edge["effect"], new_path))
-        return None
-
-    def get_graph_summary(self) -> dict:
-        """Return summary statistics of the causal graph.
-
-        Returns:
-            {node_count, edge_count, avg_weight, domains}
-        """
-        nodes = self.get_nodes()
-        weights = [e["weight"] for e in self._edges]
-        domains = list(set(e["domain"] for e in self._edges))
+        # STUB
         return {
-            "node_count": len(nodes),
-            "edge_count": len(self._edges),
-            "avg_weight": sum(weights) / len(weights) if weights else 0.0,
-            "domains": sorted(domains),
+            "edges": [],
+            "nodes": [],
+            "confidence": 0.0,
+            "data_sufficiency": "insufficient — need 30+ decisions with outcomes",
+            "recommendation": "Keep logging decisions and outcomes via FlywheelLogger."
+        }
+    def do_calculus(
+        self,
+        intervention_variable: str,
+        intervention_value: str,
+        target_outcome: str,
+        current_context: Optional[dict] = None
+    ) -> InterventionRecommendation:
+        """
+        Do-calculus query: "If I do(X=x), what happens to Y?"
+        Answers: "If I change [intervention_variable] to [intervention_value],
+                  what will happen to [target_outcome] in my specific context?"
+        Args:
+            intervention_variable: Variable you're considering changing.
+                                   e.g. "sleep_hours", "meeting_frequency", "exercise_days"
+            intervention_value:    Proposed new value. e.g. "8", "2_per_week", "5"
+            target_outcome:        What you care about. e.g. "decision_quality", "energy"
+            current_context:       Current state of relevant variables.
+        Returns:
+            InterventionRecommendation with predicted effect and confidence.
+        Stub — full do-calculus implementation Month 1.
+        """
+        # STUB
+        return InterventionRecommendation(
+            target_variable=target_outcome,
+            current_value="unknown",
+            recommended_intervention=f"Set {intervention_variable} to {intervention_value}",
+            predicted_effect="Insufficient data for causal prediction",
+            effect_magnitude=0.0,
+            confidence=0.0,
+            prerequisite_conditions=["Need 30+ logged decisions with outcomes"],
+            contraindications=[]
+        )
+    def counterfactual(
+        self,
+        decision_id: str,
+        alternative_action: str
+    ) -> CounterfactualResult:
+        """
+        Counterfactual query: "What would have happened if I had done X instead?"
+        Retrieves a past decision and simulates the alternative path
+        through the causal model using YOUR historical data.
+        Args:
+            decision_id:       UUID of a past logged decision.
+            alternative_action: Description of what you would have done differently.
+        Returns:
+            CounterfactualResult comparing factual vs counterfactual outcomes.
+        Stub — full SCM implementation Month 1.
+        """
+        # STUB
+        return CounterfactualResult(
+            query=f"What if for decision {decision_id} I had: {alternative_action}",
+            factual_outcome="(requires outcome to be logged)",
+            counterfactual_outcome="Insufficient data for counterfactual simulation",
+            confidence=0.0,
+            supporting_evidence=[],
+            caveat="Causal Inference Engine requires 30+ decisions with outcomes."
+        )
+    def identify_leverage_points(
+        self,
+        target_outcome: str,
+        domain: Optional[str] = None
+    ) -> list[dict]:
+        """
+        Identify the highest-leverage variables for a target outcome.
+        "What 3 things, if I changed them, would most improve [target_outcome]?"
+        This is the core value proposition of F1.6:
+        Not "here are best practices" but "here are YOUR highest-leverage variables
+        based on YOUR causal graph."
+        Args:
+            target_outcome: e.g. "decision_quality", "revenue", "energy"
+            domain:         Optional domain filter.
+        Returns:
+            List of leverage points, ranked by effect size:
+            [{variable, current_typical_value, recommended_value,
+              predicted_improvement, confidence, evidence_count}]
+        Stub — full implementation Month 1.
+        """
+        # STUB
+        return [{
+            "variable": "data_accumulation",
+            "current_typical_value": "insufficient",
+            "recommended_value": "30+ decisions logged",
+            "predicted_improvement": "Causal leverage analysis becomes available",
+            "confidence": 1.0,
+            "evidence_count": 0,
+            "note": "Log decisions and outcomes via FlywheelLogger to unlock this."
+        }]
+    def get_data_readiness(self) -> dict:
+        """
+        Report on data readiness for causal inference.
+        Tells you exactly how many more decisions you need and in which domains.
+        Returns:
+            {
+              "total_decisions": int,
+              "decisions_with_outcomes": int,
+              "ready_for_inference": bool,
+              "shortfall": int,
+              "domain_coverage": dict[str, int],
+              "estimated_weeks_to_ready": float
+            }
+        """
+        # STUB — reads from FlywheelLogger
+        if self._logger:
+            try:
+                score = self._logger.get_compound_score()
+                total = score.get("total_decisions", 0)
+                with_outcomes = score.get("decisions_with_outcomes", 0)
+                shortfall = max(0, self._min_samples_for_inference - with_outcomes)
+                return {
+                    "total_decisions": total,
+                    "decisions_with_outcomes": with_outcomes,
+                    "ready_for_inference": with_outcomes >= self._min_samples_for_inference,
+                    "shortfall": shortfall,
+                    "domain_coverage": {},
+                    "estimated_weeks_to_ready": round(shortfall / 3, 1),  # assume ~3/week
+                    "note": f"Need {shortfall} more decisions with outcomes for causal inference."
+                }
+            except Exception:
+                pass
+        return {
+            "total_decisions": 0,
+            "decisions_with_outcomes": 0,
+            "ready_for_inference": False,
+            "shortfall": self._min_samples_for_inference,
+            "domain_coverage": {},
+            "estimated_weeks_to_ready": 10.0,
+            "note": "FlywheelLogger not connected. Connect to track data readiness."
         }
