@@ -1,0 +1,284 @@
+{
+  "cartridge_id": "CART-LEADERSHIP",
+  "version": "1.0.0",
+  "domain": "leadership",
+  "description": "Leadership principles for building trust, clarity, and high-performing teams.",
+  "dependencies": [
+    "CART-UNIVERSAL-LAWS",
+    "CART-SYSTEMS-THINKING"
+  ],
+  "ethical_guardrail": "Use leadership rules to create safety, autonomy, and ethical performance\u2014not control, coercion, or abuse of power.",
+  "rules": [
+    {
+      "rule_id": "LD-001",
+      "name": "Psychological Safety",
+      "principle": "Teams perform best when people can speak up, ask questions, and fail without fear of punishment.",
+      "detection_triggers": [
+        "People are afraid to speak up",
+        "Mistakes are punished",
+        "No one challenges bad ideas",
+        "Meetings are silent",
+        "The team hides problems"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-009",
+        "CART-UNIVERSAL-LAWS.UL-BEH-015",
+        "CART-LEADERSHIP.LD-005"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "psychological_safety",
+        "team_culture",
+        "speaking_up",
+        "learning",
+        "trust"
+      ]
+    },
+    {
+      "rule_id": "LD-002",
+      "name": "Trust Equation",
+      "principle": "Trust increases with credibility, reliability, and intimacy, and decreases with self-orientation.",
+      "detection_triggers": [
+        "They don't trust leadership",
+        "We need to rebuild trust",
+        "The relationship feels guarded",
+        "People think it's all politics",
+        "How do we increase credibility quickly?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-PERSUASION.PRS-008",
+        "CART-UNIVERSAL-LAWS.UL-BEH-007",
+        "CART-LEADERSHIP.LD-005"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "trust",
+        "credibility",
+        "reliability",
+        "intimacy",
+        "leadership"
+      ]
+    },
+    {
+      "rule_id": "LD-003",
+      "name": "Situational Leadership",
+      "principle": "Match leadership style (direct, coach, support, delegate) to the follower\u2019s competence and commitment.",
+      "detection_triggers": [
+        "One style doesn't work for everyone",
+        "They need more support or autonomy",
+        "A new hire needs guidance",
+        "A senior person needs freedom",
+        "How do I adapt my leadership style?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-LEADERSHIP.LD-004",
+        "CART-LEADERSHIP.LD-006",
+        "CART-UNIVERSAL-LAWS.UL-SYS-011"
+      ],
+      "confidence_weight": 0.85,
+      "sovereign_need_served": "Growth",
+      "tags": [
+        "situational_leadership",
+        "coaching",
+        "delegation",
+        "development",
+        "management"
+      ]
+    },
+    {
+      "rule_id": "LD-004",
+      "name": "Delegation Ladder",
+      "principle": "Delegate by explicitly choosing the autonomy level, from 'do exactly' to 'own end-to-end'.",
+      "detection_triggers": [
+        "I'm doing everything myself",
+        "Delegation keeps failing",
+        "They need clearer autonomy levels",
+        "I want them to own it, not just do tasks",
+        "How much control should I keep?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-007",
+        "CART-UNIVERSAL-LAWS.UL-SYS-011",
+        "CART-LEADERSHIP.LD-003"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Agency",
+      "tags": [
+        "delegation",
+        "autonomy",
+        "ownership",
+        "execution",
+        "scaling"
+      ]
+    },
+    {
+      "rule_id": "LD-005",
+      "name": "Feedback Architecture",
+      "principle": "Effective feedback is specific, timely, behavior-focused, and tied to outcomes\u2014not identity or character.",
+      "detection_triggers": [
+        "Feedback conversations go badly",
+        "They get defensive with feedback",
+        "We need more frequent feedback",
+        "The same issue keeps repeating",
+        "How do I give feedback without demotivating?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-015",
+        "CART-LEADERSHIP.LD-009",
+        "CART-MENTAL-MODELS.MM-012"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Growth",
+      "tags": [
+        "feedback",
+        "coaching",
+        "behavior",
+        "performance",
+        "development"
+      ]
+    },
+    {
+      "rule_id": "LD-006",
+      "name": "Vision Clarity",
+      "principle": "Clear direction aligns effort; people follow a direction they can see, repeat, and act on.",
+      "detection_triggers": [
+        "People are confused about priorities",
+        "The team lacks direction",
+        "Everyone is busy but not aligned",
+        "We need a clear North Star",
+        "Why are efforts scattered?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-006",
+        "CART-LEADERSHIP.LD-007",
+        "CART-MENTAL-MODELS.MM-010"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "vision",
+        "alignment",
+        "strategy",
+        "communication",
+        "priorities"
+      ]
+    },
+    {
+      "rule_id": "LD-007",
+      "name": "Leading vs Managing",
+      "principle": "Leading sets direction and meaning; managing controls execution and resources\u2014both matter, but they are different jobs.",
+      "detection_triggers": [
+        "I'm stuck in the weeds",
+        "I manage tasks but lack inspiration",
+        "We need better execution AND direction",
+        "Am I leading or just supervising?",
+        "The team needs motivation, not micromanagement"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-LEADERSHIP.LD-006",
+        "CART-LEADERSHIP.LD-004",
+        "CART-UNIVERSAL-LAWS.UL-SYS-010"
+      ],
+      "confidence_weight": 0.84,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "leadership",
+        "management",
+        "direction",
+        "execution",
+        "roles"
+      ]
+    },
+    {
+      "rule_id": "LD-008",
+      "name": "Multiplier vs Diminisher",
+      "principle": "Multipliers amplify others\u2019 intelligence and ownership; diminishers create dependency and drain capability.",
+      "detection_triggers": [
+        "My team depends on me for everything",
+        "People feel drained after working with a leader",
+        "Some leaders create growth in others",
+        "I want to amplify my team's capabilities",
+        "We have talent but it's underused"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-011",
+        "CART-LEADERSHIP.LD-004",
+        "CART-LEADERSHIP.LD-002"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Growth",
+      "tags": [
+        "multiplier",
+        "enablement",
+        "ownership",
+        "talent",
+        "team_growth"
+      ]
+    },
+    {
+      "rule_id": "LD-009",
+      "name": "After-Action Review",
+      "principle": "Systematically review outcomes to capture lessons, prevent repeat mistakes, and improve the next iteration.",
+      "detection_triggers": [
+        "We keep repeating the same mistakes",
+        "We finished a project but didn't learn",
+        "What went well/poorly?",
+        "We need a postmortem",
+        "How do we improve next time?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-007",
+        "CART-UNIVERSAL-LAWS.UL-SYS-006",
+        "CART-MENTAL-MODELS.MM-007"
+      ],
+      "confidence_weight": 0.91,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "after_action_review",
+        "learning_loop",
+        "iteration",
+        "process",
+        "improvement"
+      ]
+    },
+    {
+      "rule_id": "LD-010",
+      "name": "Servant Leadership",
+      "principle": "Authority flows from service: remove obstacles, enable growth, and put the mission above ego.",
+      "detection_triggers": [
+        "Leadership feels like control, not service",
+        "How can I support the team better?",
+        "I want authority without ego",
+        "Remove blockers for others",
+        "People follow leaders who help them"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-PERSUASION.PRS-001",
+        "CART-LEADERSHIP.LD-001",
+        "CART-UNIVERSAL-LAWS.UL-BEH-014"
+      ],
+      "confidence_weight": 0.85,
+      "sovereign_need_served": "Legacy",
+      "tags": [
+        "servant_leadership",
+        "service",
+        "humility",
+        "enablement",
+        "mission"
+      ]
+    }
+  ],
+  "cross_references": {}
+}

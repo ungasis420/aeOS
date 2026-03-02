@@ -1,0 +1,338 @@
+{
+  "cartridge_id": "CART-PERSUASION",
+  "version": "1.0.0",
+  "domain": "persuasion",
+  "description": "Ethical influence principles to communicate clearly, build trust, and defend against manipulation.",
+  "dependencies": [
+    "CART-UNIVERSAL-LAWS",
+    "CART-KAHNEMAN"
+  ],
+  "ethical_guardrail": "Rules describe influence mechanics for understanding and defense \u2014 not manipulation of vulnerable individuals.",
+  "rules": [
+    {
+      "rule_id": "PRS-001",
+      "name": "Reciprocity",
+      "principle": "Giving first creates an obligation to return value; use it ethically with clear boundaries.",
+      "detection_triggers": [
+        "Should we give value first?",
+        "Free sample might convert",
+        "They helped me so I owe them",
+        "We want to build goodwill",
+        "How do we set boundaries after helping?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-014",
+        "CART-PERSUASION.PRS-002",
+        "CART-PERSUASION.PRS-005"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "reciprocity",
+        "boundaries",
+        "trust_building",
+        "ethics",
+        "cialdini"
+      ]
+    },
+    {
+      "rule_id": "PRS-002",
+      "name": "Commitment & Consistency",
+      "principle": "People align future behavior with prior commitments; small yeses create momentum toward bigger yeses.",
+      "detection_triggers": [
+        "Can we get a small yes first?",
+        "Once they agree, they tend to follow through",
+        "We need them to commit publicly",
+        "They changed their story to stay consistent",
+        "How do we design a step-by-step commitment?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-015",
+        "CART-PERSUASION.PRS-001",
+        "CART-PERSUASION.PRS-012"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "commitment",
+        "consistency",
+        "behavior_change",
+        "identity",
+        "compliance"
+      ]
+    },
+    {
+      "rule_id": "PRS-003",
+      "name": "Social Proof",
+      "principle": "People infer what\u2019s correct from what similar others do; proof from relevant peers reduces risk perception.",
+      "detection_triggers": [
+        "Do people like us already use this?",
+        "Reviews and testimonials might help",
+        "Everyone is doing it",
+        "We need case studies",
+        "They're hesitant until they see others do it"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-011",
+        "CART-PERSUASION.PRS-007",
+        "CART-PERSUASION.PRS-006"
+      ],
+      "confidence_weight": 0.89,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "social_proof",
+        "testimonials",
+        "norms",
+        "risk_reduction",
+        "trust"
+      ]
+    },
+    {
+      "rule_id": "PRS-004",
+      "name": "Authority",
+      "principle": "Signals of expertise and legitimacy increase trust and compliance; ensure authority is real, not performative.",
+      "detection_triggers": [
+        "They asked for credentials",
+        "Who is the expert here?",
+        "We should cite authoritative sources",
+        "They don't trust us yet",
+        "How do we signal competence without bragging?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-PERSUASION.PRS-008",
+        "CART-PERSUASION.PRS-010",
+        "CART-UNIVERSAL-LAWS.UL-BEH-007"
+      ],
+      "confidence_weight": 0.84,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "authority",
+        "credibility",
+        "expertise",
+        "signaling",
+        "trust"
+      ]
+    },
+    {
+      "rule_id": "PRS-005",
+      "name": "Liking",
+      "principle": "People say yes more readily to those they like; similarity, warmth, and cooperation increase openness.",
+      "detection_triggers": [
+        "They said yes because they like the person",
+        "Rapport matters more than the pitch",
+        "We need to build warmth and similarity",
+        "They resist strangers but not friends",
+        "How do we increase likability ethically?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-PERSUASION.PRS-007",
+        "CART-PERSUASION.PRS-011",
+        "CART-UNIVERSAL-LAWS.UL-BEH-002"
+      ],
+      "confidence_weight": 0.83,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "liking",
+        "rapport",
+        "similarity",
+        "warmth",
+        "relationships"
+      ]
+    },
+    {
+      "rule_id": "PRS-006",
+      "name": "Scarcity",
+      "principle": "Limited availability increases perceived value and urgency; scarcity must be truthful to remain ethical.",
+      "detection_triggers": [
+        "Limited spots are filling up",
+        "This offer is time-bound",
+        "People act when it's scarce",
+        "They keep delaying until there's urgency",
+        "How do we create urgency without lying?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-005",
+        "CART-UNIVERSAL-LAWS.UL-BEH-009",
+        "CART-PERSUASION.PRS-012"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "scarcity",
+        "urgency",
+        "ethics",
+        "value_perception",
+        "conversion"
+      ]
+    },
+    {
+      "rule_id": "PRS-007",
+      "name": "Unity",
+      "principle": "Shared identity increases influence; people follow those they perceive as part of the same \u2018we\u2019.",
+      "detection_triggers": [
+        "We need a shared identity",
+        "Community language like 'we' helps",
+        "People follow in-group norms",
+        "Make them feel part of something",
+        "How do we create belonging?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-015",
+        "CART-UNIVERSAL-LAWS.UL-BEH-011",
+        "CART-PERSUASION.PRS-005"
+      ],
+      "confidence_weight": 0.85,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "unity",
+        "identity",
+        "community",
+        "belonging",
+        "in_group"
+      ]
+    },
+    {
+      "rule_id": "PRS-008",
+      "name": "Ethos",
+      "principle": "Credibility and perceived integrity are the foundation of persuasion; trust precedes conversion.",
+      "detection_triggers": [
+        "They doubt our credibility",
+        "Trust must be earned before asking",
+        "We need to show integrity and competence",
+        "Our reputation is the main asset",
+        "How do we build credibility fast?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-PERSUASION.PRS-004",
+        "CART-LEADERSHIP.LD-002",
+        "CART-UNIVERSAL-LAWS.UL-BEH-007"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "ethos",
+        "credibility",
+        "trust",
+        "reputation",
+        "integrity"
+      ]
+    },
+    {
+      "rule_id": "PRS-009",
+      "name": "Pathos",
+      "principle": "Emotional resonance drives action; people move when the stakes feel real, not just logical.",
+      "detection_triggers": [
+        "They understand but still don't act",
+        "We need emotional resonance",
+        "This is logically solid but flat",
+        "They feel anxious about the decision",
+        "How do we connect to their feelings?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-PERSUASION.PRS-011",
+        "CART-PERSUASION.PRS-012",
+        "CART-UNIVERSAL-LAWS.UL-BEH-009"
+      ],
+      "confidence_weight": 0.84,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "pathos",
+        "emotion",
+        "motivation",
+        "empathy",
+        "messaging"
+      ]
+    },
+    {
+      "rule_id": "PRS-010",
+      "name": "Logos",
+      "principle": "Clear reasoning and evidence reduce skepticism; logic and proof close the gap for analytical audiences.",
+      "detection_triggers": [
+        "They want the numbers",
+        "Skeptics need logical proof",
+        "We need a clear argument structure",
+        "They keep poking holes in reasoning",
+        "What evidence supports the claim?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-MENTAL-MODELS.MM-012",
+        "CART-PERSUASION.PRS-008",
+        "CART-PERSUASION.PRS-012"
+      ],
+      "confidence_weight": 0.85,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "logos",
+        "argument",
+        "evidence",
+        "skeptics",
+        "reasoning"
+      ]
+    },
+    {
+      "rule_id": "PRS-011",
+      "name": "Narrative Transportation",
+      "principle": "Stories absorb attention and reduce counter-arguing; concrete narratives carry meaning better than abstractions.",
+      "detection_triggers": [
+        "A story would land better than facts",
+        "People remember examples, not bullets",
+        "We need a case study",
+        "They tune out during data",
+        "How do we make the audience feel the problem?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-PERSUASION.PRS-009",
+        "CART-PERSUASION.PRS-008",
+        "CART-UNIVERSAL-LAWS.UL-BEH-015"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "storytelling",
+        "narrative",
+        "attention",
+        "persuasion",
+        "memory"
+      ]
+    },
+    {
+      "rule_id": "PRS-012",
+      "name": "Framing Effect",
+      "principle": "How the same facts are presented changes choices; frame ethically and transparently to preserve agency.",
+      "detection_triggers": [
+        "Same facts, different reactions",
+        "How we word it changes decisions",
+        "They focus on losses more than gains",
+        "We need to reframe the offer",
+        "This is a framing problem, not a fact problem"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-009",
+        "CART-MENTAL-MODELS.MM-011",
+        "CART-PERSUASION.PRS-010"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Agency",
+      "tags": [
+        "framing",
+        "loss_aversion",
+        "choice_architecture",
+        "ethics",
+        "decision"
+      ]
+    }
+  ],
+  "cross_references": {}
+}

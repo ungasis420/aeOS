@@ -1,0 +1,295 @@
+{
+  "cartridge_id": "CART-FIRST-PRINCIPLES",
+  "version": "1.0.0",
+  "domain": "first_principles_reasoning",
+  "description": "First-principles reasoning toolkit to strip assumptions, decompose to fundamentals, and synthesize novel solutions under constraints.",
+  "dependencies": [
+    "CART-UNIVERSAL-LAWS",
+    "CART-EPISTEMIC",
+    "CART-SYSTEMS-THINKING"
+  ],
+  "ethical_guardrail": "Use to improve truth-seeking and problem solving; do not use it to rationalize unethical outcomes or bypass safety, legal, or consent constraints.",
+  "rules": [
+    {
+      "rule_id": "FP-001",
+      "name": "Assumption Inventory: Identify and Question All Assumptions",
+      "principle": "Hidden assumptions drive bad plans; make them explicit and testable before you build on them.",
+      "detection_triggers": [
+        "We\u2019re assuming a lot here",
+        "What if our assumptions are wrong?",
+        "This plan feels built on vibes",
+        "I don\u2019t know what I\u2019m taking for granted",
+        "How do I pressure-test the premise?"
+      ],
+      "insight_template": "When {decision} feels shaky, apply assumption inventory: list assumptions about {customer}, {constraints}, {timeline}, and {resources}. For each, write a test {test} and what result would change your mind {falsifier}. Start by testing the riskiest assumption first.",
+      "connects_to": [
+        "CART-EPISTEMIC.EPI-004",
+        "CART-EPISTEMIC.EPI-002",
+        "CART-UNIVERSAL-LAWS.UL-MAT-006"
+      ],
+      "confidence_weight": 0.91,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "first_principles",
+        "assumptions",
+        "validation",
+        "falsification",
+        "clarity"
+      ]
+    },
+    {
+      "rule_id": "FP-002",
+      "name": "Irreducible Truths: Decompose to Fundamentals",
+      "principle": "Break the problem into facts that remain true even if opinions change; rebuild from those constraints.",
+      "detection_triggers": [
+        "Let\u2019s get to the fundamentals",
+        "What\u2019s actually true here?",
+        "Everything feels complicated and fuzzy",
+        "I need a ground-truth model",
+        "How do I simplify this without losing reality?"
+      ],
+      "insight_template": "When {problem} is messy, apply irreducible truths: list constraints that must hold (physics, math, legal, budget) as {truths}. Then rebuild a solution by combining those truths into a mechanism {mechanism} that could work even if other assumptions fail.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-004",
+        "CART-SYSTEMS-THINKING.SYS-001",
+        "CART-EPISTEMIC.EPI-011"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "first_principles",
+        "fundamentals",
+        "constraints",
+        "decomposition",
+        "mechanisms"
+      ]
+    },
+    {
+      "rule_id": "FP-003",
+      "name": "Socratic Testing: Ask Better Questions Than Answers",
+      "principle": "Socratic questioning exposes contradictions and weak definitions by repeatedly asking for evidence, mechanisms, and alternatives.",
+      "detection_triggers": [
+        "Why do we believe this?",
+        "What evidence supports that claim?",
+        "How exactly does that work?",
+        "What would prove this wrong?",
+        "What are we missing?"
+      ],
+      "insight_template": "When {claim} is asserted, apply Socratic testing: ask (1) 'What do we mean by {term}?' (2) 'What evidence supports it?' (3) 'What mechanism links cause to effect?' (4) 'What would disconfirm it?' Then decide {next_step} based on answers, not confidence.",
+      "connects_to": [
+        "CART-EPISTEMIC.EPI-011",
+        "CART-EPISTEMIC.EPI-006",
+        "CART-KAHNEMAN.KAH-010"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "first_principles",
+        "socratic",
+        "questions",
+        "evidence",
+        "thinking"
+      ]
+    },
+    {
+      "rule_id": "FP-004",
+      "name": "Five Whys: Trace Symptoms to Root Cause",
+      "principle": "Repeatedly asking 'why' reveals causal chains and helps you target the true constraint instead of surface symptoms.",
+      "detection_triggers": [
+        "We keep fixing the symptom",
+        "What\u2019s the root cause here?",
+        "Why does this keep happening?",
+        "I need to get to the real issue",
+        "This problem is recurring"
+      ],
+      "insight_template": "When {issue} repeats, apply Five Whys: ask 'Why?' five times until you hit a controllable cause {root_cause}. Then design {countermeasure} that changes the system so the cause can\u2019t easily recur.",
+      "connects_to": [
+        "CART-SYSTEMS-THINKING.SYS-006",
+        "CART-UNIVERSAL-LAWS.UL-SYS-008",
+        "CART-UNIVERSAL-LAWS.UL-PHY-011"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "first_principles",
+        "five_whys",
+        "root_cause",
+        "problem_solving",
+        "systems"
+      ]
+    },
+    {
+      "rule_id": "FP-005",
+      "name": "Physics-as-Metaphor: Optimize by Constraints, Not Conventions",
+      "principle": "Treat problems like engineering: identify constraints, then design the simplest mechanism that satisfies them\u2014even if it breaks tradition.",
+      "detection_triggers": [
+        "That\u2019s how it\u2019s always been done",
+        "We\u2019re copying competitors without thinking",
+        "What if we ignored industry norms?",
+        "How would an engineer solve this?",
+        "I want a clean, constraint-based approach"
+      ],
+      "insight_template": "When {domain} is tradition-bound, apply physics-as-metaphor: list hard constraints {constraints} (time, energy, cost, safety) and optimize the mechanism {mechanism} to satisfy them. Ignore conventions unless they are justified by a constraint.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-011",
+        "CART-SYSTEMS-THINKING.SYS-008",
+        "CART-UNIVERSAL-LAWS.UL-STR-010"
+      ],
+      "confidence_weight": 0.82,
+      "sovereign_need_served": "Creation",
+      "tags": [
+        "first_principles",
+        "physics",
+        "constraints",
+        "innovation",
+        "mechanisms"
+      ]
+    },
+    {
+      "rule_id": "FP-006",
+      "name": "Analogy vs First Principles: Use Analogy Carefully",
+      "principle": "Analogy transfers patterns, but first principles rebuilds truth; use analogy to generate hypotheses, not to prove them.",
+      "detection_triggers": [
+        "It\u2019s like Uber for X",
+        "We\u2019re copying a playbook from another industry",
+        "This analogy feels persuasive but untested",
+        "Are we reasoning or just comparing?",
+        "I\u2019m worried we\u2019re using a bad analogy"
+      ],
+      "insight_template": "When {analogy} drives the plan, apply the distinction: write what the analogy suggests {hypothesis}, then rebuild from first principles by listing the true constraints {constraints}. Keep the analogy only if it survives a falsification check {falsifier}.",
+      "connects_to": [
+        "CART-EPISTEMIC.EPI-009",
+        "CART-EPISTEMIC.EPI-004",
+        "CART-UNIVERSAL-LAWS.UL-BEH-010"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "first_principles",
+        "analogy",
+        "models",
+        "validation",
+        "reasoning"
+      ]
+    },
+    {
+      "rule_id": "FP-007",
+      "name": "Cost Structure from Fundamentals: Build the Unit Economics",
+      "principle": "Pricing and viability come from fundamental cost drivers; estimate them bottom-up before believing projections.",
+      "detection_triggers": [
+        "How much would this actually cost to deliver?",
+        "Our margins might be fake",
+        "We need to price this properly",
+        "Is this business model viable?",
+        "What are the real cost drivers?"
+      ],
+      "insight_template": "When designing {offer}, apply fundamental cost reasoning: break delivery into components {components}, estimate time/cost per component, and compute unit economics {unit_econ}. Then set price {price} with margin of safety {buffer} and test willingness-to-pay with {validation_step}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-004",
+        "CART-UNIVERSAL-LAWS.UL-STR-003",
+        "CART-EPISTEMIC.EPI-003"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Security",
+      "tags": [
+        "first_principles",
+        "unit_economics",
+        "costs",
+        "pricing",
+        "viability"
+      ]
+    },
+    {
+      "rule_id": "FP-008",
+      "name": "Constraint First: Identify the Bottleneck Before Solutions",
+      "principle": "The real constraint governs throughput; solving non-constraints wastes effort and creates illusion of progress.",
+      "detection_triggers": [
+        "We\u2019re doing a lot but not moving",
+        "What\u2019s the bottleneck here?",
+        "Everything feels urgent and tangled",
+        "We keep optimizing the wrong thing",
+        "Where should we focus first?"
+      ],
+      "insight_template": "When {system} is stuck, apply constraint-first: find where work accumulates {queue_point} and name the constraint {constraint}. Solve only that with {constraint_action} until it moves, then re-scan. Ignore improvements that don\u2019t increase end-to-end throughput.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-011",
+        "CART-UNIVERSAL-LAWS.UL-SYS-007",
+        "CART-SYSTEMS-THINKING.SYS-005"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "first_principles",
+        "constraints",
+        "bottlenecks",
+        "focus",
+        "throughput"
+      ]
+    },
+    {
+      "rule_id": "FP-009",
+      "name": "Inversion: Solve the Opposite Problem",
+      "principle": "By asking how to cause failure, you reveal hidden risks and necessary conditions for success.",
+      "detection_triggers": [
+        "How do we avoid failure here?",
+        "What could go wrong?",
+        "I want to think like a pessimist for a minute",
+        "Let\u2019s assume this fails\u2014why?",
+        "How do I de-risk this plan?"
+      ],
+      "insight_template": "When {plan} feels risky, apply inversion: list ways to guarantee failure {failure_modes}, then flip each into a safeguard {safeguards}. Add one margin-of-safety buffer {buffer} and define a kill-switch metric {kill_metric} that triggers stopping early.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-STR-003",
+        "CART-SYSTEMS-THINKING.SYS-009",
+        "CART-EPISTEMIC.EPI-007"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Security",
+      "tags": [
+        "first_principles",
+        "inversion",
+        "risk",
+        "premortem",
+        "safeguards"
+      ]
+    },
+    {
+      "rule_id": "FP-010",
+      "name": "Synthesis: Rebuild Into a Novel Solution",
+      "principle": "After decomposition, recombine truths into a new mechanism and test it in the smallest viable experiment.",
+      "detection_triggers": [
+        "Okay, how do we put this back together?",
+        "I have the pieces but not the solution",
+        "How do we turn analysis into action?",
+        "We need a novel approach",
+        "What\u2019s the simplest experiment to test this?"
+      ],
+      "insight_template": "When {analysis} is complete, apply synthesis: choose 2\u20133 core truths {truths}, design a mechanism {prototype} that satisfies them, then run a smallest test {experiment} with a clear success criterion {metric}. Iterate fast and retain wins into the new default.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-007",
+        "CART-UNIVERSAL-LAWS.UL-STR-010",
+        "CART-SYSTEMS-THINKING.SYS-008"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Creation",
+      "tags": [
+        "first_principles",
+        "synthesis",
+        "experiments",
+        "iteration",
+        "design"
+      ]
+    }
+  ],
+  "cross_references": {
+    "CART-EPISTEMIC": [
+      "Supplies falsification, base rates, and calibration so first-principles work stays grounded and testable."
+    ],
+    "CART-SYSTEMS-THINKING": [
+      "Adds system maps, feedback loops, and leverage points so first-principles solutions target the right mechanism."
+    ],
+    "CART-UNIVERSAL-LAWS": [
+      "Provides constraint, trade-off, inertia, and iteration principles that keep reasoning reality-aligned."
+    ]
+  }
+}
