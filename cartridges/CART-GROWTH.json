@@ -1,0 +1,18 @@
+{
+  "cartridge_id": "CART-GROWTH",
+  "domain": "growth",
+  "version": "1.0",
+  "rule_count": 10,
+  "rules": [
+    {"id": "GRW-001", "name": "Compound First", "principle": "Always prefer strategies that compound over strategies that pay once.", "insight_template": "Does {strategy} pay you once or does it build an asset that keeps paying?"},
+    {"id": "GRW-002", "name": "Skill Leverage", "principle": "One high-leverage skill learned deeply creates more growth than ten surface skills.", "insight_template": "What single skill, if mastered in the next 12 months, would most change your trajectory?"},
+    {"id": "GRW-003", "name": "Network Compounding", "principle": "Relationships compound. One strong relationship with the right person beats 100 weak connections.", "insight_template": "Who are the 3 people whose relationship, if deepened, would most accelerate your growth?"},
+    {"id": "GRW-004", "name": "Feedback Hunger", "principle": "Seek the most accurate feedback possible, especially the feedback you do not want to hear.", "insight_template": "What feedback about {area} have you been avoiding seeking because you suspect it will be uncomfortable?"},
+    {"id": "GRW-005", "name": "Environment Design", "principle": "You will not outgrow your environment long-term. Design or escape it.", "insight_template": "Does your current environment make your desired growth easier or harder? What would need to change?"},
+    {"id": "GRW-006", "name": "Asymmetric Experiments", "principle": "Run many small experiments with capped downside and uncapped upside.", "insight_template": "What low-cost experiment could you run in the next 2 weeks to test {growth_hypothesis}?"},
+    {"id": "GRW-007", "name": "Plateau Diagnosis", "principle": "Every plateau has a cause. Diagnose before applying solution.", "insight_template": "Why specifically have you plateaued in {area}? Is it skill, motivation, strategy, or environment?"},
+    {"id": "GRW-008", "name": "Teach to Learn", "principle": "Teaching forces mastery at a different level than consuming. Teach what you want to own.", "insight_template": "What concept in {domain} would you understand more deeply if you had to teach it to someone else?"},
+    {"id": "GRW-009", "name": "Identity First", "principle": "Sustainable growth requires identity change, not just behavior change.", "insight_template": "What identity shift — not habit shift — would make {growth_goal} feel natural rather than forced?"},
+    {"id": "GRW-010", "name": "Momentum Preservation", "principle": "Growth momentum is fragile and expensive to restart. Protect it above optimization.", "insight_template": "What is currently threatening the momentum you have built in {area}?"}
+  ]
+}
