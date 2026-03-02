@@ -1,0 +1,18 @@
+{
+  "cartridge_id": "CART-CREATIVE-WORK",
+  "domain": "creative-work",
+  "version": "1.0",
+  "rule_count": 10,
+  "rules": [
+    {"id": "CRW-001", "name": "Protected Time Blocks", "principle": "Deep creative work requires uninterrupted blocks. Schedule them first, everything else around them.", "insight_template": "When is your highest creative energy window in the day? Is it currently protected or colonized by meetings?"},
+    {"id": "CRW-002", "name": "Project Over Task", "principle": "Think in projects, not tasks. Tasks without project context are just busyness.", "insight_template": "What is the one creative project that would matter most if completed in the next 90 days?"},
+    {"id": "CRW-003", "name": "Resistance as Compass", "principle": "The work you most resist is usually the work most worth doing.", "insight_template": "What creative task have you been avoiding longest on {project}? That is where to start."},
+    {"id": "CRW-004", "name": "Done List", "principle": "Track what you completed, not just what remains. Completion momentum is real.", "insight_template": "What have you shipped or completed on {project} in the last 30 days that deserves acknowledgment?"},
+    {"id": "CRW-005", "name": "Single Metric", "principle": "One leading metric per creative project. Tracking everything means optimizing nothing.", "insight_template": "What is the one number that, if it moved, would tell you {project} is genuinely succeeding?"},
+    {"id": "CRW-006", "name": "Maker Schedule", "principle": "Makers need half-day minimum blocks. One meeting can destroy a full creative day.", "insight_template": "How many half-day uninterrupted blocks do you have this week for {creative_work}?"},
+    {"id": "CRW-007", "name": "Finished Not Perfect", "principle": "A finished imperfect work creates more value than an unfinished perfect one.", "insight_template": "What definition of done would let you call {project} complete enough to share?"},
+    {"id": "CRW-008", "name": "Scope Containment", "principle": "Scope creep is the primary killer of creative projects. Define and defend the boundary.", "insight_template": "What features or elements could you cut from {project} without reducing its core value?"},
+    {"id": "CRW-009", "name": "Feedback Loops", "principle": "Fast feedback loops accelerate creative quality. Get real reactions early and often.", "insight_template": "Who could give you honest feedback on {project} within the next 7 days?"},
+    {"id": "CRW-010", "name": "Energy Matching", "principle": "Match task type to energy level. Generate when high, edit when medium, admin when low.", "insight_template": "Are you currently scheduling your hardest creative work during your lowest energy periods?"}
+  ]
+}
