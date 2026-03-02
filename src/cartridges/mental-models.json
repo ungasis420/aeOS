@@ -1,0 +1,338 @@
+{
+  "cartridge_id": "CART-MENTAL-MODELS",
+  "version": "1.0.0",
+  "domain": "mental_models",
+  "description": "Core mental models for clearer thinking, better decisions, and robust planning.",
+  "dependencies": [
+    "CART-UNIVERSAL-LAWS",
+    "CART-EPISTEMIC"
+  ],
+  "ethical_guardrail": "Use mental models to improve decision quality and reduce harm; never to rationalize exploitation or override consent.",
+  "rules": [
+    {
+      "rule_id": "MM-001",
+      "name": "Inversion",
+      "principle": "Solve by first asking how to cause failure (or the opposite outcome), then avoid those causes.",
+      "detection_triggers": [
+        "How do we avoid this outcome?",
+        "What's the opposite of what we're trying to do?",
+        "Let's list ways this could fail",
+        "We're stuck\u2014try flipping the problem",
+        "What would make this definitely not work?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-010",
+        "CART-MENTAL-MODELS.MM-011",
+        "CART-MENTAL-MODELS.MM-012"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "inversion",
+        "problem_solving",
+        "debiasing",
+        "risk_reduction",
+        "decision_quality"
+      ]
+    },
+    {
+      "rule_id": "MM-002",
+      "name": "Circle of Competence",
+      "principle": "Make high-stakes decisions only where your understanding is strong; outside it, reduce stakes or learn first.",
+      "detection_triggers": [
+        "This isn't my area\u2014I'm guessing",
+        "I don't know enough to decide",
+        "What am I missing here?",
+        "I'm overconfident about something new",
+        "Should we outsource or de-risk this?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-004",
+        "CART-UNIVERSAL-LAWS.UL-PHY-011",
+        "CART-MENTAL-MODELS.MM-012"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "competence",
+        "boundaries",
+        "risk_management",
+        "calibration",
+        "decision_quality"
+      ]
+    },
+    {
+      "rule_id": "MM-003",
+      "name": "Margin of Safety",
+      "principle": "Build buffers so small errors, noise, or surprises don\u2019t cause catastrophic failure.",
+      "detection_triggers": [
+        "What if we're wrong?",
+        "We have zero buffer in the plan",
+        "This depends on everything going perfectly",
+        "One mistake would sink us",
+        "We need a safety buffer"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-013",
+        "CART-UNIVERSAL-LAWS.UL-SYS-012",
+        "CART-UNIVERSAL-LAWS.UL-BEH-013"
+      ],
+      "confidence_weight": 0.92,
+      "sovereign_need_served": "Security",
+      "tags": [
+        "buffers",
+        "risk_management",
+        "redundancy",
+        "safety_margin",
+        "robustness"
+      ]
+    },
+    {
+      "rule_id": "MM-004",
+      "name": "Occam's Razor",
+      "principle": "Prefer the simplest explanation that fits the evidence; don\u2019t multiply assumptions unnecessarily.",
+      "detection_triggers": [
+        "There are too many explanations",
+        "Which explanation requires the fewest assumptions?",
+        "This feels overcomplicated",
+        "We keep adding theories",
+        "What's the simplest story that fits the facts?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-010",
+        "CART-MENTAL-MODELS.MM-006",
+        "CART-MENTAL-MODELS.MM-012"
+      ],
+      "confidence_weight": 0.85,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "simplicity",
+        "model_selection",
+        "assumptions",
+        "analysis",
+        "clarity"
+      ]
+    },
+    {
+      "rule_id": "MM-005",
+      "name": "Hanlon's Razor",
+      "principle": "Default to non-malicious explanations (ignorance, error, constraints) unless evidence supports intent.",
+      "detection_triggers": [
+        "They did this to hurt us",
+        "This feels like sabotage",
+        "Why are they being malicious?",
+        "They must be lying on purpose",
+        "I'm assuming intent without proof"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-006",
+        "CART-UNIVERSAL-LAWS.UL-BEH-001",
+        "CART-LEADERSHIP.LD-001"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "charity",
+        "conflict",
+        "attribution",
+        "communication",
+        "team_dynamics"
+      ]
+    },
+    {
+      "rule_id": "MM-006",
+      "name": "Map vs Territory",
+      "principle": "The model is not reality; treat maps as hypotheses and update them with real-world feedback.",
+      "detection_triggers": [
+        "The plan works on paper but not in reality",
+        "Our model doesn't match what we observe",
+        "We're arguing about the framework, not the facts",
+        "We need to test this assumption",
+        "The metrics don't reflect what's happening"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-004",
+        "CART-UNIVERSAL-LAWS.UL-BEH-010",
+        "CART-MENTAL-MODELS.MM-012"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "models",
+        "reality_check",
+        "calibration",
+        "evidence",
+        "epistemology"
+      ]
+    },
+    {
+      "rule_id": "MM-007",
+      "name": "Second-Order Thinking",
+      "principle": "Evaluate consequences of consequences; the real cost/benefit often appears one or two steps later.",
+      "detection_triggers": [
+        "What happens after we do this?",
+        "This might create new problems",
+        "Short-term win, long-term risk",
+        "What are the side effects?",
+        "And then what?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-008",
+        "CART-UNIVERSAL-LAWS.UL-PHY-003",
+        "CART-LEADERSHIP.LD-009"
+      ],
+      "confidence_weight": 0.93,
+      "sovereign_need_served": "Security",
+      "tags": [
+        "second_order",
+        "systems",
+        "unintended_consequences",
+        "planning",
+        "risk"
+      ]
+    },
+    {
+      "rule_id": "MM-008",
+      "name": "Opportunity Cost",
+      "principle": "Every choice spends scarce resources and forecloses alternatives; evaluate what you\u2019re not doing.",
+      "detection_triggers": [
+        "If we do this, what do we give up?",
+        "We can't do everything",
+        "Which option costs the most time?",
+        "What are we not choosing?",
+        "This decision blocks other paths"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-004",
+        "CART-UNIVERSAL-LAWS.UL-PHY-011",
+        "CART-MENTAL-MODELS.MM-010"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Agency",
+      "tags": [
+        "opportunity_cost",
+        "tradeoffs",
+        "time",
+        "prioritization",
+        "decision"
+      ]
+    },
+    {
+      "rule_id": "MM-009",
+      "name": "Compounding",
+      "principle": "Small consistent gains accumulate nonlinearly over time; consistency beats intensity.",
+      "detection_triggers": [
+        "Small steps feel pointless",
+        "Consistency seems boring but works",
+        "This will pay off later if we keep at it",
+        "How do we make this compound?",
+        "We need momentum over time"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-006",
+        "CART-UNIVERSAL-LAWS.UL-SYS-006",
+        "CART-ENERGY-MANAGEMENT.EM-010"
+      ],
+      "confidence_weight": 0.92,
+      "sovereign_need_served": "Growth",
+      "tags": [
+        "compounding",
+        "consistency",
+        "habits",
+        "exponential",
+        "long_term"
+      ]
+    },
+    {
+      "rule_id": "MM-010",
+      "name": "Regret Minimization",
+      "principle": "Choose the option your future self is least likely to regret; optimize for long-term meaning over short-term comfort.",
+      "detection_triggers": [
+        "Which choice will I regret at 80?",
+        "What would future me thank me for?",
+        "This feels scary but important",
+        "I'm torn between safe and meaningful",
+        "What decision aligns with my long-term self?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-MENTAL-MODELS.MM-008",
+        "CART-MENTAL-MODELS.MM-009",
+        "CART-LEADERSHIP.LD-006"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Legacy",
+      "tags": [
+        "regret_minimization",
+        "long_term",
+        "values",
+        "decision",
+        "legacy"
+      ]
+    },
+    {
+      "rule_id": "MM-011",
+      "name": "Availability Bias Correction",
+      "principle": "Don\u2019t overweigh vivid or recent examples; use base rates, broader samples, and data.",
+      "detection_triggers": [
+        "That story is stuck in my head",
+        "I\u2019m reacting to the latest headline",
+        "We\u2019re overweighing a vivid example",
+        "What do base rates say?",
+        "Anecdotes are driving the decision"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-004",
+        "CART-UNIVERSAL-LAWS.UL-BEH-010",
+        "CART-MENTAL-MODELS.MM-012"
+      ],
+      "confidence_weight": 0.91,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "availability_bias",
+        "base_rates",
+        "statistics",
+        "debiasing",
+        "evidence"
+      ]
+    },
+    {
+      "rule_id": "MM-012",
+      "name": "Falsifiability",
+      "principle": "If a claim can\u2019t be tested and proven wrong in principle, it\u2019s not a useful decision model.",
+      "detection_triggers": [
+        "How could this be proven wrong?",
+        "What evidence would change my mind?",
+        "This claim is unfalsifiable",
+        "We can't test this idea",
+        "Are we making a prediction or a belief?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-010",
+        "CART-UNIVERSAL-LAWS.UL-BEH-004",
+        "CART-MENTAL-MODELS.MM-006"
+      ],
+      "confidence_weight": 0.94,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "falsifiability",
+        "testing",
+        "scientific_method",
+        "epistemology",
+        "validation"
+      ]
+    }
+  ],
+  "cross_references": {}
+}

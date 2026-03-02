@@ -1,0 +1,351 @@
+{
+  "cartridge_id": "CART-STOICISM-PRACTICE",
+  "version": "1.0.0",
+  "domain": "stoic_practice",
+  "description": "Applied Stoic practices for daily living: the three disciplines, preferred indifferents, cosmopolitan ethics, and reflective training loops.",
+  "dependencies": [
+    "CART-UNIVERSAL-LAWS",
+    "CART-STOIC"
+  ],
+  "ethical_guardrail": "Use for self-governance and ethical action; never to justify emotional suppression, tolerate abuse, or dismiss injustice\u2014safety and boundaries override 'acceptance'.",
+  "rules": [
+    {
+      "rule_id": "STP-001",
+      "name": "Discipline of Desire (Orexis): Want What Nature Allows",
+      "principle": "Suffering drops when you train desire toward virtue and what is within your control, not toward outcomes you can't command.",
+      "detection_triggers": [
+        "I want this outcome so badly it's ruining me",
+        "If this doesn't happen, I'm done",
+        "I can't accept reality as it is",
+        "I'm chasing something I can't control",
+        "How do I stop wanting what I can't have?"
+      ],
+      "insight_template": "When {situation} triggers craving or aversion, apply orexis by shifting desire from {external_outcome} to {virtuous_aim}. Write: 'I prefer {preferred_result}, but I choose {virtuous_aim} regardless,' then take {next_action} that is fully under your control.",
+      "connects_to": [
+        "CART-STOIC.STO-001",
+        "CART-UNIVERSAL-LAWS.UL-BEH-003",
+        "CART-KAHNEMAN.KAH-015"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Agency",
+      "tags": [
+        "stoic",
+        "desire",
+        "acceptance",
+        "agency",
+        "orexis"
+      ]
+    },
+    {
+      "rule_id": "STP-002",
+      "name": "Discipline of Action (Horme): Reserved Action",
+      "principle": "Act vigorously on what you control while reserving outcomes to reality; you commit to effort, not to guarantees.",
+      "detection_triggers": [
+        "I won't start unless I'm sure it works",
+        "If I fail, it will be humiliating",
+        "I'm afraid to try because the outcome isn't certain",
+        "I keep waiting for perfect conditions",
+        "How do I act without needing control of results?"
+      ],
+      "insight_template": "When {goal} feels risky, apply reserved action by committing to {process_action} and releasing {outcome}. Say: 'I will do {process_action}; if {setback} happens, I will respond with {contingency}.' Then execute the smallest step today to reduce inertia.",
+      "connects_to": [
+        "CART-STOIC.STO-009",
+        "CART-UNIVERSAL-LAWS.UL-PHY-002",
+        "CART-UNIVERSAL-LAWS.UL-STR-003"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Growth",
+      "tags": [
+        "stoic",
+        "action",
+        "reserved_action",
+        "courage",
+        "horme"
+      ]
+    },
+    {
+      "rule_id": "STP-003",
+      "name": "Discipline of Assent (Synkatathesis): Full Impression Audit",
+      "principle": "Between impression and response is the power to test the story; assent only to judgments that survive scrutiny.",
+      "detection_triggers": [
+        "I instantly assume the worst",
+        "My mind tells a story and I believe it",
+        "I get triggered and act without thinking",
+        "I keep interpreting everything as an attack",
+        "How do I stop believing my first thought?"
+      ],
+      "insight_template": "When {trigger_event} hits, apply synkatathesis by running a 3-step audit: (1) Impression: 'I notice {raw_fact}'; (2) Story: 'My mind says {story}'; (3) Test: 'What evidence for/against?' Assent only to {tested_claim}, then choose {wise_response} aligned with values.",
+      "connects_to": [
+        "CART-STOIC.STO-007",
+        "CART-KAHNEMAN.KAH-001",
+        "CART-EPISTEMIC.EPI-004"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Agency",
+      "tags": [
+        "stoic",
+        "assent",
+        "cognitive_control",
+        "reframing",
+        "synkatathesis"
+      ]
+    },
+    {
+      "rule_id": "STP-004",
+      "name": "Preferred Indifferents: Use Them Without Worship",
+      "principle": "Health, wealth, and reputation are 'preferred' but not moral goods; pursue them with virtue and drop them without collapse.",
+      "detection_triggers": [
+        "If I lose my status, I'm nothing",
+        "Money is the only thing that matters",
+        "I can't handle being disliked",
+        "I need this promotion to be okay",
+        "How do I care without being controlled by it?"
+      ],
+      "insight_template": "When {indifferent} starts to control you, apply preferred indifferents by separating preference from identity: 'I prefer {indifferent}, but my good is {virtue}.' Set a clean goal for {indifferent_goal} plus a virtue constraint {virtue_constraint}, then take {next_action} that honors both.",
+      "connects_to": [
+        "CART-STOIC.STO-006",
+        "CART-KAHNEMAN.KAH-008",
+        "CART-UNIVERSAL-LAWS.UL-PHY-004"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "stoic",
+        "indifferents",
+        "values",
+        "status",
+        "detachment"
+      ]
+    },
+    {
+      "rule_id": "STP-005",
+      "name": "Sympatheia: Act as Part of the Whole",
+      "principle": "You are a node in a larger system; wise action considers interdependence and the common good.",
+      "detection_triggers": [
+        "I feel isolated and disconnected",
+        "Why should I care about other people?",
+        "Everyone is selfish so I should be too",
+        "I want to act with compassion but not be naive",
+        "How do I balance self-interest and the common good?"
+      ],
+      "insight_template": "When {relationship} feels adversarial, apply sympatheia by naming shared reality: 'We are both affected by {shared_constraint}.' Choose {prosocial_action} that improves the system for everyone while keeping {boundary}. This is cooperation with clarity, not self-abandonment.",
+      "connects_to": [
+        "CART-STOIC.STO-011",
+        "CART-UNIVERSAL-LAWS.UL-SYS-006",
+        "CART-UNIVERSAL-LAWS.UL-BEH-001"
+      ],
+      "confidence_weight": 0.82,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "stoic",
+        "sympatheia",
+        "systems",
+        "compassion",
+        "ethics"
+      ]
+    },
+    {
+      "rule_id": "STP-006",
+      "name": "Eudaimonia vs Hedonia: Choose Flourishing Over Hits",
+      "principle": "Pleasure is a side-effect; flourishing comes from virtue, meaning, and consistent right action.",
+      "detection_triggers": [
+        "I'm chasing dopamine and it's not working",
+        "I keep scrolling/eating/escaping",
+        "I want a meaningful life, not just comfort",
+        "This pleasure wears off fast",
+        "How do I stop living for quick hits?"
+      ],
+      "insight_template": "When {temptation} offers short-term relief, apply eudaimonia by asking: 'Does this build {character_strength} and long-term {life_aim}?' Replace {temptation} with {higher_action} that serves your values, and schedule {small_reward} after the work to avoid burnout.",
+      "connects_to": [
+        "CART-STOIC.STO-006",
+        "CART-UNIVERSAL-LAWS.UL-BEH-003",
+        "CART-KAHNEMAN.KAH-015"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Vitality",
+      "tags": [
+        "stoic",
+        "eudaimonia",
+        "hedonia",
+        "habits",
+        "meaning"
+      ]
+    },
+    {
+      "rule_id": "STP-007",
+      "name": "The Sage as Compass: Direction, Not Perfection",
+      "principle": "The Sage is an orientation device\u2014use the ideal to steer choices without turning it into self-attack.",
+      "detection_triggers": [
+        "I'm not stoic enough",
+        "I keep failing at this and feel ashamed",
+        "If I can't do it perfectly, why try?",
+        "I judge myself for being emotional",
+        "How do I practice without perfectionism?"
+      ],
+      "insight_template": "When {self_criticism} spikes, apply the Sage-as-compass: define the next 1-degree improvement toward {virtue} (not a total overhaul). Ask: 'What would the Sage do in the next 5 minutes?' Then do {micro_action} and record it as a win in {log}.",
+      "connects_to": [
+        "CART-STOIC.STO-012",
+        "CART-UNIVERSAL-LAWS.UL-PHY-007",
+        "CART-EPISTEMIC.EPI-001"
+      ],
+      "confidence_weight": 0.83,
+      "sovereign_need_served": "Growth",
+      "tags": [
+        "stoic",
+        "sage",
+        "perfectionism",
+        "practice",
+        "direction"
+      ]
+    },
+    {
+      "rule_id": "STP-008",
+      "name": "Stoa Poikile: Learn in Public, Train with Others",
+      "principle": "Stoicism is strengthened by community: dialogue, role-modeling, accountability, and shared practice.",
+      "detection_triggers": [
+        "I keep trying alone and falling off",
+        "I need accountability",
+        "I want mentors or a community for this",
+        "Reading isn't translating into behavior",
+        "How do I practice this with other people?"
+      ],
+      "insight_template": "When {practice} stalls, apply the Stoa Poikile principle by adding social structure: join {community}, schedule {cadence} check-ins, and do one 'public commitment' to {habit}. Use steelmanning in discussions and log one lesson per session.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-003",
+        "CART-EPISTEMIC.EPI-005",
+        "CART-STOIC.STO-011"
+      ],
+      "confidence_weight": 0.8,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "stoic",
+        "community",
+        "accountability",
+        "learning",
+        "stoa_poikile"
+      ]
+    },
+    {
+      "rule_id": "STP-009",
+      "name": "Premeditatio Malorum Extended: Pre-Mortem for Life",
+      "principle": "Imagining realistic setbacks plus response plans converts anxiety into preparedness and reduces surprise.",
+      "detection_triggers": [
+        "I'm worried everything will go wrong",
+        "I can't sleep because I'm thinking of disasters",
+        "What if the plan fails?",
+        "I'm anxious about the future",
+        "How do I prepare without spiraling?"
+      ],
+      "insight_template": "When {plan} feels fragile, apply extended premeditation: list 3 likely setbacks ({setback_1}, {setback_2}, {setback_3}), write a response for each, and add a buffer {margin_of_safety}. Then pick one prevention step {prevention_action} you can do this week.",
+      "connects_to": [
+        "CART-STOIC.STO-003",
+        "CART-UNIVERSAL-LAWS.UL-STR-003",
+        "CART-EPISTEMIC.EPI-008"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Security",
+      "tags": [
+        "stoic",
+        "premeditatio_malorum",
+        "risk",
+        "buffers",
+        "preparedness"
+      ]
+    },
+    {
+      "rule_id": "STP-010",
+      "name": "Journaling as Philosophical Practice: Morning + Evening",
+      "principle": "Writing clarifies judgments, reveals patterns, and turns philosophy into a feedback loop you can improve.",
+      "detection_triggers": [
+        "My thoughts are chaotic",
+        "I want a journaling practice that works",
+        "I keep repeating the same patterns",
+        "I need more self-awareness",
+        "How do I reflect without overthinking?"
+      ],
+      "insight_template": "When {mind_state} is noisy, apply philosophical journaling: morning\u2014set {intention} and one virtue focus {virtue}; evening\u2014review {event}, note where you assented too fast, and choose {adjustment} for tomorrow. Keep it to {minutes} minutes to avoid rumination.",
+      "connects_to": [
+        "CART-STOIC.STO-012",
+        "CART-EPISTEMIC.EPI-012",
+        "CART-UNIVERSAL-LAWS.UL-PHY-007"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "stoic",
+        "journaling",
+        "reflection",
+        "feedback_loop",
+        "practice"
+      ]
+    },
+    {
+      "rule_id": "STP-011",
+      "name": "Physics as Foundation for Ethics: Live in Accord with Nature",
+      "principle": "Understanding how reality works (change, limits, causality) stabilizes judgment and grounds ethics in the possible.",
+      "detection_triggers": [
+        "This isn't fair and I can't accept it",
+        "I keep fighting reality",
+        "Why do bad things happen randomly?",
+        "I want to be calm in uncertainty",
+        "How do I ground my values in reality?"
+      ],
+      "insight_template": "When {event} feels unjust or chaotic, apply Stoic physics by naming the governing forces in {system} (entropy, delays, constraints). Accept the fact-pattern, then choose {ethical_action} that is feasible under those constraints. Reality sets the board; virtue chooses the move.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-001",
+        "CART-UNIVERSAL-LAWS.UL-PHY-012",
+        "CART-STOIC.STO-005"
+      ],
+      "confidence_weight": 0.81,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "stoic",
+        "physics",
+        "reality",
+        "ethics",
+        "acceptance"
+      ]
+    },
+    {
+      "rule_id": "STP-012",
+      "name": "Cosmopolitan Identity: Citizen of the World",
+      "principle": "You can hold firm boundaries while treating every person as part of the same human community.",
+      "detection_triggers": [
+        "I hate people who disagree with me",
+        "They're the enemy",
+        "Society feels tribal and toxic",
+        "I want to be principled without being cruel",
+        "How do I stay humane in conflict?"
+      ],
+      "insight_template": "When {conflict} turns tribal, apply cosmopolitan identity: treat the other as a fellow citizen. Separate the person from the idea, state {principle_boundary} clearly, and choose {respectful_action} that preserves dignity. You can reject behavior without rejecting humanity.",
+      "connects_to": [
+        "CART-STOIC.STO-011",
+        "CART-JUNG-SHADOW.JSH-010",
+        "CART-UNIVERSAL-LAWS.UL-BEH-006"
+      ],
+      "confidence_weight": 0.84,
+      "sovereign_need_served": "Legacy",
+      "tags": [
+        "stoic",
+        "cosmopolitan",
+        "conflict",
+        "ethics",
+        "humanity"
+      ]
+    }
+  ],
+  "cross_references": {
+    "CART-STOIC": [
+      "Extends Stoic fundamentals into the full three-disciplines framework and community-based daily practice loops."
+    ],
+    "CART-UNIVERSAL-LAWS": [
+      "Uses universal laws (entropy, inertia, delays, constraints) as Stoic 'physics' for reality-aligned ethics."
+    ],
+    "CART-KAHNEMAN": [
+      "Debiasing support: many failures of assent/desire are System 1 hijacks (present bias, loss aversion)."
+    ],
+    "CART-EPISTEMIC": [
+      "Epistemic tools strengthen assent (falsification, calibration) and prevent denial-as-stoicism."
+    ]
+  }
+}

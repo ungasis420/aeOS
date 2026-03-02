@@ -1,0 +1,348 @@
+{
+  "cartridge_id": "CART-SYSTEMS-THINKING",
+  "version": "1.0.0",
+  "domain": "systems_thinking",
+  "description": "Systems thinking tools for diagnosing and redesigning complex systems: stocks/flows, feedback loops, delays, archetypes, leverage points, and purpose.",
+  "dependencies": [
+    "CART-UNIVERSAL-LAWS",
+    "CART-EPISTEMIC"
+  ],
+  "ethical_guardrail": "Use to improve outcomes and reduce harm; do not use system mapping to justify dehumanizing optimization, coercive control, or surveillance.",
+  "rules": [
+    {
+      "rule_id": "SYS-001",
+      "name": "Stocks and Flows: Measure What Accumulates vs What Moves",
+      "principle": "Outcomes depend on what is stored (stocks) and what changes it (flows); confusing the two creates bad fixes.",
+      "detection_triggers": [
+        "We keep treating symptoms but nothing changes",
+        "Why is the backlog still growing?",
+        "Our pipeline is clogged and I don\u2019t know why",
+        "We increased effort but results lag",
+        "How do I model what\u2019s building up over time?"
+      ],
+      "insight_template": "When {problem} persists, apply stocks/flows by naming the stock {stock} (what accumulates) and the inflow/outflow {inflow}/{outflow}. Improve results by changing the highest-leverage flow (reduce {inflow} or increase {outflow}) and track the stock weekly until it trends down.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-006",
+        "CART-UNIVERSAL-LAWS.UL-PHY-012",
+        "CART-EPISTEMIC.EPI-011"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "systems",
+        "stocks_flows",
+        "meadows",
+        "throughput",
+        "modeling"
+      ]
+    },
+    {
+      "rule_id": "SYS-002",
+      "name": "Reinforcing Loops: Identify What Compounds",
+      "principle": "Reinforcing feedback loops amplify change; they create virtuous cycles or runaway collapse.",
+      "detection_triggers": [
+        "Success keeps feeding more success",
+        "This problem is snowballing fast",
+        "The rich get richer dynamic is happening",
+        "It\u2019s accelerating and I can\u2019t stop it",
+        "How do we create a flywheel?"
+      ],
+      "insight_template": "When {trend} accelerates, apply reinforcing-loop mapping: define the loop 'More {A} \u2192 more {B} \u2192 more {A}.' Decide whether to strengthen it (add fuel to {A}) or break it (add friction at {B}). Install one control knob {control_knob} and monitor weekly.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-006",
+        "CART-UNIVERSAL-LAWS.UL-MAT-003",
+        "CART-UNIVERSAL-LAWS.UL-MAT-002"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Growth",
+      "tags": [
+        "systems",
+        "reinforcing_loop",
+        "compounding",
+        "flywheel",
+        "feedback"
+      ]
+    },
+    {
+      "rule_id": "SYS-003",
+      "name": "Balancing Loops: Find the System\u2019s 'Snap Back'",
+      "principle": "Balancing loops resist change to keep stability; ignoring them makes interventions bounce back or fail silently.",
+      "detection_triggers": [
+        "Every time we improve, it reverts",
+        "The system keeps snapping back",
+        "We make changes but adoption dies",
+        "Why won\u2019t this stick?",
+        "It works briefly then collapses"
+      ],
+      "insight_template": "When {change} doesn\u2019t hold, apply balancing-loop diagnosis: ask what force pushes back (policy, incentives, capacity, fear). Name the loop 'More {intervention} \u2192 more {pushback} \u2192 less {intervention}.' Reduce pushback by changing {constraint} or strengthening {support}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-006",
+        "CART-UNIVERSAL-LAWS.UL-PHY-003",
+        "CART-UNIVERSAL-LAWS.UL-BEH-001"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "systems",
+        "balancing_loop",
+        "resistance",
+        "stability",
+        "change"
+      ]
+    },
+    {
+      "rule_id": "SYS-004",
+      "name": "Delays: Effects Arrive Later Than Actions",
+      "principle": "Time delays distort perception and cause overcorrection; stable control requires patience and leading indicators.",
+      "detection_triggers": [
+        "We changed it and nothing happened yet",
+        "We keep overcorrecting",
+        "Results show up weeks later",
+        "We pivot too fast",
+        "How long should we wait before judging?"
+      ],
+      "insight_template": "When {intervention} feels ineffective, apply delay thinking: estimate the delay {time_constant}, define a leading indicator {leading_indicator}, and hold the policy steady for {evaluation_window}. If you change faster than the delay, you will chase noise, not signal.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-012",
+        "CART-EPISTEMIC.EPI-010",
+        "CART-UNIVERSAL-LAWS.UL-SYS-004"
+      ],
+      "confidence_weight": 0.89,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "systems",
+        "delays",
+        "time_lag",
+        "control",
+        "signals"
+      ]
+    },
+    {
+      "rule_id": "SYS-005",
+      "name": "Limits to Growth: Identify the Hidden Constraint",
+      "principle": "Growth slows when a reinforcing loop hits a constraint; removing the limit or shifting goals is required.",
+      "detection_triggers": [
+        "Growth plateaued and we don\u2019t know why",
+        "We hit a ceiling",
+        "Adding effort isn\u2019t increasing output",
+        "The first gains were easy, now it\u2019s stuck",
+        "What\u2019s the bottleneck behind this plateau?"
+      ],
+      "insight_template": "When {growth_metric} plateaus, apply limits-to-growth: map the reinforcing loop driving growth, then find the limiting factor {constraint}. Choose one: remove the constraint with {constraint_fix}, redesign the system to need less of it, or jump to a new S-curve {new_curve}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-009",
+        "CART-UNIVERSAL-LAWS.UL-PHY-011",
+        "CART-UNIVERSAL-LAWS.UL-PHY-010"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Growth",
+      "tags": [
+        "systems",
+        "limits_to_growth",
+        "constraints",
+        "plateau",
+        "archetypes"
+      ]
+    },
+    {
+      "rule_id": "SYS-006",
+      "name": "Shifting the Burden: Symptom Fixes Create Dependency",
+      "principle": "Quick fixes relieve symptoms but weaken fundamental capability, making the system dependent on patches.",
+      "detection_triggers": [
+        "We keep patching instead of fixing",
+        "This workaround is becoming permanent",
+        "We rely on heroics every week",
+        "Why do our fixes keep creating more work?",
+        "We\u2019re addicted to the quick solution"
+      ],
+      "insight_template": "When {workaround} becomes the norm, apply shifting-the-burden: name the symptom fix {symptom_fix} and the fundamental solution {root_fix}. Create a plan to reduce reliance on {symptom_fix} while investing in {root_fix} with a protected weekly budget {time_budget}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-008",
+        "CART-UNIVERSAL-LAWS.UL-PHY-001",
+        "CART-UNIVERSAL-LAWS.UL-SYS-010"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "systems",
+        "shifting_burden",
+        "workarounds",
+        "root_cause",
+        "debt"
+      ]
+    },
+    {
+      "rule_id": "SYS-007",
+      "name": "Tragedy of the Commons: Individual Incentives Break Shared Resources",
+      "principle": "When benefits are private and costs are shared, the commons gets overused unless governance changes incentives.",
+      "detection_triggers": [
+        "Everyone is overusing the shared resource",
+        "The team keeps burning out collectively",
+        "No one wants to be the one to sacrifice",
+        "We\u2019re depleting something we all need",
+        "How do we stop free-riding?"
+      ],
+      "insight_template": "When {commons} is being depleted, apply commons governance: define the resource {commons}, set usage rules {rules}, add monitoring {monitoring}, and align incentives so overuse has a cost. Make the default behavior sustainable, not heroic.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-001",
+        "CART-UNIVERSAL-LAWS.UL-BEH-007",
+        "CART-UNIVERSAL-LAWS.UL-SYS-011"
+      ],
+      "confidence_weight": 0.84,
+      "sovereign_need_served": "Security",
+      "tags": [
+        "systems",
+        "commons",
+        "incentives",
+        "governance",
+        "sustainability"
+      ]
+    },
+    {
+      "rule_id": "SYS-008",
+      "name": "Leverage Points: Change the Few Things That Change Everything",
+      "principle": "High-leverage interventions target structure (rules, information flows, goals, paradigms) rather than surface events.",
+      "detection_triggers": [
+        "We\u2019re busy but nothing changes",
+        "What\u2019s the highest leverage fix?",
+        "Small changes aren\u2019t moving the needle",
+        "We need a systems-level intervention",
+        "Where should we intervene first?"
+      ],
+      "insight_template": "When {system} feels stuck, apply leverage points by checking the top four: (1) goal/purpose {goal}, (2) rules/incentives {rules}, (3) information flow {info_flow}, (4) self-organization capacity {learning_loop}. Pick one lever and implement {intervention} with a measurable signal {signal}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-MAT-004",
+        "CART-UNIVERSAL-LAWS.UL-SYS-010",
+        "CART-EPISTEMIC.EPI-007"
+      ],
+      "confidence_weight": 0.85,
+      "sovereign_need_served": "Agency",
+      "tags": [
+        "systems",
+        "leverage_points",
+        "meadows",
+        "intervention",
+        "design"
+      ]
+    },
+    {
+      "rule_id": "SYS-009",
+      "name": "Unintended Consequences: Ask 'And Then What?'",
+      "principle": "Interventions create second-order effects; the real outcome often appears one or two steps later.",
+      "detection_triggers": [
+        "This fix created a new problem",
+        "I\u2019m worried about side effects",
+        "We keep trading one issue for another",
+        "Short-term win, long-term mess",
+        "What are the second-order effects?"
+      ],
+      "insight_template": "When proposing {action}, apply 'and then what': list 3 plausible side effects {side_effects}, pick one safeguard {safeguard}, and set a monitoring metric {monitor_metric}. Prefer interventions that improve incentives and feedback loops, not just symptoms.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-008",
+        "CART-UNIVERSAL-LAWS.UL-PHY-003",
+        "CART-EPISTEMIC.EPI-007"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Security",
+      "tags": [
+        "systems",
+        "second_order",
+        "unintended_consequences",
+        "risk",
+        "design"
+      ]
+    },
+    {
+      "rule_id": "SYS-010",
+      "name": "Nonlinearity and Tipping Points: Small Inputs, Big Jumps",
+      "principle": "Systems can change abruptly after thresholds; linear intuition fails near tipping points.",
+      "detection_triggers": [
+        "Everything was fine, then it suddenly broke",
+        "We need a tipping point for adoption",
+        "Small changes are causing huge reactions",
+        "It feels like we\u2019re near a threshold",
+        "Why did this shift happen so fast?"
+      ],
+      "insight_template": "When {system} shifts suddenly, apply tipping-point thinking: identify the threshold variable {threshold_var} and current level {current_level}. Either (a) push past the threshold with {push_action}, or (b) add dampeners {dampener} to avoid collapse. Stop using linear forecasts; use ranges.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-006",
+        "CART-UNIVERSAL-LAWS.UL-MAT-002",
+        "CART-EPISTEMIC.EPI-008"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "systems",
+        "nonlinear",
+        "tipping_points",
+        "thresholds",
+        "dynamics"
+      ]
+    },
+    {
+      "rule_id": "SYS-011",
+      "name": "Maps Are Not Territory: Models Are Tools, Not Reality",
+      "principle": "Any model is a simplification; treat it as a map to update, not a truth to defend.",
+      "detection_triggers": [
+        "Our model says one thing but reality says another",
+        "We\u2019re arguing theory instead of looking",
+        "I might be attached to my framework",
+        "This is getting ideological",
+        "How do we keep our model honest?"
+      ],
+      "insight_template": "When {model} conflicts with data, apply map-not-territory: write what the model predicts {prediction}, compare to observation {observation}, and update the model with {update}. If you can\u2019t name a falsifier, you\u2019re protecting identity, not seeking truth.",
+      "connects_to": [
+        "CART-EPISTEMIC.EPI-009",
+        "CART-UNIVERSAL-LAWS.UL-BEH-010",
+        "CART-EPISTEMIC.EPI-004"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "systems",
+        "models",
+        "map_territory",
+        "updating",
+        "epistemic"
+      ]
+    },
+    {
+      "rule_id": "SYS-012",
+      "name": "System Purpose: Behavior Reveals Goals",
+      "principle": "A system\u2019s real purpose is what it reliably produces; stated goals don\u2019t matter if behavior contradicts them.",
+      "detection_triggers": [
+        "They say they care, but behavior proves otherwise",
+        "Our mission sounds great but outcomes are bad",
+        "The incentives are driving the wrong behavior",
+        "We keep hitting KPIs but failing customers",
+        "What is this system actually optimized for?"
+      ],
+      "insight_template": "When {organization} claims {stated_goal} but produces {actual_outcome}, apply purpose-by-behavior: infer the true goal {true_goal} from incentives and constraints. Then redesign {rules_or_metrics} so the easiest path produces the outcome you want.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-004",
+        "CART-UNIVERSAL-LAWS.UL-SYS-010",
+        "CART-UNIVERSAL-LAWS.UL-BEH-001"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "systems",
+        "purpose",
+        "incentives",
+        "goodhart",
+        "design"
+      ]
+    }
+  ],
+  "cross_references": {
+    "CART-UNIVERSAL-LAWS": [
+      "Overlaps heavily with universal feedback/second-order/constraints principles; this cartridge adds modeling tools and archetypes for diagnosis."
+    ],
+    "CART-EPISTEMIC": [
+      "Epistemic discipline (definitions, ranges, prediction logs) prevents system maps from turning into ideology."
+    ],
+    "CART-FIRST-PRINCIPLES": [
+      "Systems diagnosis pairs with first-principles decomposition to rebuild mechanisms after you identify leverage points."
+    ]
+  }
+}

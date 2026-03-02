@@ -1,0 +1,284 @@
+{
+  "cartridge_id": "CART-ENERGY-MANAGEMENT",
+  "version": "1.0.0",
+  "domain": "energy_management",
+  "description": "Practices for protecting attention, preventing burnout, and sustaining high-quality work output.",
+  "dependencies": [
+    "CART-UNIVERSAL-LAWS",
+    "CART-STOIC"
+  ],
+  "ethical_guardrail": "Use these rules to support health and sustainable performance; they are not a substitute for medical care.",
+  "rules": [
+    {
+      "rule_id": "EM-001",
+      "name": "Ultradian Rhythm",
+      "principle": "Sustain performance by working in 60\u201390 minute focus cycles followed by 15\u201320 minutes of recovery.",
+      "detection_triggers": [
+        "I crash after about an hour of focus",
+        "My energy comes in waves",
+        "I can\u2019t sustain long sessions",
+        "I need a rhythm for work and breaks",
+        "I work nonstop and burn out"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-009",
+        "CART-ENERGY-MANAGEMENT.EM-005",
+        "CART-ENERGY-MANAGEMENT.EM-010"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Vitality",
+      "tags": [
+        "ultradian",
+        "focus_cycles",
+        "recovery",
+        "performance",
+        "burnout_prevention"
+      ]
+    },
+    {
+      "rule_id": "EM-002",
+      "name": "Deep Work Blocks",
+      "principle": "Uninterrupted focus time is a scarce resource; protect it to produce disproportionate output.",
+      "detection_triggers": [
+        "I keep getting interrupted",
+        "I need uninterrupted focus time",
+        "Notifications ruin my output",
+        "I want to do deep work",
+        "Context switching is killing my productivity"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-005",
+        "CART-ENERGY-MANAGEMENT.EM-007",
+        "CART-ENERGY-MANAGEMENT.EM-008"
+      ],
+      "confidence_weight": 0.88,
+      "sovereign_need_served": "Growth",
+      "tags": [
+        "deep_work",
+        "focus",
+        "attention",
+        "output_quality",
+        "time_protection"
+      ]
+    },
+    {
+      "rule_id": "EM-003",
+      "name": "Decision Fatigue",
+      "principle": "Decision quality declines as choices accumulate; do high-stakes decisions early and automate routine choices.",
+      "detection_triggers": [
+        "My decisions get worse late in the day",
+        "I feel mentally fried from choices",
+        "I make impulsive decisions at night",
+        "Too many decisions are draining me",
+        "I need a system to reduce choices"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-ENERGY-MANAGEMENT.EM-008",
+        "CART-ENERGY-MANAGEMENT.EM-006",
+        "CART-MENTAL-MODELS.MM-008"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "decision_fatigue",
+        "routines",
+        "prioritization",
+        "cognitive_load",
+        "systems"
+      ]
+    },
+    {
+      "rule_id": "EM-004",
+      "name": "Physical Foundation",
+      "principle": "Sleep, movement, and nutrition are core inputs to cognition; treat them as infrastructure, not optional hacks.",
+      "detection_triggers": [
+        "I can\u2019t focus because I'm tired",
+        "My body feels sluggish",
+        "My sleep is inconsistent",
+        "My diet/exercise affects my mind",
+        "I want more energy without stimulants"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-ENERGY-MANAGEMENT.EM-005",
+        "CART-ENERGY-MANAGEMENT.EM-010",
+        "CART-UNIVERSAL-LAWS.UL-SYS-013"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Vitality",
+      "tags": [
+        "sleep",
+        "movement",
+        "nutrition",
+        "health",
+        "cognitive_performance"
+      ]
+    },
+    {
+      "rule_id": "EM-005",
+      "name": "Stress-Recovery Cycle",
+      "principle": "Peak performance requires oscillation between stress and recovery; chronic stress erodes output and health.",
+      "detection_triggers": [
+        "I'm running on adrenaline",
+        "I never fully recover",
+        "Burnout is creeping in",
+        "I push hard without rest",
+        "My performance is dropping despite effort"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-009",
+        "CART-ENERGY-MANAGEMENT.EM-001",
+        "CART-ENERGY-MANAGEMENT.EM-010"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Vitality",
+      "tags": [
+        "stress",
+        "recovery",
+        "burnout",
+        "sustainability",
+        "resilience"
+      ]
+    },
+    {
+      "rule_id": "EM-006",
+      "name": "Energy Audit",
+      "principle": "Track what drains versus restores your energy so you can redesign your schedule for net-positive capacity.",
+      "detection_triggers": [
+        "Some tasks drain me instantly",
+        "I don\u2019t know what restores my energy",
+        "My day feels randomly exhausting",
+        "I need to track energy patterns",
+        "What should I cut or keep?"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-011",
+        "CART-ENERGY-MANAGEMENT.EM-009",
+        "CART-ENERGY-MANAGEMENT.EM-004"
+      ],
+      "confidence_weight": 0.85,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "energy_audit",
+        "patterns",
+        "schedule_design",
+        "self_management",
+        "capacity"
+      ]
+    },
+    {
+      "rule_id": "EM-007",
+      "name": "Single-Tasking",
+      "principle": "Context switching has hidden costs; doing one task at a time improves speed, quality, and mental calm.",
+      "detection_triggers": [
+        "I multitask all day",
+        "I keep jumping between tabs",
+        "I lose time switching tasks",
+        "My work quality is inconsistent",
+        "I want to focus on one thing"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-005",
+        "CART-ENERGY-MANAGEMENT.EM-002",
+        "CART-ENERGY-MANAGEMENT.EM-001"
+      ],
+      "confidence_weight": 0.92,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "single_tasking",
+        "context_switching",
+        "focus",
+        "friction",
+        "productivity"
+      ]
+    },
+    {
+      "rule_id": "EM-008",
+      "name": "Morning Routine",
+      "principle": "Protect the first 60\u201390 minutes to set trajectory: priority work first, inputs later, friction minimized.",
+      "detection_triggers": [
+        "My mornings get hijacked",
+        "I check phone/email first thing",
+        "I want to protect the first hour",
+        "If I win the morning, I win the day",
+        "Starting is the hardest part"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-002",
+        "CART-ENERGY-MANAGEMENT.EM-003",
+        "CART-ENERGY-MANAGEMENT.EM-002"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Agency",
+      "tags": [
+        "morning_routine",
+        "inertia",
+        "priority",
+        "structure",
+        "momentum"
+      ]
+    },
+    {
+      "rule_id": "EM-009",
+      "name": "Emotional Energy",
+      "principle": "Unresolved conflict and rumination consume working memory; resolve, reframe, or contain them to regain bandwidth.",
+      "detection_triggers": [
+        "Conflict is stuck in my head",
+        "I keep ruminating",
+        "Unresolved issues drain my focus",
+        "Team tension is exhausting",
+        "I feel mentally heavy for no clear reason"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-LEADERSHIP.LD-001",
+        "CART-ENERGY-MANAGEMENT.EM-006",
+        "CART-UNIVERSAL-LAWS.UL-BEH-015"
+      ],
+      "confidence_weight": 0.84,
+      "sovereign_need_served": "Vitality",
+      "tags": [
+        "emotional_load",
+        "rumination",
+        "conflict",
+        "bandwidth",
+        "regulation"
+      ]
+    },
+    {
+      "rule_id": "EM-010",
+      "name": "Strategic Recovery",
+      "principle": "Rest is productive; schedule recovery to sustain output, prevent burnout, and preserve long-term compounding.",
+      "detection_triggers": [
+        "I feel guilty resting",
+        "I need a recovery plan",
+        "Weekends don't restore me",
+        "I want sustainable performance",
+        "Rest feels like wasted time"
+      ],
+      "insight_template": "When {context}, apply {principle} by {action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-SYS-013",
+        "CART-ENERGY-MANAGEMENT.EM-005",
+        "CART-MENTAL-MODELS.MM-009"
+      ],
+      "confidence_weight": 0.89,
+      "sovereign_need_served": "Vitality",
+      "tags": [
+        "recovery",
+        "rest",
+        "sustainability",
+        "burnout",
+        "compounding"
+      ]
+    }
+  ],
+  "cross_references": {}
+}

@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 *.pyo
+src/db/aeOS.db
+src/logs/
+*.log

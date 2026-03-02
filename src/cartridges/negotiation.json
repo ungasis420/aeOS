@@ -1,0 +1,348 @@
+{
+  "cartridge_id": "CART-NEGOTIATION",
+  "version": "1.0.0",
+  "domain": "negotiation",
+  "description": "Negotiation playbook for fair, high-leverage agreements: BATNA, anchoring, empathy tactics, calibrated questions, and walk-away power.",
+  "dependencies": [
+    "CART-UNIVERSAL-LAWS",
+    "CART-KAHNEMAN"
+  ],
+  "ethical_guardrail": "Use to reach clear, consent-based agreements; do not use deception, coercion, harassment, or exploitation of vulnerable parties.",
+  "rules": [
+    {
+      "rule_id": "NEG-001",
+      "name": "BATNA: Build Your Best Alternative",
+      "principle": "Negotiation power comes from having credible alternatives; without a BATNA you are negotiating against yourself.",
+      "detection_triggers": [
+        "I have no leverage in this deal",
+        "What if they say no?",
+        "I need a backup plan before negotiating",
+        "I feel trapped because I need this",
+        "How do I strengthen my position?"
+      ],
+      "insight_template": "When {deal} feels one-sided, apply BATNA by defining your best alternative {batna} and improving it with {upgrade_action}. Set a walk-away point {walkaway} based on your BATNA, then negotiate from calm because you can choose no.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-STR-009",
+        "CART-UNIVERSAL-LAWS.UL-STR-003",
+        "CART-KAHNEMAN.KAH-015"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Agency",
+      "tags": [
+        "negotiation",
+        "batna",
+        "leverage",
+        "optionality",
+        "boundaries"
+      ]
+    },
+    {
+      "rule_id": "NEG-002",
+      "name": "Anchoring in Negotiation",
+      "principle": "The first credible number becomes the reference point; anchors shape the entire bargaining range.",
+      "detection_triggers": [
+        "They threw out a number first",
+        "What should my first offer be?",
+        "That opening price is messing with my head",
+        "Should I anchor high or low?",
+        "How do I reset the anchor?"
+      ],
+      "insight_template": "When {other_party} anchors with {anchor}, apply anchoring by either (a) counter-anchoring with your own {counter_anchor} plus justification, or (b) rejecting the anchor and reframing to {objective_standard}. Never debate their number\u2014replace it with yours.",
+      "connects_to": [
+        "CART-KAHNEMAN.KAH-003",
+        "CART-EPISTEMIC.EPI-003",
+        "CART-UNIVERSAL-LAWS.UL-MAT-006"
+      ],
+      "confidence_weight": 0.92,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "negotiation",
+        "anchoring",
+        "pricing",
+        "reference_points",
+        "tactics"
+      ]
+    },
+    {
+      "rule_id": "NEG-003",
+      "name": "ZOPA: Find the Zone of Possible Agreement",
+      "principle": "Deals happen inside overlapping ranges; without a ZOPA, the correct move is to change terms or walk away.",
+      "detection_triggers": [
+        "Are we even in the same ballpark?",
+        "This negotiation feels impossible",
+        "What range would make sense for both sides?",
+        "I think we're too far apart",
+        "How do I know if there\u2019s a deal here?"
+      ],
+      "insight_template": "When {positions} clash, apply ZOPA by estimating your reservation value {your_floor} and their likely reservation value {their_floor}. If no overlap, change variables (scope, timing, risk, extras) to create overlap, or trigger {walkaway_action}.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-PHY-004",
+        "CART-EPISTEMIC.EPI-008",
+        "CART-NEGOTIATION.NEG-001"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "negotiation",
+        "zopa",
+        "tradeoffs",
+        "deal_structure",
+        "ranges"
+      ]
+    },
+    {
+      "rule_id": "NEG-004",
+      "name": "Principled Negotiation: Separate People from Problem",
+      "principle": "Treat the relationship as a system to protect while jointly solving the problem on objective criteria.",
+      "detection_triggers": [
+        "This is getting personal",
+        "They\u2019re attacking me instead of the issue",
+        "We keep fighting and not solving",
+        "How do I negotiate without ruining the relationship?",
+        "Emotions are derailing the conversation"
+      ],
+      "insight_template": "When {conversation} turns personal, apply principled negotiation by naming the shared goal {shared_goal}, separating the problem {problem} from the person, and proposing an objective standard {standard}. Ask: 'What would be fair by {standard}?' then negotiate terms, not ego.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-006",
+        "CART-UNIVERSAL-LAWS.UL-BEH-007",
+        "CART-STOIC.STO-007"
+      ],
+      "confidence_weight": 0.87,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "negotiation",
+        "principled",
+        "relationships",
+        "objective_criteria",
+        "conflict"
+      ]
+    },
+    {
+      "rule_id": "NEG-005",
+      "name": "Tactical Empathy: Make Them Feel Understood",
+      "principle": "People move when they feel heard; accurate empathy lowers defensiveness and reveals real constraints.",
+      "detection_triggers": [
+        "They won\u2019t budge and I don\u2019t know why",
+        "I can\u2019t read what they really want",
+        "How do I get them to open up?",
+        "They seem defensive",
+        "I need to build rapport fast"
+      ],
+      "insight_template": "When {other_party} is guarded, apply tactical empathy by reflecting their perspective: 'It sounds like {their_concern}.' Pause, then ask what matters most: '{priority_question}'. Use what you learn to propose {option} that meets their core need without violating yours.",
+      "connects_to": [
+        "CART-UNIVERSAL-LAWS.UL-BEH-001",
+        "CART-JUNG-SHADOW.JSH-001",
+        "CART-NEGOTIATION.NEG-004"
+      ],
+      "confidence_weight": 0.84,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "negotiation",
+        "empathy",
+        "voss",
+        "rapport",
+        "information"
+      ]
+    },
+    {
+      "rule_id": "NEG-006",
+      "name": "Mirroring and Labeling: Slow the Pace, Surface Meaning",
+      "principle": "Repeating key words and labeling emotions encourages elaboration and reduces tension without arguing.",
+      "detection_triggers": [
+        "They\u2019re talking fast and pushing",
+        "I need them to explain more",
+        "How do I de-escalate this?",
+        "They\u2019re emotional and I\u2019m stuck",
+        "I don\u2019t know how to respond"
+      ],
+      "insight_template": "When {pressure} rises, apply mirroring/labeling: mirror the last 1\u20133 words ('{mirror_phrase}?'), then label emotion ('It seems like {emotion_label}'). Stop talking and let {silence_seconds} seconds of silence do the work.",
+      "connects_to": [
+        "CART-NEGOTIATION.NEG-011",
+        "CART-KAHNEMAN.KAH-005",
+        "CART-STOIC.STO-007"
+      ],
+      "confidence_weight": 0.83,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "negotiation",
+        "mirroring",
+        "labeling",
+        "deescalation",
+        "communication"
+      ]
+    },
+    {
+      "rule_id": "NEG-007",
+      "name": "Calibrated Questions: 'How' and 'What' Make Them Solve It",
+      "principle": "Open-ended 'how/what' questions shift problem-solving burden to the other side and reveal constraints.",
+      "detection_triggers": [
+        "How am I supposed to do that?",
+        "They\u2019re making demands I can\u2019t meet",
+        "I need them to propose options",
+        "I don\u2019t want to say no directly",
+        "How do I push back without conflict?"
+      ],
+      "insight_template": "When {demand} is unrealistic, apply calibrated questions: ask 'How would you like me to {request} given {constraint}?' and 'What would need to change for {win_condition}?' Keep your tone curious, then choose {next_move} based on their answer.",
+      "connects_to": [
+        "CART-EPISTEMIC.EPI-011",
+        "CART-KAHNEMAN.KAH-002",
+        "CART-NEGOTIATION.NEG-003"
+      ],
+      "confidence_weight": 0.86,
+      "sovereign_need_served": "Agency",
+      "tags": [
+        "negotiation",
+        "calibrated_questions",
+        "pushback",
+        "constraints",
+        "options"
+      ]
+    },
+    {
+      "rule_id": "NEG-008",
+      "name": "Ackermann Model: Structured Bargaining Steps",
+      "principle": "A planned sequence of offers with small calibrated concessions prevents emotional overpaying and keeps control of the range.",
+      "detection_triggers": [
+        "I keep conceding too fast",
+        "I need a structure for price negotiation",
+        "What\u2019s a good counteroffer strategy?",
+        "I don\u2019t want to overpay",
+        "How do I move them toward my number?"
+      ],
+      "insight_template": "When negotiating {price_item}, apply Ackermann: set target {target_price}, open at {opening_offer}%, then move in planned steps with non-round numbers and justification {justification}. Tie each concession to a ask ({give_get}) and stop at {walkaway}.",
+      "connects_to": [
+        "CART-NEGOTIATION.NEG-002",
+        "CART-KAHNEMAN.KAH-003",
+        "CART-UNIVERSAL-LAWS.UL-STR-003"
+      ],
+      "confidence_weight": 0.8,
+      "sovereign_need_served": "Order",
+      "tags": [
+        "negotiation",
+        "ackermann",
+        "concessions",
+        "pricing",
+        "structure"
+      ]
+    },
+    {
+      "rule_id": "NEG-009",
+      "name": "Loss Framing in Offers: Highlight What They Avoid Losing",
+      "principle": "Because losses loom larger than gains, framing your proposal as loss-avoidance increases acceptance without changing substance.",
+      "detection_triggers": [
+        "They\u2019re afraid of giving something up",
+        "They keep focusing on what they lose",
+        "How do I present this so it lands?",
+        "They\u2019re risk-averse",
+        "They hate change even if it helps"
+      ],
+      "insight_template": "When {other_party} resists, apply loss framing by describing the cost of inaction {status_quo_loss} and how {offer} prevents that loss. Pair it with a transition plan {transition} to reduce perceived risk and preserve agency.",
+      "connects_to": [
+        "CART-KAHNEMAN.KAH-008",
+        "CART-UNIVERSAL-LAWS.UL-BEH-009",
+        "CART-NEGOTIATION.NEG-004"
+      ],
+      "confidence_weight": 0.85,
+      "sovereign_need_served": "Influence",
+      "tags": [
+        "negotiation",
+        "loss_aversion",
+        "framing",
+        "offers",
+        "change"
+      ]
+    },
+    {
+      "rule_id": "NEG-010",
+      "name": "Never Split the Difference: Counter Extreme Anchors",
+      "principle": "Splitting arbitrary differences rewards bad anchors; instead, reset terms to objective standards and trade variables.",
+      "detection_triggers": [
+        "They want to just meet in the middle",
+        "The midpoint feels unfair",
+        "They anchored insanely high/low",
+        "If we split it, I lose",
+        "How do I respond to an extreme offer?"
+      ],
+      "insight_template": "When {extreme_offer} appears, apply 'no split' by rejecting the midpoint and reframing to {standard}. Counter with {counter} plus rationale, then propose trades on non-price variables {variables}. Aim for fair by standards, not fair by arithmetic.",
+      "connects_to": [
+        "CART-NEGOTIATION.NEG-002",
+        "CART-NEGOTIATION.NEG-003",
+        "CART-EPISTEMIC.EPI-006"
+      ],
+      "confidence_weight": 0.82,
+      "sovereign_need_served": "Truth",
+      "tags": [
+        "negotiation",
+        "anchors",
+        "standards",
+        "counteroffers",
+        "fairness"
+      ]
+    },
+    {
+      "rule_id": "NEG-011",
+      "name": "Silence as Leverage: Let the Gap Work",
+      "principle": "Silence creates pressure for the other side to fill the space, often revealing information or making concessions.",
+      "detection_triggers": [
+        "I talk too much in negotiations",
+        "Awkward silence makes me cave",
+        "How do I stop over-explaining?",
+        "They keep pushing and I panic",
+        "I want them to speak first"
+      ],
+      "insight_template": "When {question} is asked or {offer} is made, apply strategic silence: stop talking, breathe, and count {seconds}. Let {other_party} respond first. If needed, repeat your label {label} and stay quiet again.",
+      "connects_to": [
+        "CART-NEGOTIATION.NEG-006",
+        "CART-STOIC.STO-007",
+        "CART-KAHNEMAN.KAH-001"
+      ],
+      "confidence_weight": 0.83,
+      "sovereign_need_served": "Agency",
+      "tags": [
+        "negotiation",
+        "silence",
+        "self_control",
+        "leverage",
+        "communication"
+      ]
+    },
+    {
+      "rule_id": "NEG-012",
+      "name": "Walk-Away Power: Credible Alternatives Win",
+      "principle": "A clear, enforced walk-away line prevents bad deals and signals strength; credibility comes from actually being willing to leave.",
+      "detection_triggers": [
+        "I don\u2019t know when to walk away",
+        "I\u2019m tempted to accept a bad deal",
+        "I need a hard boundary",
+        "What\u2019s my walk-away point?",
+        "How do I say no without burning bridges?"
+      ],
+      "insight_template": "When {deal} crosses your line, apply walk-away power: state {boundary} calmly, reference your BATNA {batna}, and offer one final option {final_offer}. If they refuse, exit with respect and move to {next_best_path}.",
+      "connects_to": [
+        "CART-NEGOTIATION.NEG-001",
+        "CART-UNIVERSAL-LAWS.UL-STR-009",
+        "CART-UNIVERSAL-LAWS.UL-STR-003"
+      ],
+      "confidence_weight": 0.9,
+      "sovereign_need_served": "Security",
+      "tags": [
+        "negotiation",
+        "walkaway",
+        "batna",
+        "boundaries",
+        "integrity"
+      ]
+    }
+  ],
+  "cross_references": {
+    "CART-KAHNEMAN": [
+      "Negotiation is a bias battlefield: anchoring, loss aversion, framing, and affect heuristics distort offers and concessions."
+    ],
+    "CART-UNIVERSAL-LAWS": [
+      "Applies incentives, optionality, margin of safety, and second-order effects to deal design and long-term outcomes."
+    ],
+    "CART-EPISTEMIC": [
+      "Objective criteria, ranges, and evidence-quality checks prevent ego-driven bargaining and make terms defensible."
+    ]
+  }
+}
