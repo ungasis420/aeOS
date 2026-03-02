@@ -1,0 +1,18 @@
+{
+  "cartridge_id": "CART-CREATION",
+  "domain": "creation",
+  "version": "1.0",
+  "rule_count": 10,
+  "rules": [
+    {"id": "CRE-001", "name": "Ship Before Ready", "principle": "Version 1.0 is supposed to be embarrassing. Ship it anyway and iterate.", "insight_template": "What is the ugliest version of {project} you could put in front of one real person this week?"},
+    {"id": "CRE-002", "name": "Constraint as Catalyst", "principle": "Constraints force creativity. Unlimited resources produce bloated work.", "insight_template": "What one constraint — time, budget, format — could you impose on {project} to force a breakthrough?"},
+    {"id": "CRE-003", "name": "Volume Before Quality", "principle": "High output volume is the fastest path to quality. The ceramics class that made 100 pots beat the one that made one perfect pot.", "insight_template": "How could you increase your output volume on {creative_work} by 3x this month?"},
+    {"id": "CRE-004", "name": "Steal Like an Artist", "principle": "Everything is a remix. Study the best, deconstruct it, rebuild it in your voice.", "insight_template": "Which 3 creators in {domain} would you synthesize to define your own style?"},
+    {"id": "CRE-005", "name": "Separate Generation from Editing", "principle": "Never edit while generating. They use different cognitive modes and each kills the other.", "insight_template": "In your current {creative_process}, where are you editing before you have finished generating?"},
+    {"id": "CRE-006", "name": "Audience of One", "principle": "Create for one specific person first. Universal appeal is found through specificity, not despite it.", "insight_template": "Who is the single most specific person you are creating {work} for? Name them."},
+    {"id": "CRE-007", "name": "Daily Minimum", "principle": "Consistency of small output beats sporadic bursts. A daily minimum maintains creative momentum.", "insight_template": "What is the smallest daily creative action on {project} that takes under 20 minutes?"},
+    {"id": "CRE-008", "name": "Input Quality", "principle": "Creative output quality is bounded by input quality. Curate what you consume.", "insight_template": "What low-quality input are you regularly consuming that is degrading your creative output?"},
+    {"id": "CRE-009", "name": "Cross-Domain Pollination", "principle": "The best creative ideas come from importing solutions from unrelated domains.", "insight_template": "What problem in {domain} could be solved by a solution that already exists in a completely different field?"},
+    {"id": "CRE-010", "name": "Public Commitment", "principle": "Announcing creative work publicly raises completion rate dramatically.", "insight_template": "Who could you tell about {project} today to create productive external accountability?"}
+  ]
+}
