@@ -1,0 +1,18 @@
+{
+  "cartridge_id": "CART-EMOTIONAL-INTELLIGENCE",
+  "domain": "emotional-intelligence",
+  "version": "1.0",
+  "rule_count": 10,
+  "rules": [
+    {"id": "EI-001", "name": "Name It To Tame It", "principle": "Labeling an emotion precisely reduces its intensity. Vague 'stressed' vs specific 'humiliated' changes the response.", "insight_template": "What is the most precise word for what you are feeling about {situation} right now?"},
+    {"id": "EI-002", "name": "Trigger Mapping", "principle": "Recurring emotional reactions point to unexamined beliefs. Map the trigger to the belief underneath.", "insight_template": "When {situation} triggered you, what belief about yourself or the world did it threaten?"},
+    {"id": "EI-003", "name": "Response Gap", "principle": "Between stimulus and response there is a gap. That gap is where your power lives.", "insight_template": "In your last reactive moment around {situation}, where could you have inserted a pause?"},
+    {"id": "EI-004", "name": "Empathy Accuracy", "principle": "Empathy is not agreeing — it is accurately perceiving another's experience without merging with it.", "insight_template": "What is {person}'s experience of {situation} likely to be, separate from your own?"},
+    {"id": "EI-005", "name": "Emotional Contagion Awareness", "principle": "Emotions are contagious. You absorb the emotional state of rooms and people unconsciously.", "insight_template": "Which person or environment in your life is most consistently lowering your emotional baseline?"},
+    {"id": "EI-006", "name": "Validation Before Solution", "principle": "People need to feel heard before they can hear solutions. Validate first, solve second.", "insight_template": "In your last difficult conversation about {topic}, did you validate before you problem-solved?"},
+    {"id": "EI-007", "name": "Anger as Secondary", "principle": "Anger is almost always a secondary emotion covering hurt, fear, or shame underneath.", "insight_template": "Underneath the anger about {situation}, what is the primary emotion you have not named yet?"},
+    {"id": "EI-008", "name": "Somatic Signal", "principle": "The body registers emotion before the mind does. Learn your physical tells.", "insight_template": "Where in your body do you feel {emotion}? What does that signal tell you before your mind catches up?"},
+    {"id": "EI-009", "name": "Repair Quickly", "principle": "Relationship ruptures are inevitable. Speed and quality of repair determines relationship health.", "insight_template": "What rupture in your relationship with {person} is currently unrepaired and getting more expensive?"},
+    {"id": "EI-010", "name": "Emotional Granularity", "principle": "The more precisely you can name emotions, the more effectively you can regulate them.", "insight_template": "Is what you are calling {emotion} actually a blend of multiple distinct feelings? What are they?"}
+  ]
+}
