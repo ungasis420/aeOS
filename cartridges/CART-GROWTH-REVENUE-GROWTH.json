@@ -1,0 +1,121 @@
+{
+  "id": "growth_revenue_growth",
+  "name": "Revenue Growth & Monetization Strategy",
+  "category": "Growth",
+  "sovereign_need": "Growth",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Revenue Lever Hierarchy",
+      "description": "Revenue has four levers. Most operators pull the hardest lever (more customers) while ignoring easier ones. Sequence by effort-to-impact ratio.",
+      "steps": [
+        "Lever 1 — Price: increase price on existing offer to existing customers. Zero acquisition cost. Highest ROI lever. Test 10-20% increase.",
+        "Lever 2 — Retention: keep existing customers longer. Acquiring a new customer costs 5-7x retaining an existing one.",
+        "Lever 3 — Expansion: sell more to existing customers (upsell, cross-sell, adjacent offers).",
+        "Lever 4 — Acquisition: new customers. Highest cost, longest cycle, most effort.",
+        "Audit: what percentage of revenue growth effort is on Lever 4 vs. Levers 1-3?",
+        "Rebalance toward highest-ROI lever before increasing acquisition spend"
+      ],
+      "antipatterns": [
+        "Defaulting to acquisition when retention is the actual constraint",
+        "Underpricing out of fear rather than market evidence — most service providers are underpriced",
+        "No expansion revenue strategy — leaving known-good customers at single purchase point"
+      ]
+    },
+    {
+      "name": "Offer Staircase",
+      "description": "A single offer at a single price point leaves most revenue potential unrealized. A staircase captures buyers at every commitment level and naturally upgrades them over time.",
+      "steps": [
+        "Free tier: builds audience and trust. Demonstrates competence. Entry point for the relationship.",
+        "Low-ticket ($7-$97): breaks the payment threshold. A buyer at $10 is categorically different from a non-buyer.",
+        "Core offer ($300-$2,000): primary revenue driver. Where most transformation happens.",
+        "High-ticket ($3,000-$25,000): premium outcome with premium support. 1-5% of buyers, disproportionate revenue.",
+        "Map your current offers to this staircase — identify missing rungs",
+        "Design the upgrade path: what naturally leads a buyer from one rung to the next?"
+      ],
+      "antipatterns": [
+        "Single price point — captures only buyers ready for that commitment level",
+        "High-ticket with no low-ticket entry — forces cold buyers to make large commitments",
+        "No designed upgrade path — customers plateau at first purchase"
+      ]
+    },
+    {
+      "name": "Pricing Power Development",
+      "description": "Pricing power is the ability to raise prices without losing customers. It is built through positioning, not negotiation. Operators with pricing power earn more doing less.",
+      "steps": [
+        "Quantify your value: what is the economic outcome you deliver? Price as a fraction of that, not as cost-plus.",
+        "Specialize to reduce comparison: generic providers compete on price; specialists set price.",
+        "Build a body of evidence: case studies, testimonials, outcomes data make price defensible",
+        "Raise prices on new clients first — test market tolerance without risking existing relationships",
+        "Eliminate price-sensitive clients progressively — they consume the most time and generate the most friction",
+        "Reframe from time-based to outcome-based pricing — hourly rate caps earnings; outcome pricing does not"
+      ],
+      "antipatterns": [
+        "Competing on price in a commodity market — a race to the bottom with no floor",
+        "Time-based pricing for expertise — caps income at hours available",
+        "Discounting to close — attracts price-sensitive clients and signals weak positioning"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "revenue_lever_audit",
+      "name": "Revenue Lever Audit",
+      "template": "Audit my revenue levers. Current revenue: [amount]. Revenue from price increases in last 12 months: [amount or none]. Churn rate: [%]. Expansion revenue (upsell/cross-sell): [amount]. New customer acquisition spend: [amount]. Identify which lever has the highest untapped ROI and give me the specific action to pull it.",
+      "tags": ["revenue", "levers", "audit"]
+    },
+    {
+      "id": "offer_staircase_design",
+      "name": "Offer Staircase Design",
+      "template": "Design my offer staircase. Current offers: [list with prices]. Target customer: [describe]. Map my existing offers to the staircase tiers, identify missing rungs, and design the upgrade path from entry to high-ticket.",
+      "tags": ["offer", "staircase", "pricing"]
+    },
+    {
+      "id": "pricing_power",
+      "name": "Pricing Power Assessment",
+      "template": "Assess my pricing power. Current pricing: [describe — hourly/project/retainer]. Specialization level: [describe]. Evidence of outcomes: [describe]. Last price increase: [when]. Identify the barriers to raising prices and the highest-leverage action to increase pricing power in 90 days.",
+      "tags": ["pricing", "positioning", "power"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Service Business Price Increase",
+      "context": "Copywriter charging $75/hour, fully booked, no capacity to take more clients",
+      "diagnosis": "Fully booked at current price = demand exceeds supply = underpriced",
+      "intervention": "Raised rate to $125/hour for new clients. Lost 2 of 8 existing clients on renewal. Net revenue increased 40% with 25% less time.",
+      "framework": "Pricing Power Development — outcome-based repositioning"
+    }
+  ],
+  "vocabulary": [
+    { "term": "Revenue Levers", "definition": "The four mechanisms for growing revenue: price increase, retention improvement, expansion revenue, and new customer acquisition." },
+    { "term": "Expansion Revenue", "definition": "Additional revenue from existing customers via upsell, cross-sell, or renewal at higher tier. Highest ROI revenue category." },
+    { "term": "Offer Staircase", "definition": "A tiered sequence of offers from free to ultra-premium, designed to capture buyers at every commitment level and facilitate natural upgrades." },
+    { "term": "Pricing Power", "definition": "The ability to raise prices without proportionate customer loss. Built through specialization, positioning, and demonstrated outcomes." },
+    { "term": "Price-Sensitive Client", "definition": "A client who selected you primarily on price. Typically generates highest friction, lowest margins, and weakest loyalty." },
+    { "term": "Outcome-Based Pricing", "definition": "Pricing tied to the value of the result delivered rather than time spent. Removes the income ceiling inherent in time-based models." }
+  ],
+  "sources": [
+    { "title": "$100M Offers", "authors": ["Alex Hormozi"], "type": "book", "relevance": "Offer design, value equation, staircase architecture" },
+    { "title": "Predictably Irrational", "authors": ["Dan Ariely"], "type": "book", "relevance": "Pricing psychology, anchoring, comparison effects" },
+    { "title": "The Win Without Pitching Manifesto", "authors": ["Blair Enns"], "type": "book", "relevance": "Pricing power for service providers, specialist positioning" },
+    { "title": "Confessions of the Pricing Man", "authors": ["Hermann Simon"], "type": "book", "relevance": "Pricing strategy, value-based pricing mechanics" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["Revenue_Forecast (D2)", "Finance_Insights (D1)", "Pipeline_Analytics (D4)", "DECISION_ENGINE (D20)"],
+    "v78_consciousnesses": ["House v2.1 (revenue problem diagnosis)", "Rogan v2.1 (reality check on pricing assumptions)", "Module 30 Sales Mastery"],
+    "master_laws": ["Law 11 (Leverage — pricing is highest-leverage revenue lever)", "Law 21 (Action — price increase requires execution)", "Law 18 (Reality — market pricing is data, not feeling)"],
+    "sovereign_needs_served": ["Growth (primary)", "Agency (pricing power = negotiating freedom)", "Security (revenue growth funds safety stack)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS", "high_leverage": "PASS", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 22,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

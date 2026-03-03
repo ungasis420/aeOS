@@ -1,0 +1,125 @@
+{
+  "id": "growth_compound_intelligence",
+  "name": "Compound Intelligence & Learning Velocity",
+  "category": "Growth",
+  "sovereign_need": "Growth",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Knowledge Compounding Architecture",
+      "description": "Knowledge compounds when new learning connects to existing mental models rather than sitting in isolation. Connection density — not volume — determines compound rate.",
+      "steps": [
+        "Build mental models before facts: frameworks for understanding a domain make every subsequent fact 10x more memorable and useful",
+        "Link new knowledge explicitly to existing knowledge — ask 'how does this connect to what I already know?'",
+        "Teach to learn: explaining forces connection-making and exposes gaps. Teaching is the fastest compounding accelerator.",
+        "Revisit and re-examine: returning to fundamental concepts with new knowledge creates new connections",
+        "Identify your core mental model library — the 20-30 models you apply repeatedly across domains",
+        "Track: which mental models do you reach for most? Those are your highest-value models to deepen"
+      ],
+      "antipatterns": [
+        "Consuming content without synthesis — information without connection is not knowledge",
+        "Breadth without depth — shallow familiarity with many domains produces no real mental models",
+        "No retrieval practice — knowledge not retrieved fades; it does not compound"
+      ]
+    },
+    {
+      "name": "Learning Velocity Protocol",
+      "description": "Learning speed is trainable. The bottleneck is rarely intelligence — it is technique. Systematic learning protocol produces 3-5x velocity improvement over naive reading and forgetting.",
+      "steps": [
+        "Pre-learn: before engaging with material, generate questions you want answered — primes retrieval pathways",
+        "Active recall over re-reading: close the book and recall what you just learned. Retrieval is the learning event.",
+        "Spaced repetition: review at increasing intervals (1 day, 3 days, 7 days, 21 days). Defeats the forgetting curve.",
+        "Interleaving: mix topics within a learning session rather than blocking. More difficult, but produces stronger retention.",
+        "Minimum effective dose: what is the smallest amount of this material that captures 80% of the value? Learn that first.",
+        "Output-first learning: define what you will create or do with the knowledge before consuming — dramatically improves retention"
+      ],
+      "antipatterns": [
+        "Re-reading as review — feels like learning, produces no retention improvement",
+        "Highlighting without recall — passive engagement does not create retrievable memory",
+        "Marathon single-session learning — spaced repetition beats massed practice for retention"
+      ]
+    },
+    {
+      "name": "Insight Capture System",
+      "description": "Insights not captured are lost. Most people have their best thinking while doing something else. A systematic capture system turns ephemeral insight into compound intelligence.",
+      "steps": [
+        "One capture tool: single location for all raw ideas and insights. Friction kills capture.",
+        "Capture immediately: insight half-life is minutes. Do not trust memory.",
+        "Review weekly: process raw captures into connected notes or action items",
+        "Connect on capture: when adding a new note, link it to at least one existing note",
+        "Periodically synthesize: every month, review recent captures and ask 'what pattern is emerging across these?'",
+        "Output regularly: writing, teaching, or creating from your insight library accelerates compounding by forcing synthesis"
+      ],
+      "antipatterns": [
+        "Multiple capture tools — context-switching kills capture habit",
+        "Capture without review — inbox that is never processed is not a system",
+        "Collection without connection — notes that do not link to other notes do not compound"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "knowledge_audit",
+      "name": "Mental Model Audit",
+      "template": "Audit my mental model library. Domains I have studied seriously: [list]. Models I reach for repeatedly: [list or describe]. Identify my 3 highest-value mental models, the domains where I have shallow familiarity without real models, and the single model that would most amplify my current stack.",
+      "tags": ["mental_models", "audit", "compound"]
+    },
+    {
+      "id": "learning_velocity_design",
+      "name": "Learning Velocity Protocol Design",
+      "template": "Design a learning protocol for: [subject]. Time available: [hours/week]. Current knowledge level: [describe]. Output I want to produce: [describe]. Apply pre-learning, active recall, and spaced repetition structure. Give me a week-by-week learning architecture.",
+      "tags": ["learning", "velocity", "protocol"]
+    },
+    {
+      "id": "insight_system_design",
+      "name": "Insight Capture System Design",
+      "template": "Design my insight capture system. Current capture behavior: [describe — what I use, how often I review]. Primary contexts where I have insights: [describe — reading, walking, conversations]. Give me a minimal, high-friction-free capture and review system.",
+      "tags": ["capture", "system", "insights"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Accelerated Domain Entry",
+      "context": "Operator entering a new domain (no prior knowledge) needing functional competence in 60 days",
+      "framework_applied": "Learning Velocity Protocol",
+      "approach": "Week 1: Read 3 foundational books with active recall after each chapter. Week 2-3: Teach back concepts to colleague. Week 4-8: Apply in low-stakes context, capture insights, connect to existing mental models.",
+      "outcome": "Functional competence in 60 days. Deep competence in 12 months via continued spaced repetition."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Mental Model", "definition": "A reusable framework for understanding a category of situation. The base unit of compound intelligence." },
+    { "term": "Active Recall", "definition": "Deliberately retrieving information from memory without looking at the source. The primary mechanism of durable learning." },
+    { "term": "Spaced Repetition", "definition": "Reviewing material at increasing intervals timed to just before forgetting. Maximizes retention per unit of review time." },
+    { "term": "Interleaving", "definition": "Mixing different topics within a learning session. More difficult than blocking but produces stronger retention and transfer." },
+    { "term": "Forgetting Curve", "definition": "Ebbinghaus's finding that memory decays exponentially without review. Spaced repetition is the systematic response." },
+    { "term": "Connection Density", "definition": "The number of links between a piece of knowledge and the rest of your knowledge base. High connection density = high recall and application." },
+    { "term": "Minimum Effective Dose", "definition": "The smallest amount of input that produces the target output. Applied to learning: capture 80% of value from 20% of material." },
+    { "term": "Compound Intelligence", "definition": "The self-reinforcing loop where each new insight makes existing knowledge more valuable and new learning faster. The cognitive equivalent of compound interest." }
+  ],
+  "sources": [
+    { "title": "Make It Stick", "authors": ["Peter Brown", "Henry Roediger", "Mark McDaniel"], "type": "book", "relevance": "Active recall, interleaving, spaced repetition — cognitive science of durable learning" },
+    { "title": "How to Take Smart Notes", "authors": ["Sönke Ahrens"], "type": "book", "relevance": "Insight capture, connection-making, zettelkasten method" },
+    { "title": "Ultralearning", "authors": ["Scott Young"], "type": "book", "relevance": "Learning velocity, metalearning, directness" },
+    { "title": "The Great Mental Models", "authors": ["Shane Parrish"], "type": "book", "relevance": "Mental model library, cross-domain application" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["COMPOUND_FLYWHEEL (F3.6)", "COGNITIVE_TWIN (F2.5)", "Cognitive_Journal (D30)", "Reflection_Engine (A7)"],
+    "v78_consciousnesses": ["Ancient One v3.0 (compounding timeline)", "Analogical Engine v1.0 (cross-domain connection)", "META-0.5.1 (system-level learning)"],
+    "master_laws": ["Law 19 (Compound — intelligence is the original compound asset)", "Law 15 (Simplicity — mental models compress complexity)", "Law 8 (Focus — deep learning requires protected attention)"],
+    "sovereign_needs_served": ["Growth (primary)", "Truth (better models = clearer perception)", "Legacy (compound intelligence outlasts any single achievement)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS — grounded in cognitive science literature",
+      "high_leverage": "PASS — learning velocity is a meta-skill multiplying all other skill acquisition",
+      "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 24,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}
