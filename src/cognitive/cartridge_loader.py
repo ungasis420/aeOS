@@ -178,6 +178,68 @@ def load_cartridges(
     return results
 
 
+def load_cartridge_by_id(
+    cartridge_id: str,
+    cartridges_dir: Optional[Path] = None,
+    schema: Optional[Dict[str, Any]] = None,
+) -> Optional[Dict[str, Any]]:
+    """Load a single cartridge by its ``cartridge_id``.
+
+    Scans the cartridges directory for a JSON file whose ``cartridge_id``
+    field matches *cartridge_id* (case-insensitive).  Returns the cartridge
+    dict or ``None`` if not found.
+    """
+    cdir = Path(cartridges_dir) if cartridges_dir is not None else _DEFAULT_CARTRIDGES_DIR
+    if schema is None:
+        try:
+            schema = load_schema(cdir / "cartridge_schema.json")
+        except Exception:
+            schema = None
+
+    target = cartridge_id.strip().upper()
+    for fp in sorted(cdir.glob("*.json")):
+        if fp.name == "cartridge_schema.json":
+            continue
+        try:
+            with open(fp, "r", encoding="utf-8") as fh:
+                data = json.load(fh)
+            cid = str(data.get("cartridge_id", "")).strip().upper()
+            if cid == target:
+                if schema is not None:
+                    errors = _validate_against_schema(data, schema)
+                    if errors:
+                        logger.warning("Cartridge %s validation warnings: %s", cartridge_id, errors)
+                logger.info("Loaded cartridge '%s' by ID from %s", cartridge_id, fp)
+                return data
+        except (OSError, json.JSONDecodeError):
+            continue
+    logger.warning("Cartridge '%s' not found in %s", cartridge_id, cdir)
+    return None
+
+
+def get_cartridge_index(
+    cartridges_dir: Optional[Path] = None,
+) -> Dict[str, str]:
+    """Return a mapping of cartridge_id → filename for all cartridges.
+
+    Useful for quick lookups without loading full cartridge data.
+    """
+    cdir = Path(cartridges_dir) if cartridges_dir is not None else _DEFAULT_CARTRIDGES_DIR
+    index: Dict[str, str] = {}
+    for fp in sorted(cdir.glob("*.json")):
+        if fp.name == "cartridge_schema.json":
+            continue
+        try:
+            with open(fp, "r", encoding="utf-8") as fh:
+                data = json.load(fh)
+            cid = data.get("cartridge_id", "")
+            if cid:
+                index[cid] = fp.name
+        except (OSError, json.JSONDecodeError):
+            continue
+    return index
+
+
 # ---------------------------------------------------------------------------
 # Rule execution engine
 # ---------------------------------------------------------------------------
