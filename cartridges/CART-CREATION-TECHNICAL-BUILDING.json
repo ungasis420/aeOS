@@ -1,0 +1,190 @@
+{
+  "id": "creation_technical_building",
+  "name": "Technical Building",
+  "category": "Creation",
+  "sovereign_need": "Creation",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Architecture Decision Record (ADR)",
+      "description": "Every significant technical decision should be recorded with context, options considered, decision made, and consequences. ADRs prevent the same debate from recurring and explain why the codebase looks the way it does.",
+      "steps": [
+        "Trigger: any technical decision with non-obvious trade-offs or long-term implications",
+        "Record context: what forces and constraints shaped this decision? What problem are we solving?",
+        "Record options considered: at least 2-3 alternatives with pros/cons for each",
+        "Record the decision: what was chosen, and the primary reason",
+        "Record consequences: what becomes easier, harder, or constrained by this decision?",
+        "Store in version control alongside code — ADRs become outdated if not co-located with what they describe"
+      ],
+      "adr_template": {
+        "title": "ADR-[number]: [short decision title]",
+        "status": "Proposed | Accepted | Deprecated | Superseded by ADR-[n]",
+        "context": "What situation, constraints, and forces led to this decision?",
+        "options": [
+          { "option": "Option A", "pros": [], "cons": [] },
+          { "option": "Option B", "pros": [], "cons": [] }
+        ],
+        "decision": "We chose Option A because...",
+        "consequences": "What becomes easier/harder. What this constrains. What we accept as a trade-off."
+      },
+      "antipatterns": [
+        "Tribal knowledge about why things are built the way they are — kills team onboarding and future decision quality",
+        "Revisiting settled decisions without new information — ADRs prevent this",
+        "ADRs without consequences section — consequences are often more important than the decision"
+      ]
+    },
+    {
+      "name": "Technical Debt Management",
+      "description": "Technical debt is not a failure — it is a deliberate or accidental trade-off of future maintenance cost for present speed. Managing it consciously is the difference between a codebase that compounds and one that collapses.",
+      "steps": [
+        "Distinguish debt types: deliberate (we know this is suboptimal but shipping is worth it), accidental (we didn't know better at the time), bit rot (the world changed and this code didn't)",
+        "Make deliberate debt explicit: document it at creation with a TODO and the reason. Undocumented debt is the most dangerous kind.",
+        "Track debt as a backlog: each debt item with estimated cost-to-fix and cost-of-carrying (how much it slows development per sprint)",
+        "Allocate capacity: reserve 15-20% of each sprint for debt reduction. No allocation = debt grows until it dominates",
+        "Prioritize debt that blocks features, causes bugs, or creates security risk — not debt that is merely ugly",
+        "Refactor under test coverage: never refactor code without tests in place. Untested refactors trade one risk for another."
+      ],
+      "debt_types": [
+        { "type": "Deliberate-reckless", "example": "No time for design, just ship it", "approach": "Avoid — creates the worst compounding debt" },
+        { "type": "Deliberate-prudent", "example": "Ship now, we know we'll need to refactor payment module when volume grows", "approach": "Document, schedule, repay" },
+        { "type": "Accidental-reckless", "example": "Didn't know about connection pooling, now we have N+1 queries everywhere", "approach": "Identify, quantify, prioritize" },
+        { "type": "Accidental-prudent", "example": "Best practice in 2019; now outdated in 2024", "approach": "Planned migration when capacity allows" }
+      ]
+    },
+    {
+      "name": "Systems Design First Principles",
+      "description": "Every system design is a set of trade-offs across the same five dimensions. Explicitly stating which dimensions you are optimizing for produces better designs than implicit optimization.",
+      "dimensions": [
+        { "name": "Consistency", "definition": "All nodes see the same data at the same time", "trade_off": "Requires coordination cost; reduces availability in partition scenarios" },
+        { "name": "Availability", "definition": "System responds to every request", "trade_off": "May return stale data under partition (CAP theorem)" },
+        { "name": "Scalability", "definition": "System handles growth in load without redesign", "trade_off": "Adds complexity; over-engineering for premature scale kills early products" },
+        { "name": "Maintainability", "definition": "System can be changed, debugged, and operated by future engineers", "trade_off": "Requires investment in documentation, tests, clean code" },
+        { "name": "Performance", "definition": "System responds within acceptable latency", "trade_off": "Caching and optimization add complexity; premature optimization is the root of much evil" }
+      ],
+      "steps": [
+        "State the system's primary optimization target: what must be maximized above all else?",
+        "State the non-negotiables: what floors must not be breached?",
+        "State acceptable trade-offs explicitly: what will be sacrificed for the primary target?",
+        "Design to the stated trade-offs — not to abstract 'best practices'",
+        "Revisit when load, team size, or requirements change materially — the right design changes with context"
+      ],
+      "antipatterns": [
+        "Designing for Google-scale on day one — premature scale optimization kills product velocity",
+        "Optimizing all five dimensions simultaneously — physically impossible; always a trade-off",
+        "Following 'best practices' without checking if they optimize for your actual constraints"
+      ]
+    },
+    {
+      "name": "Build vs. Buy vs. Borrow Decision",
+      "description": "Every technical capability requires a sourcing decision. Building is almost always more expensive than it appears. The correct answer depends on whether the capability is core to your competitive differentiation.",
+      "steps": [
+        "Is this capability core to your competitive differentiation? If yes, build. If no, proceed to next step.",
+        "Does a mature, well-supported solution exist? Check maintenance activity, community size, security track record.",
+        "What is the total cost of ownership: buy (license + integration + customization + upgrade cost) vs. build (development + maintenance + security + team knowledge)?",
+        "What is the switching cost if the vendor fails or changes terms? Is vendor lock-in acceptable?",
+        "For 'borrow' (open source): who maintains this? What is the bus factor? Is the license compatible with your use case?",
+        "Default: buy or borrow commodity infrastructure (auth, payments, email, storage, queues). Build differentiated product logic."
+      ],
+      "decision_matrix": {
+        "build": "Core competitive differentiation, no adequate solution exists, team has expertise, long-term ownership justified",
+        "buy": "Commodity capability, mature vendor market, cost below build threshold, switching cost acceptable",
+        "borrow": "Open source with active maintenance, compatible license, community large enough to ensure continuity"
+      },
+      "antipatterns": [
+        "NIH (Not Invented Here) syndrome — rebuilding solved problems because of preference for control",
+        "Building authentication, payments, or email infrastructure from scratch — commodity capabilities with significant security complexity",
+        "Borrow without checking maintenance status — abandoned libraries are liabilities"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "adr_generation",
+      "name": "Architecture Decision Record",
+      "template": "Generate an ADR for this technical decision: [describe the decision]. Context: [constraints and situation]. Options I'm considering: [list options]. Help me articulate pros/cons of each, recommend a decision, and map the consequences.",
+      "tags": ["ADR", "architecture", "decision", "trade_offs"]
+    },
+    {
+      "id": "technical_debt_audit",
+      "name": "Technical Debt Audit",
+      "template": "Help me audit and prioritize technical debt. Known debt items: [list or describe]. Upcoming features: [describe]. Sprint capacity: [estimate]. Classify each debt item by type and estimate carry cost vs. fix cost. What should be repaid first?",
+      "tags": ["technical_debt", "refactor", "prioritization", "backlog"]
+    },
+    {
+      "id": "systems_design_tradeoffs",
+      "name": "Systems Design Trade-offs",
+      "template": "Help me design [system or component]. Primary optimization target: [consistency/availability/scalability/maintainability/performance]. Non-negotiables: [list]. Expected load: [estimate]. Evaluate the design trade-offs explicitly.",
+      "tags": ["systems_design", "trade_offs", "architecture", "CAP"]
+    },
+    {
+      "id": "build_buy_borrow",
+      "name": "Build vs. Buy vs. Borrow",
+      "template": "I need [technical capability]. Is this core to my competitive differentiation? Walk me through build vs. buy vs. borrow analysis: options available, total cost of ownership comparison, lock-in risk, and recommendation.",
+      "tags": ["build", "buy", "borrow", "make_vs_buy", "sourcing"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Premature Microservices Migration",
+      "context": "12-person startup on a monolith. Engineering lead wants to migrate to microservices for scale.",
+      "framework_applied": "Systems Design First Principles + ADR",
+      "analysis": "Primary optimization target for a 12-person startup is maintainability and development velocity. Microservices optimize for independent scalability and team autonomy — relevant at 100+ engineers with separate deployment requirements. Current scale does not justify the coordination overhead.",
+      "adr_outcome": "ADR-007: Remain on monolith. Accepted. Consequence: extract payment service only (regulatory isolation requirement). Re-evaluate at 50+ engineers or when deployment coupling creates measurable delays.",
+      "outcome": "Saved ~6 months of migration work. Team shipped 3 major features instead."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Architecture Decision Record (ADR)", "definition": "Documented record of a significant architectural decision: context, options, decision, and consequences. Stored in version control." },
+    { "term": "Technical Debt", "definition": "The implied cost of future rework caused by choosing a fast/easy solution now instead of a better approach that would take longer." },
+    { "term": "CAP Theorem", "definition": "A distributed system can guarantee at most two of: Consistency, Availability, Partition tolerance. Never all three." },
+    { "term": "N+1 Query Problem", "definition": "A database performance antipattern where fetching N records triggers N additional queries instead of one batch query." },
+    { "term": "Bus Factor", "definition": "The number of team members who, if incapacitated, would put a project in serious trouble. Bus factor of 1 is critical single-point-of-failure risk." },
+    { "term": "NIH Syndrome", "definition": "Not Invented Here — the tendency to rebuild solutions internally when adequate external solutions exist, driven by preference for control." },
+    { "term": "Refactoring", "definition": "Improving internal code structure without changing external behavior. Requires test coverage to be safe." },
+    { "term": "Total Cost of Ownership (TCO)", "definition": "Full cost of a technical choice over its lifetime: acquisition, integration, maintenance, upgrades, security, and migration." },
+    { "term": "Bit Rot", "definition": "Code that was correct when written but degrades over time as its environment, dependencies, and requirements change without corresponding updates." },
+    { "term": "Premature Optimization", "definition": "Optimizing for performance or scale before it is needed. Adds complexity without current benefit; slows development." }
+  ],
+  "sources": [
+    { "title": "A Philosophy of Software Design", "authors": ["John Ousterhout"], "type": "book", "relevance": "Complexity management, module design, deep vs. shallow modules" },
+    { "title": "Designing Data-Intensive Applications", "authors": ["Martin Kleppmann"], "type": "book", "relevance": "Systems design trade-offs, CAP theorem, distributed systems fundamentals" },
+    { "title": "The Pragmatic Programmer", "authors": ["David Thomas", "Andrew Hunt"], "type": "book", "relevance": "Technical debt, ADRs, build discipline" },
+    { "title": "Staff Engineer", "authors": ["Will Larson"], "type": "book", "relevance": "Technical decision-making, build vs. buy, architecture at scale" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["DECISION_ENGINE (D20)", "Module 4 Tech Execution (Jobs/Bezos/Zuckerberg)", "Module 12 Technical Implementation"],
+    "v78_consciousnesses": [
+      "House v2.1 (systems diagnosis — N+1, bottlenecks, debt type classification)",
+      "Ancient One v3.0 (technical debt compounds or decays over time — temporal evaluation)",
+      "Constraint Mapper (CAP theorem is a hard constraint — Law 18 Reality)",
+      "Deadpool v2.2 (challenge premature optimization and NIH syndrome — Law 15 Simplicity)"
+    ],
+    "master_laws": [
+      "Law 28 (Systems — if you can't replicate it, you don't own it; ADRs make systems replicable)",
+      "Law 23 (Iteration — ship, then refactor under test)",
+      "Law 19 (Compound — clean codebases compound velocity; debt compounds drag)",
+      "Law 15 (Simplicity — premature optimization = complexity tax)"
+    ],
+    "sovereign_needs_served": ["Creation (primary)", "Order (ADRs and debt management create technical order)", "Growth (clean systems scale; debt-laden systems don't)"],
+    "4_gate_relevance": {
+      "gate_2_true": "Build vs. buy analysis requires honest TCO — Law 18 Reality check on cost assumptions",
+      "gate_3_leverage": "ADR process is the highest-leverage technical decision tool — prevents expensive reversals"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 35,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "cluster": "Creation (34-35)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL",
+    "4_gate_validation": {
+      "safe": "PASS",
+      "true": "PASS — CAP theorem, ADR methodology, and technical debt taxonomy are well-established engineering frameworks",
+      "high_leverage": "PASS — ADRs and build/buy/borrow analysis prevent multi-month expensive wrong decisions",
+      "aligned": "PASS — Laws 28, 23, 19, 15; Creation and Order needs"
+    }
+  }
+}
