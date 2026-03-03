@@ -1,0 +1,197 @@
+{
+  "id": "security_digital_privacy",
+  "name": "Digital Privacy & Operational Security",
+  "category": "Security",
+  "sovereign_need": "Security",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Privacy Threat Model",
+      "description": "Privacy is not binary. Define who you are protecting against — that determines which controls matter. Misidentifying your adversary wastes effort on irrelevant controls while leaving real threats unaddressed.",
+      "steps": [
+        "Identify your adversary: data brokers, advertisers, stalkers, competitors, state actors, or opportunistic criminals — each requires different controls",
+        "Identify the data you are protecting: identity, location, communications, financial, professional, relational",
+        "Map which adversaries can realistically access which data categories given current exposure",
+        "Rate each intersection: likelihood × harm if exposed",
+        "Select controls proportionate to your actual threat model — not maximum paranoia, not naive defaults",
+        "Review quarterly: threat model changes as life circumstances change"
+      ],
+      "examples": [
+        {
+          "situation": "Public-facing professional concerned about doxxing",
+          "adversary": "Motivated individual aggregating public data sources",
+          "data_at_risk": "Home address, family members, daily routines",
+          "proportionate_controls": "PO box for all public registrations, opt-out from data brokers, separate professional identity from personal, location services off for social media"
+        },
+        {
+          "situation": "Executive concerned about competitive intelligence",
+          "adversary": "Competitor or journalist via OSINT",
+          "data_at_risk": "Business strategy, key relationships, travel patterns",
+          "proportionate_controls": "Minimal public social media, travel booking via corporate account not personal, encrypted communications for sensitive discussions"
+        }
+      ],
+      "antipatterns": [
+        "Maximum privacy controls regardless of actual threat — creates friction without proportionate benefit",
+        "No threat model — applying random controls based on articles read",
+        "Treating privacy as a one-time setup rather than ongoing practice",
+        "Ignoring the human layer — most privacy failures are social, not technical"
+      ]
+    },
+    {
+      "name": "Data Minimization Protocol",
+      "description": "Data that does not exist cannot be breached, subpoenaed, or sold. The most effective privacy control is not generating or retaining unnecessary data in the first place.",
+      "steps": [
+        "Audit what data you currently generate: accounts, purchases, location, communications, browsing",
+        "For each data type ask: does retaining this serve me, or only the platform collecting it?",
+        "Delete: accounts not used in 90+ days, stored data with no ongoing value",
+        "Minimize at collection: use aliases where possible, provide minimum required fields, avoid optional data fields",
+        "Separate identities: professional, personal, high-privacy activities should not share accounts or contact information",
+        "Prefer ephemeral: use services that do not retain data by default where the function allows"
+      ],
+      "antipatterns": [
+        "Convenience accounts linking identity across unrelated services (login with Google/Facebook)",
+        "Providing real name, phone, and address where a pseudonym and PO box would work",
+        "Retaining communications indefinitely — most should be deleted after their purpose expires",
+        "Single email address used everywhere — one breach exposes everything"
+      ]
+    },
+    {
+      "name": "Communications Security Tiering",
+      "description": "Not all communications require the same protection. Tiering matches security overhead to sensitivity, preventing both under-protection of sensitive content and over-engineering of routine communication.",
+      "steps": [
+        "Tier 1 — Public: assume anything sent here is public. Social media, public forums, standard email to unknown parties.",
+        "Tier 2 — Private but not sensitive: standard encrypted email (ProtonMail/Tutanota), encrypted messaging (Signal). Daily professional communication.",
+        "Tier 3 — Sensitive: Signal with disappearing messages, in-person, or air-gapped communication. Legal strategy, financial planning, confidential business.",
+        "Tier 4 — Critical: in-person only, no devices present. Matters where compromise would be catastrophic.",
+        "Assign each regular communication context to a tier",
+        "Ensure you have a functioning tool for each tier you need"
+      ],
+      "antipatterns": [
+        "Using Tier 1 tools for Tier 3 content — SMS for legal strategy, Gmail for confidential financials",
+        "Encrypting everything regardless of sensitivity — friction kills adoption",
+        "Encrypted tool with unencrypted backup — the backup is the vulnerability",
+        "Discussing Tier 3 content with device present in the room (microphone risk)"
+      ]
+    },
+    {
+      "name": "Identity Separation Architecture",
+      "description": "Separate identities for separate contexts limits correlation. When identities merge, a single breach or data sale exposes the complete picture. Separation requires deliberate architecture.",
+      "steps": [
+        "Define your identity contexts: public professional, private personal, high-privacy, financial",
+        "Assign a separate email address to each context — not aliases, separate accounts on separate providers",
+        "Use separate browsers or browser profiles per context — prevent cross-context tracking via cookies",
+        "Separate payment methods: business card, personal card, privacy-preserving option for sensitive purchases",
+        "Never use real name + home address for public-facing registrations — PO box and professional name",
+        "Review annually: have any contexts merged inadvertently?"
+      ],
+      "antipatterns": [
+        "Single email for all contexts — one breach exposes all contexts",
+        "Same username across platforms — trivial to correlate",
+        "Home address as billing address for public-facing services",
+        "Social media account linked to professional identity containing personal content"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "privacy_threat_model",
+      "name": "Personal Privacy Threat Model",
+      "template": "Build my privacy threat model. My public exposure: [describe — social media, professional profile, business ownership, etc.]. My primary concerns: [doxxing / competitive intelligence / data brokers / other]. Map my realistic adversaries to the data they could access, rate each risk, and give me the top 3 proportionate controls.",
+      "tags": ["threat_model", "adversary", "risk_rating"]
+    },
+    {
+      "id": "data_minimization_audit",
+      "name": "Data Minimization Audit",
+      "template": "Audit my digital data footprint. Accounts I know about: [list]. Data I regularly generate: [location, purchases, communications, browsing — describe]. Identify my highest-exposure data categories, what I should delete, and where I should minimize at collection going forward.",
+      "tags": ["data_minimization", "audit", "footprint"]
+    },
+    {
+      "id": "communications_tiering",
+      "name": "Communications Security Setup",
+      "template": "Design my communications security architecture. Current tools I use: [list]. Regular communication contexts: [professional, personal, sensitive business, legal, financial — describe]. Assign each context to a security tier and identify any gaps where I am using under-protected tools for sensitive content.",
+      "tags": ["communications", "tiering", "encryption"]
+    },
+    {
+      "id": "identity_separation",
+      "name": "Identity Separation Review",
+      "template": "Review my identity separation. Current email accounts: [list with purposes]. Payment methods: [list]. Public registrations using my home address: [list]. Identify where my identities have merged inappropriately and give me a prioritized separation plan.",
+      "tags": ["identity", "separation", "correlation"]
+    },
+    {
+      "id": "data_broker_removal",
+      "name": "Data Broker Opt-Out Plan",
+      "template": "I want to remove myself from data broker databases. My public exposure: [name, location, professional profile — describe]. Give me a prioritized list of data broker categories to opt out from, starting with the highest-risk aggregators, and the process for each.",
+      "tags": ["data_brokers", "opt_out", "removal"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Public Figure Doxxing Prevention",
+      "context": "Content creator with 50K followers receiving harassment, home address at risk",
+      "framework_applied": "Privacy Threat Model + Identity Separation Architecture",
+      "findings": "Home address on business registration (public record), same email for public contact and personal banking, social media photos with identifiable location metadata",
+      "interventions": [
+        "Registered agent service replaces home address on all business filings",
+        "PO box for all public-facing mail",
+        "Separate email: public@domain.com for fans, private account for banking/legal",
+        "Location metadata stripped from all photos before posting",
+        "Opt-out submitted to top 20 data brokers"
+      ],
+      "outcome": "Home address removed from public record within 60 days. Identity separation prevents future correlation."
+    },
+    {
+      "title": "Executive Communications Hardening",
+      "context": "CEO discussing acquisition strategy over standard email and SMS",
+      "framework_applied": "Communications Security Tiering",
+      "diagnosis": "Tier 3 content (M&A strategy, legal discussions) transmitted via Tier 1 tools (standard email, SMS). Single breach exposes competitive strategy.",
+      "intervention": "Signal with disappearing messages for board and legal counsel. ProtonMail for confidential vendor discussions. Standard email for routine operations only.",
+      "outcome": "Sensitive communications isolated to encrypted channels with no persistent storage."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Threat Model", "definition": "Identification of who you are protecting against and what data matters — determines which controls are proportionate." },
+    { "term": "Data Minimization", "definition": "Generating and retaining only the data necessary for a specific purpose. Data that does not exist cannot be compromised." },
+    { "term": "Identity Separation", "definition": "Maintaining distinct, non-correlated identities for different life contexts to limit exposure from any single breach." },
+    { "term": "OSINT (Open Source Intelligence)", "definition": "Intelligence gathered from publicly available sources. What an adversary can learn about you without any privileged access." },
+    { "term": "Metadata", "definition": "Data about data. Photos contain location and device metadata; emails contain routing and timing metadata. Often more revealing than content." },
+    { "term": "Data Broker", "definition": "Companies that aggregate and sell personal data from public records, purchase history, and tracked behavior. Primary source of doxxing data." },
+    { "term": "Operational Security (OPSEC)", "definition": "Discipline of identifying and protecting sensitive information from adversarial collection. Originally military; applies to any high-stakes context." },
+    { "term": "Correlation Attack", "definition": "Linking data points across separate sources to identify a person or their behavior. Separation prevents correlation." },
+    { "term": "Registered Agent", "definition": "Service that receives official correspondence on behalf of a business, keeping the owner's home address off public business filings." },
+    { "term": "Disappearing Messages", "definition": "Encrypted messaging feature that auto-deletes messages after a set period, limiting data retention and legal exposure." },
+    { "term": "Air-Gapped", "definition": "Physically isolated from any network. Used for highest-sensitivity communications where even encrypted digital channels are insufficient." },
+    { "term": "Pseudonymity", "definition": "Operating under a consistent but non-real-name identity. Protects personal identity while maintaining accountability within a context." }
+  ],
+  "sources": [
+    { "title": "The Art of Invisibility", "authors": ["Kevin Mitnick"], "type": "book", "relevance": "Practical OPSEC, identity separation, data minimization" },
+    { "title": "Permanent Record", "authors": ["Edward Snowden"], "type": "book", "relevance": "Surveillance architecture, metadata risks, communications security" },
+    { "title": "Surveillance Self-Defense", "authors": ["EFF"], "type": "guide", "relevance": "Threat modeling, tiered communications security" },
+    { "title": "Privacy Is Power", "authors": ["Carissa Véliz"], "type": "book", "relevance": "Data minimization philosophy, structural privacy" },
+    { "title": "Michael Bazzell's OSINT Techniques", "authors": ["Michael Bazzell"], "type": "book", "relevance": "Data broker removal, identity separation, doxxing prevention" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["CRYPTO_STATE (F0.3)", "ADVERSARIAL_FIREWALL (F2.6)", "SOVEREIGN_IDENTITY (F6.2)", "ZK_PROOF_ENGINE (F6.1)", "Identity_Continuity_Protocol (A1)"],
+    "v78_consciousnesses": ["Constraint Mapper (hard privacy laws vs self-imposed exposure)", "Rogan v2.1 (realistic threat assessment — calibrated, not paranoid)", "House v2.1 (differential diagnosis of privacy failure vectors)"],
+    "master_laws": ["Law 2 (Silence — privacy is absolute)", "Law 6 (Defense — security is a state of being)", "Law 3 (Agency — privacy preserves future options)", "Law 7 (Ownership — Sovereign owns their data)"],
+    "sovereign_needs_served": ["Security (primary)", "Agency (privacy = freedom from coercion)", "Truth (accurate self-knowledge of exposure)"],
+    "4_gate_relevance": {
+      "gate_1_safe": "Law 2 (Silence) enforcement — Privacy Shield active; no PII leakage",
+      "gate_4_aligned": "Law 7 (Ownership) — all outputs respect Sovereign's data sovereignty"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 12,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL",
+    "4_gate_validation": {
+      "safe": "PASS — defensive privacy practices only; no surveillance or offensive techniques",
+      "true": "PASS — grounded in established OPSEC practice and EFF guidance",
+      "high_leverage": "PASS — identity separation and data minimization prevent the majority of realistic privacy failures",
+      "aligned": "PASS — directly serves Security need; Law 2 and Law 7 compliance"
+    }
+  }
+}
