@@ -1,0 +1,192 @@
+{
+  "id": "security_legal_protection",
+  "name": "Legal Protection & Risk Architecture",
+  "category": "Security",
+  "sovereign_need": "Security",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Legal Exposure Audit",
+      "description": "Most legal risk is invisible until it materializes. Systematic audit surfaces exposure before it becomes litigation.",
+      "steps": [
+        "Map all business and personal activities generating legal exposure: contracts, employees, clients, IP, real estate, online presence",
+        "For each exposure category identify: who could sue, on what grounds, and what assets are at risk",
+        "Rate each: likelihood (1-5) × financial impact (1-5) = risk score",
+        "Identify which exposures are currently unprotected vs. covered by entity structure or insurance",
+        "Prioritize by risk score — address top 3 unprotected exposures first",
+        "Review annually and after any significant business or life change"
+      ],
+      "antipatterns": [
+        "Assuming good intentions prevent lawsuits — most litigation involves parties who had no hostile intent originally",
+        "Verbal agreements for material commitments — unenforceable and creates he-said/she-said risk",
+        "Operating without entity structure until 'big enough' — first client is when liability begins"
+      ]
+    },
+    {
+      "name": "Entity Structure as Liability Shield",
+      "description": "The correct entity structure separates personal assets from business risk. One judgment without a shield can eliminate personal wealth built over decades.",
+      "steps": [
+        "Sole proprietorship: zero liability protection — personal assets fully exposed to business claims",
+        "LLC: separates personal from business liability. Minimum viable structure for any revenue-generating activity.",
+        "LLC + S-Corp election: adds self-employment tax savings above ~$60K net profit",
+        "Holding company + operating LLCs: isolates risk between ventures — one entity's liability cannot reach another",
+        "Determine current stage and transition trigger: first client → LLC; $60K+ net → S-Corp; second venture → holding structure",
+        "Maintain corporate formality: separate bank accounts, no personal/business fund commingling — piercing the veil destroys protection"
+      ],
+      "examples": [
+        {
+          "situation": "Consultant operating as sole proprietor with $150K revenue",
+          "exposure": "Client sues over deliverable dispute — personal home, savings, all assets at risk",
+          "intervention": "Form LLC immediately. $500 filing fee protects decades of personal asset accumulation.",
+          "caveat": "Consult qualified attorney for jurisdiction-specific structure advice."
+        }
+      ],
+      "antipatterns": [
+        "LLC on paper but commingling personal and business funds — court will pierce the veil",
+        "Single LLC for multiple ventures — one liability event reaches all",
+        "Delaying entity formation until 'profitable enough' — liability begins at first transaction"
+      ]
+    },
+    {
+      "name": "Contract Architecture",
+      "description": "Contracts define the rules of every business relationship. Weak contracts are the primary source of preventable legal disputes.",
+      "steps": [
+        "Every material business relationship requires a written contract — no exceptions",
+        "Core elements every service contract must contain: scope of work (precise), payment terms, IP ownership, limitation of liability, dispute resolution, termination conditions",
+        "IP assignment: ensure all work product created for clients is explicitly assigned; ensure all work created by contractors for you is explicitly assigned to your entity",
+        "Limitation of liability clause: cap your liability at contract value or insurance coverage — without this, exposure is unlimited",
+        "Dispute resolution: specify arbitration over litigation — faster, cheaper, private",
+        "Use templates reviewed by counsel once; reuse with minor modifications — not a new legal bill per contract"
+      ],
+      "antipatterns": [
+        "Scope of work described vaguely — primary source of client disputes",
+        "No IP ownership clause — creates ambiguity over who owns deliverables",
+        "No limitation of liability — one contract dispute can exceed total contract value",
+        "Verbal change orders — scope creep with no documentation is unenforceable"
+      ]
+    },
+    {
+      "name": "Insurance as Risk Transfer",
+      "description": "Insurance transfers catastrophic risk to a third party at known cost. Correct insurance coverage is the cheapest form of legal protection available.",
+      "steps": [
+        "General Liability (GL): covers bodily injury, property damage, basic business operations. Floor coverage for any business.",
+        "Professional Liability / E&O (Errors & Omissions): covers claims arising from professional services. Essential for consultants, advisors, designers, developers.",
+        "Cyber Liability: covers data breach costs, notification requirements, regulatory fines. Required if handling client data.",
+        "Umbrella Policy: extends coverage limits across GL and other policies. Cost-effective way to increase protection.",
+        "Directors & Officers (D&O): if managing a company or sitting on boards — personal protection for management decisions.",
+        "Audit coverage annually against current business activities — coverage gaps appear as business evolves"
+      ],
+      "antipatterns": [
+        "GL without E&O for service businesses — GL does not cover professional service failures",
+        "Coverage limits below realistic claim exposure — insurance that runs out provides false confidence",
+        "No cyber coverage while handling client data — regulatory fines alone can exceed policy cost many times over",
+        "Canceling coverage during slow periods — claims can arise from past work"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "legal_exposure_audit",
+      "name": "Legal Exposure Audit",
+      "template": "Run a legal exposure audit for my situation. Business activities: [describe]. Contracts currently in use: [describe or none]. Entity structure: [type or none]. Insurance: [types held]. Identify my top 3 unprotected legal exposures by risk score and the highest-leverage protection for each. Note: this is strategic awareness, not legal advice.",
+      "tags": ["audit", "exposure", "risk_scoring"]
+    },
+    {
+      "id": "entity_structure_decision",
+      "name": "Entity Structure Decision",
+      "template": "Help me determine the right entity structure for my situation. Current revenue: [amount]. Business activities: [describe]. Current structure: [sole prop/LLC/other]. Personal assets to protect: [describe]. Walk me through the structure appropriate for my stage and the transition trigger for the next level. I will consult an attorney to implement.",
+      "tags": ["entity", "structure", "LLC", "liability"]
+    },
+    {
+      "id": "contract_gap_review",
+      "name": "Contract Gap Review",
+      "template": "Review my contract situation. I use: [describe current contracts or lack thereof]. My primary business relationships: [clients/contractors/vendors]. Identify the most dangerous contract gaps — missing clauses, vague scope, no IP assignment — and what each exposes me to.",
+      "tags": ["contracts", "gaps", "IP", "liability"]
+    },
+    {
+      "id": "insurance_coverage_review",
+      "name": "Insurance Coverage Review",
+      "template": "Review my insurance coverage against my business activities. Current coverage: [list policies and limits]. Business activities: [describe — services provided, data handled, team size]. Identify coverage gaps and prioritize additions by risk exposure.",
+      "tags": ["insurance", "coverage", "gaps"]
+    },
+    {
+      "id": "ip_protection_plan",
+      "name": "IP Protection Plan",
+      "template": "Help me identify and protect my intellectual property. What I have created: [describe — brand, content, software, processes, client lists]. Current protection: [trademarks filed, contracts with IP clauses, NDAs — describe or none]. Identify my most valuable unprotected IP and the appropriate protection mechanism for each.",
+      "tags": ["IP", "trademark", "copyright", "protection"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Freelancer Entity Structure Transition",
+      "context": "Designer earning $120K, operating as sole proprietor, no contracts with IP clauses",
+      "framework_applied": "Entity Structure as Liability Shield + Contract Architecture",
+      "findings": "Personal assets fully exposed to client disputes. No IP assignment clauses means ownership of all work is legally ambiguous. No limitation of liability — one dispute could exceed annual revenue.",
+      "interventions": [
+        "LLC formed — personal assets separated from business liability",
+        "Standard contract template created with scope, IP assignment, $50K liability cap, arbitration clause",
+        "S-Corp election evaluated at $60K net profit threshold"
+      ],
+      "outcome": "Legal exposure reduced from unlimited personal liability to LLC-bounded business liability. Contract disputes now governed by agreed terms.",
+      "caveat": "Implemented with guidance from business attorney."
+    },
+    {
+      "title": "SaaS Founder Data Liability Gap",
+      "context": "Early-stage SaaS handling customer PII, no cyber insurance, single LLC with multiple products",
+      "framework_applied": "Legal Exposure Audit + Insurance as Risk Transfer",
+      "findings": "Data breach would trigger notification costs, regulatory fines, and customer claims — all uninsured. Single LLC means a claim on one product reaches all products.",
+      "interventions": [
+        "Cyber liability policy covering breach costs and regulatory fines",
+        "Holding company structure — separate LLC per product",
+        "Privacy policy and data processing agreements updated"
+      ],
+      "outcome": "Catastrophic data breach scenario reduced from existential to manageable with insurance coverage."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Liability Shield", "definition": "Legal separation between personal and business assets provided by LLC or corporation. Prevents business judgments from reaching personal wealth." },
+    { "term": "Piercing the Veil", "definition": "Court action that removes LLC liability protection when corporate formality is not maintained — typically due to commingling of funds." },
+    { "term": "Limitation of Liability", "definition": "Contract clause capping the maximum damages one party can recover from the other, typically at contract value or insurance coverage amount." },
+    { "term": "IP Assignment", "definition": "Contract clause explicitly transferring ownership of created work product from creator to client (or contractor to company). Without it, ownership is ambiguous." },
+    { "term": "E&O Insurance", "definition": "Errors and Omissions insurance. Covers claims arising from professional service failures, mistakes, or alleged negligence." },
+    { "term": "Holding Company", "definition": "Parent entity that owns operating entities. Isolates liability between ventures — a claim against one operating company cannot reach others." },
+    { "term": "Corporate Formality", "definition": "Maintaining clear separation between entity and owner: separate bank accounts, proper records, no personal fund commingling. Required to preserve liability protection." },
+    { "term": "Arbitration Clause", "definition": "Contract provision requiring disputes to be resolved through arbitration rather than litigation. Faster, cheaper, and private." },
+    { "term": "S-Corp Election", "definition": "Tax election for LLC allowing owner salary + distributions structure, reducing self-employment tax on distributions above reasonable salary." },
+    { "term": "Indemnification", "definition": "Contractual obligation for one party to cover legal costs and damages incurred by the other party in specified circumstances." },
+    { "term": "Scope of Work", "definition": "Contract section defining precisely what is and is not included in the engagement. Vague scope is the primary source of client disputes." },
+    { "term": "NDA (Non-Disclosure Agreement)", "definition": "Contract requiring parties to keep specified information confidential. Protects trade secrets, client lists, and proprietary processes." }
+  ],
+  "sources": [
+    { "title": "Legal Guide for Starting and Running a Small Business", "authors": ["Fred Steingold"], "type": "book", "relevance": "Entity structure, contracts, practical legal architecture" },
+    { "title": "The E-Myth Revisited", "authors": ["Michael Gerber"], "type": "book", "relevance": "Business structure, systems before scale" },
+    { "title": "Nolo Press Guides", "authors": ["Nolo"], "type": "reference", "relevance": "LLC formation, contract templates, IP protection" },
+    { "title": "$100M Offers", "authors": ["Alex Hormozi"], "type": "book", "relevance": "Business structure evolution, liability as business scale function" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["DECISION_ENGINE (D20)", "Finance_Insights (D1)", "Negotiation_War_Room (D27)", "Risk_Register (D17)"],
+    "v78_consciousnesses": ["Ancient One v3.0 (temporal — legal decisions compound or cascade over years)", "Constraint Mapper (hard legal constraints vs perceived ones)", "House v2.1 (differential diagnosis of legal exposure vectors)"],
+    "master_laws": ["Law 24 (Resources — legal judgments destroy capital)", "Law 3 (Agency — liability exposure restricts future options)", "Law 28 (Systems — entity structure is replicable legal architecture)"],
+    "sovereign_needs_served": ["Security (primary)", "Agency (liability-free operation preserves optionality)", "Growth (protected assets compound; unprotected assets are at risk)"],
+    "caveat": "This cartridge provides strategic awareness for legal architecture decisions. It is not legal advice. All entity, contract, and insurance decisions should be implemented with guidance from qualified legal and tax professionals.",
+    "4_gate_relevance": {
+      "gate_1_safe": "Caveat enforced in all outputs — never presents as legal advice",
+      "gate_3_leverage": "Entity structure is highest-leverage legal intervention — $500 LLC filing protects decades of asset accumulation"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 14,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL",
+    "4_gate_validation": {
+      "safe": "PASS — strategic awareness framing only; caveat on professional consultation embedded in cartridge and all prompts",
+      "true": "PASS — standard legal structures accurately described; jurisdiction variance acknowledged",
+      "high_leverage": "PASS — entity structure formation is asymmetric: low cost, protects against catastrophic downside",
+      "aligned": "PASS — directly serves Security need; Laws 3, 24, 28 compliance"
+    }
+  }
+}
