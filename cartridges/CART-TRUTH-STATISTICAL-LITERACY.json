@@ -1,0 +1,189 @@
+{
+  "id": "truth_statistical_literacy",
+  "name": "Statistical Literacy & Quantitative Reasoning",
+  "category": "Truth",
+  "sovereign_need": "Truth",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Base Rate Thinking",
+      "description": "The most common and costly reasoning error is ignoring base rates — the background frequency of an event before any specific information is considered. Your brain naturally anchors on the vivid, specific case and ignores the denominator. Base rate neglect kills financial decisions, medical decisions, and business strategy.",
+      "steps": [
+        "Before evaluating any specific case, ask: what is the base rate? How often does this happen in the relevant reference class?",
+        "Identify the correct reference class: 'startups' is too broad. 'B2B SaaS startups with $1M+ ARR in year 2' is a useful reference class.",
+        "Find the base rate data: industry reports, historical databases, published studies. If no data exists, estimate conservatively.",
+        "Anchor on the base rate FIRST, then adjust based on specific information about this case",
+        "Adjust proportionally: even strong specific evidence rarely justifies moving more than 2-3x from the base rate",
+        "When someone tells you a story (especially a success story), ask: what is the denominator? How many tried and failed?"
+      ],
+      "examples": [
+        {
+          "situation": "Friend recommends real estate investing because they tripled their money on a flip",
+          "base_rate_analysis": {
+            "vivid_case": "Friend made 200% return on one property",
+            "base_rate": "Average house flipper profit margin: 26.9% (ATTOM Data). Median first-time flipper: loses money after carrying costs. ~40% of flips sell at break-even or loss.",
+            "denominator_missing": "Friend did not mention the 3 other flips that broke even or the one that lost money.",
+            "calibrated_expectation": "Base rate expectation: modest positive return with significant variance and illiquidity risk. Friend's experience is 90th percentile, not typical."
+          }
+        }
+      ],
+      "antipatterns": [
+        "Anchoring on a vivid anecdote instead of the base rate — the story feels more real but carries less information",
+        "Using the wrong reference class — 'businesses' vs. 'restaurants in this city' have very different base rates",
+        "Ignoring the denominator — every success story has a denominator of attempts; not knowing it makes the story uninterpretable",
+        "Base rate of zero — assuming something cannot happen because you have not seen it. Absence of personal experience is not a base rate."
+      ]
+    },
+    {
+      "name": "Sample Size & Selection Bias Detection",
+      "description": "Small samples lie. Biased samples lie systematically. Most 'data-driven' decisions in business and personal life are based on samples too small or too biased to support the conclusions drawn from them. Knowing when your data is insufficient is as important as analyzing the data you have.",
+      "steps": [
+        "Ask: how large is the sample? For most business metrics, fewer than 30 observations is noise, not signal.",
+        "Ask: is the sample representative? Who is missing? Self-selected samples (surveys, reviews, testimonials) systematically exclude the silent majority.",
+        "Check for survivorship bias: are you only seeing the successes? The failures that would complete the picture may have disappeared.",
+        "Check for selection bias: did the sampling method systematically include or exclude certain types of observations?",
+        "Look for regression to the mean: extreme results in small samples naturally regress toward the average in larger samples. An unusually good month is followed by an average one — this is mathematics, not failure.",
+        "When sample is too small to trust: acknowledge uncertainty, make a reversible decision, and collect more data"
+      ],
+      "examples": [
+        {
+          "situation": "SaaS product with 5-star rating based on 12 reviews",
+          "sample_size_issue": "12 reviews is far too few to estimate true quality. The margin of error at 95% confidence with n=12 is enormous.",
+          "selection_bias": "Early reviewers are self-selected: either extremely satisfied evangelists or angry churners. The typical user who finds the product 'fine' does not leave reviews.",
+          "survivorship_bias": "Unhappy users who churned are not in the review pool — they left silently.",
+          "calibrated_interpretation": "The 5-star rating tells you almost nothing about likely user experience. Weight: trial experience > all reviews. If forced to use reviews: read the 3-star reviews (most informative) and weight total review count more than average rating."
+        }
+      ],
+      "antipatterns": [
+        "Treating small samples as representative — 'my 3 customers all said X' is anecdote, not data",
+        "Ignoring who is NOT in the sample — the missing data is often more informative than the present data",
+        "Survivorship bias in benchmarking — studying only successful companies tells you nothing about what causes success",
+        "Regression to the mean misinterpreted as causation — a great quarter followed by an average one is not evidence of decline"
+      ]
+    },
+    {
+      "name": "Conditional Probability & Bayes' Rule",
+      "description": "Most people confuse P(A|B) with P(B|A). The probability of having a disease given a positive test is NOT the same as the probability of testing positive given you have the disease. This error distorts medical, legal, financial, and business reasoning. Bayes' Rule is the correction.",
+      "steps": [
+        "Identify what you actually want to know: P(hypothesis | evidence) — the probability the hypothesis is true given the evidence you observed",
+        "Gather the components: P(evidence | hypothesis true) — the true positive rate. P(evidence | hypothesis false) — the false positive rate. P(hypothesis) — the prior probability (base rate).",
+        "Apply Bayes' Rule: P(H|E) = P(E|H) * P(H) / [P(E|H) * P(H) + P(E|not-H) * P(not-H)]",
+        "Intuitive version: when the base rate is low, even highly accurate tests produce mostly false positives. A 99% accurate test for a 1% base rate condition produces 50% false positives.",
+        "Update incrementally: each new piece of evidence shifts your probability estimate, but rarely as much as it feels like it should",
+        "When possible, use natural frequencies instead of percentages — '10 out of 1000' is more intuitive than '1%'"
+      ],
+      "examples": [
+        {
+          "situation": "Marketing team declares campaign successful because conversion rate 'doubled' from 1% to 2%",
+          "bayesian_analysis": {
+            "prior": "Baseline conversion rate: 1%. Sample size during campaign: 200 visitors.",
+            "evidence": "4 conversions observed (2% rate) vs. expected 2 conversions (1% rate).",
+            "bayes_check": "With n=200, the probability of observing 4+ conversions even with true rate of 1% is approximately 14%. This is not remotely statistically significant.",
+            "conclusion": "Cannot distinguish signal from noise at this sample size. Need 2,000+ visitors minimum to detect a true doubling of conversion rate with 95% confidence."
+          }
+        }
+      ],
+      "antipatterns": [
+        "Prosecutor's fallacy — confusing P(evidence | innocent) with P(innocent | evidence)",
+        "Ignoring base rates in Bayesian updating — a strong signal from a rare event is usually still a false positive",
+        "Treating each piece of evidence as independent when they share a common cause",
+        "Updating too much on vivid evidence and too little on statistical evidence — the opposite of what Bayes prescribes"
+      ]
+    },
+    {
+      "name": "Effect Size vs. Statistical Significance",
+      "description": "Statistical significance tells you whether an effect is real (not random noise). Effect size tells you whether the effect matters. A statistically significant but tiny effect is real but useless. Business decisions should be driven by effect size, not p-values.",
+      "steps": [
+        "After confirming statistical significance: ask 'how big is the effect?' not just 'is it real?'",
+        "Express effect size in practical units: '$42 more revenue per customer' is more useful than 'p < 0.05'",
+        "Calculate cost-benefit: does the effect size justify the cost of the intervention that produced it?",
+        "Compare effect sizes across interventions: 'A produces a 2% lift, B produces a 15% lift' — even if both are significant, B is 7.5x more valuable",
+        "Beware of large-sample statistical significance: with enough data, any trivially small difference becomes statistically significant. A 0.1% conversion improvement can be 'significant' with n=1M but completely irrelevant to the business.",
+        "Report and think in confidence intervals, not point estimates — 'the effect is between 3% and 12%' is more honest than 'the effect is 7.5%'"
+      ],
+      "antipatterns": [
+        "P-value worship — 'p < 0.05 therefore we should act' ignores effect size entirely",
+        "Ignoring confidence intervals — a significant result with a wide interval (2%-50%) tells you very little about the true effect",
+        "Comparing statistical significance across studies — 'Study A was significant and B was not' does not mean A found a bigger effect",
+        "Confusing statistical significance with practical significance — a real but tiny effect may not be worth acting on"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "base_rate_check",
+      "name": "Base Rate Reality Check",
+      "template": "I am evaluating [opportunity/decision]. Before looking at specifics, help me find the base rate: what is the reference class? What percentage succeed/fail in this class? What is the median outcome? What would I expect BEFORE considering any information specific to my case?",
+      "tags": ["base_rate", "reference_class", "denominator"]
+    },
+    {
+      "id": "sample_size_audit",
+      "name": "Sample Size & Bias Audit",
+      "template": "I am drawing a conclusion from [data/observation]. Audit my sample: is the sample size sufficient to support this conclusion? What selection biases might be present? Who is missing from the data? Is survivorship bias affecting my view? What would a skeptic say about this sample?",
+      "tags": ["sample_size", "selection_bias", "survivorship"]
+    },
+    {
+      "id": "bayesian_update",
+      "name": "Bayesian Update Calculator",
+      "template": "New evidence: [describe]. My prior belief: [hypothesis] at [X]% confidence. Help me do a proper Bayesian update: what is the likelihood ratio of this evidence? How much should my confidence shift? What is my posterior probability? Am I over-updating or under-updating?",
+      "tags": ["bayes", "update", "posterior"]
+    },
+    {
+      "id": "effect_size_evaluation",
+      "name": "Effect Size Evaluation",
+      "template": "We observed a statistically significant result: [describe]. Help me evaluate the practical significance: what is the effect size in real-world units? Does this effect size justify the cost of the intervention? How does it compare to alternative interventions? Would I care about this difference if it were not 'statistically significant'?",
+      "tags": ["effect_size", "practical_significance", "roi"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Startup Founder Correcting Survivorship Bias in Fundraising Strategy",
+      "context": "Founder studying Y Combinator success stories to design fundraising approach",
+      "framework_applied": "Base Rate Thinking + Sample Size & Selection Bias",
+      "problem": "Reading 20 YC company profiles that raised Series A within 6 months of Demo Day. Conclusion: 'YC companies easily raise Series A.'",
+      "base_rate_correction": "YC accepts ~200 companies per batch. Approximately 40% raise a priced Series A within 2 years. Within 6 months: approximately 25%. The 20 profiles represent the top 10%, not the typical outcome.",
+      "selection_bias_identified": "YC's public materials feature successes. Failed companies do not write blog posts about failing to raise. Survivorship bias is extreme.",
+      "calibrated_strategy": "Expect fundraising to be difficult. Plan for 6-12 months of runway without Series A. Build metrics that would make fundraising inevitable rather than relying on brand halo."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Base Rate", "definition": "The background frequency of an event in a reference class before considering case-specific information. The denominator most people ignore." },
+    { "term": "Reference Class", "definition": "The category of similar cases used to establish base rate expectations. Choosing the right reference class is the critical first step." },
+    { "term": "Survivorship Bias", "definition": "Drawing conclusions from only the visible survivors while the invisible failures — which contain equally important information — are absent from the data." },
+    { "term": "Selection Bias", "definition": "Systematic error from a non-random sampling method. Makes the sample unrepresentative of the population." },
+    { "term": "Regression to the Mean", "definition": "Extreme observations tend to be followed by less extreme ones. A mathematical inevitability, not a causal phenomenon. Commonly misinterpreted as decline or improvement." },
+    { "term": "Bayes' Rule", "definition": "The mathematical formula for updating probability estimates when new evidence arrives. Properly weighs evidence strength against prior probability." },
+    { "term": "False Positive Rate", "definition": "The probability of a positive result when the condition is absent. Combined with low base rates, produces the base rate fallacy." },
+    { "term": "Statistical Significance", "definition": "The probability that an observed result occurred by chance (conventionally p < 0.05). Tells you an effect is real, not that it is large or important." },
+    { "term": "Effect Size", "definition": "The magnitude of an observed effect in practical units. The difference between 'real' and 'worth acting on.'" },
+    { "term": "Confidence Interval", "definition": "A range of values within which the true effect likely falls. More informative than a point estimate because it communicates uncertainty." },
+    { "term": "Simpson's Paradox", "definition": "A trend that appears in aggregated data reverses when the data is split into subgroups. Aggregated statistics can be systematically misleading." },
+    { "term": "Natural Frequency", "definition": "Expressing probabilities as counts (e.g., '10 out of 1000') rather than percentages. Dramatically improves human Bayesian reasoning accuracy." }
+  ],
+  "sources": [
+    { "title": "Thinking, Fast and Slow", "authors": ["Daniel Kahneman"], "type": "book", "relevance": "Base rate neglect, anchoring, cognitive biases in statistical reasoning" },
+    { "title": "The Signal and the Noise", "authors": ["Nate Silver"], "type": "book", "relevance": "Bayesian thinking, forecasting, distinguishing signal from noise" },
+    { "title": "Naked Statistics", "authors": ["Charles Wheelan"], "type": "book", "relevance": "Accessible statistical literacy, regression to the mean, sample bias" },
+    { "title": "How to Lie with Statistics", "authors": ["Darrell Huff"], "type": "book", "relevance": "Statistical manipulation, misleading visualizations, effect size vs. significance" },
+    { "title": "Fooled by Randomness", "authors": ["Nassim Taleb"], "type": "book", "relevance": "Survivorship bias, narrative fallacy, randomness mistaken for skill" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["BRIER_SCORE_CALC (calc)", "BIAS_DETECTOR (calc)", "CAUSAL_GRAPH_LOG (F1.6)", "PREDICTIVE_ENGINE (F1.1)", "COMPOUND_FLYWHEEL (F3.6)"],
+    "v78_consciousnesses": ["Rogan v2.1 (confidence calibration, base rate enforcement)", "House v2.1 (base rate differential diagnosis)", "Ancient One v3.0 (long-term statistical tracking)", "Analogical Engine v1.0 (reference class selection)"],
+    "master_laws": ["Law 18 (Reality — data over narrative)", "Law 19 (Compound — statistical errors compound into major losses)", "Law 14 (Validation — verify before generalizing)", "Law 4 (Truth — numbers do not lie but liars use numbers)"],
+    "sovereign_needs_served": ["Truth (primary)", "Security (statistical literacy prevents financially exploitative claims)", "Growth (better data literacy = faster learning from experiments)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS — grounded in Kahneman, Tetlock, Silver — core statistical reasoning",
+      "high_leverage": "PASS — statistical literacy is a meta-skill that improves every data-dependent decision", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 27,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "id": "truth_scientific_method",
+  "name": "Scientific Method & Experimental Thinking",
+  "category": "Truth",
+  "sovereign_need": "Truth",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Hypothesis-Experiment-Update Cycle",
+      "description": "The scientific method is not a school exercise — it is the most reliable truth-finding engine ever developed. Applied to business, health, and personal decisions, it replaces opinion-driven action with evidence-driven iteration. The cycle: hypothesize, test, measure, update.",
+      "steps": [
+        "State the hypothesis explicitly: 'I believe [X] because [Y], and if true, then [Z] should be observable.'",
+        "Define the test: what specific experiment or data collection would confirm or disconfirm this?",
+        "Set success criteria BEFORE running the test: 'I will consider this validated if [metric] reaches [threshold] within [timeframe].'",
+        "Run the experiment with minimum viable scope — do not over-invest before first signal",
+        "Measure honestly: record actual results, not interpreted results. Separate observation from inference.",
+        "Update the hypothesis: confirmed (increase confidence), disconfirmed (revise or abandon), or inconclusive (redesign test with more statistical power)"
+      ],
+      "examples": [
+        {
+          "situation": "Freelancer believing that cold email outreach is the best client acquisition channel",
+          "hypothesis": "Cold email produces higher-quality leads than content marketing, per hour invested",
+          "experiment": "Invest 10 hours in each channel over 4 weeks. Track: leads generated, conversion to call, conversion to paid engagement, average deal size.",
+          "result": "Cold email: 50 sent, 3 replies, 1 call, 0 clients. Content: 2 articles published, 8 inbound inquiries, 4 calls, 2 clients at higher average deal size.",
+          "update": "Hypothesis disconfirmed. Content marketing produces higher-quality leads per hour for this operator's domain and positioning. Reallocate 80% of acquisition time to content."
+        }
+      ],
+      "antipatterns": [
+        "Running experiments without pre-defined success criteria — allows post-hoc rationalization of any result",
+        "Testing too many variables simultaneously — cannot isolate what caused the result",
+        "Abandoning experiments before statistical significance — noise looks like signal in small samples",
+        "Interpreting inconclusive results as confirmation — 'it kind of worked' is not validation"
+      ]
+    },
+    {
+      "name": "Controlled Comparison Design",
+      "description": "The human mind is wired to see causation in correlation. Controlled comparison — testing against a baseline — is the only reliable way to distinguish 'this worked' from 'this happened at the same time.' Without a control, you are not experimenting — you are guessing.",
+      "steps": [
+        "Identify the variable you want to test (the independent variable)",
+        "Identify the outcome you want to measure (the dependent variable)",
+        "Establish a baseline: what is the current state WITHOUT the intervention?",
+        "Change ONE variable at a time — if you change multiple things, you cannot attribute the result",
+        "Compare intervention results against baseline — the difference is the treatment effect",
+        "Account for confounds: what else changed between baseline and test that might explain the difference?"
+      ],
+      "examples": [
+        {
+          "situation": "Manager introduces new meeting structure and team output improves the following month",
+          "naive_conclusion": "New meeting structure improved output",
+          "controlled_analysis": "What else changed? New team member started. Q4 deadline approaching (seasonal motivation). Previous month had 2 holiday weeks (artificially low baseline). Without controlling for these confounds, attributing improvement to meeting structure is unjustified.",
+          "corrected_approach": "Run the new structure for 3 months. Compare against same period last year (seasonal control). Survey team on perceived impact. Look for the meeting-specific mechanism."
+        }
+      ],
+      "antipatterns": [
+        "Before-after comparison without controlling for other changes — classic post hoc fallacy",
+        "No baseline measurement — cannot know if the intervention changed anything",
+        "Changing multiple variables and attributing results to the preferred one",
+        "Selection bias in comparison groups — comparing your best performers on the new system to average performers on the old"
+      ]
+    },
+    {
+      "name": "Replication & Robustness Testing",
+      "description": "A result that cannot be replicated is not a result — it is an anecdote. The replication crisis in science applies equally to personal and business experiments. One success proves nothing. Consistent success across varied conditions proves something.",
+      "steps": [
+        "After a positive result, ask: was this a one-time event or a repeatable pattern?",
+        "Replicate: run the same test again under the same conditions. Does it produce the same result?",
+        "Vary conditions: test under different contexts, time periods, or populations. Does the result hold?",
+        "Look for boundary conditions: where does the pattern break down? These limits define the actual scope of the finding.",
+        "Seek independent verification: can someone else reproduce this result without your involvement?",
+        "Only generalize from replicated, robust findings — everything else is preliminary"
+      ],
+      "examples": [
+        {
+          "situation": "Sales team discovers that a specific email subject line doubles open rates",
+          "single_result": "40% open rate vs. 20% baseline in one campaign (n=500)",
+          "replication_test": "Run same subject line on next 5 campaigns across different segments and times",
+          "replication_result": "Open rates: 38%, 22%, 35%, 19%, 31%. Result holds in 3 of 5 tests. Boundary condition: works for warm leads but not cold leads.",
+          "calibrated_conclusion": "Subject line improves open rates for warm leads (replicated). Does not work for cold outreach (boundary condition identified). Original claim of 'doubles open rates' was overstated."
+        }
+      ],
+      "antipatterns": [
+        "Generalizing from a single success — the denominator matters",
+        "Publication bias in personal experiments — remembering successes and forgetting failures",
+        "Refusing to re-test a result that 'feels' right — replication is not optional",
+        "Ignoring boundary conditions — every pattern has limits; knowing them is as valuable as knowing the pattern"
+      ]
+    },
+    {
+      "name": "Occam's Razor & Parsimony",
+      "description": "When multiple explanations fit the data equally well, prefer the simplest one. Not because simple explanations are always right, but because complex explanations have more ways to be wrong. Every additional assumption is a potential failure point.",
+      "steps": [
+        "List all plausible explanations for the observed data",
+        "Count the assumptions each explanation requires — how many things must be true for this to hold?",
+        "Eliminate explanations that require special pleading, coincidence, or untestable mechanisms",
+        "Prefer the explanation with fewest assumptions THAT STILL ACCOUNTS FOR ALL THE DATA",
+        "Important: Occam's Razor is a tiebreaker, not a proof. If a complex explanation fits the data better, it wins.",
+        "Use parsimony as a starting point, not a conclusion — test the simple explanation first, then add complexity only as evidence demands it"
+      ],
+      "antipatterns": [
+        "Confusing 'simple' with 'comfortable' — Occam's Razor favors fewer assumptions, not easier conclusions",
+        "Conspiracy thinking — adding complexity to explain away disconfirming evidence violates parsimony",
+        "Over-applying parsimony — some systems are genuinely complex; forcing simplicity where it does not fit is also an error",
+        "Using Occam's Razor to dismiss unlikely but true explanations — low probability is not zero probability"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "hypothesis_design",
+      "name": "Hypothesis Design",
+      "template": "I believe [claim] about [domain]. Help me formulate this as a testable hypothesis with: specific prediction, falsification criteria, minimum viable experiment, pre-defined success threshold, and timeline. What confounds should I control for?",
+      "tags": ["hypothesis", "experiment", "scientific_method"]
+    },
+    {
+      "id": "experiment_audit",
+      "name": "Experiment Quality Audit",
+      "template": "I ran an experiment: [describe experiment and results]. Audit my methodology: did I have a proper baseline? Did I control for confounds? Is the sample size sufficient? Am I interpreting the results correctly? What would a skeptic say about this result?",
+      "tags": ["experiment", "audit", "methodology"]
+    },
+    {
+      "id": "replication_plan",
+      "name": "Replication Plan Design",
+      "template": "I got a positive result from [experiment/observation]. Design a replication plan: how many replications are needed to be confident? What conditions should I vary to test robustness? What boundary conditions should I look for?",
+      "tags": ["replication", "robustness", "boundary_conditions"]
+    },
+    {
+      "id": "causal_vs_correlation",
+      "name": "Causal vs. Correlation Analysis",
+      "template": "I observed that [A] and [B] tend to occur together. Help me determine: is this causal, correlational, or coincidental? What confounding variables could explain this? What controlled test would isolate causation? What would a directed acyclic graph of these variables look like?",
+      "tags": ["causation", "correlation", "confounds"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Health Optimization Through Systematic Experimentation",
+      "context": "Operator experiencing afternoon energy crashes, trying multiple interventions simultaneously",
+      "framework_applied": "Controlled Comparison Design",
+      "problem": "Changed diet, sleep schedule, and exercise routine simultaneously. Energy improved. Cannot determine which intervention was responsible.",
+      "corrected_approach": "Reverted all changes to baseline. Introduced one variable per 2-week period: Week 1-2 (diet change only), Week 3-4 (added sleep change), Week 5-6 (added exercise). Measured energy at 2pm daily on 1-10 scale.",
+      "findings": "Diet change: no effect (+0.2 average). Sleep change: significant effect (+2.1 average). Exercise: moderate effect (+0.8 average). Root cause was sleep timing, not diet.",
+      "outcome": "Focused on sleep optimization. Dropped the restrictive diet (no effect, high compliance cost). Achieved same energy improvement with one change instead of three."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Hypothesis", "definition": "A specific, testable prediction about how the world works. Must be falsifiable — if no possible evidence could disprove it, it is not a hypothesis." },
+    { "term": "Independent Variable", "definition": "The factor you deliberately change in an experiment. The cause you are testing." },
+    { "term": "Dependent Variable", "definition": "The outcome you measure in an experiment. The effect you are observing." },
+    { "term": "Confounding Variable", "definition": "A factor that changes alongside your independent variable, creating a false appearance of causation. The primary threat to experimental validity." },
+    { "term": "Control Group/Baseline", "definition": "The comparison condition where the intervention is absent. Without a control, you cannot attribute results to your intervention." },
+    { "term": "Replication", "definition": "Repeating an experiment to verify the result is not a fluke. A finding that does not replicate is not a finding." },
+    { "term": "Statistical Significance", "definition": "The probability that the observed result occurred by chance. Low p-value = unlikely to be chance. Does not mean the effect is large or important." },
+    { "term": "Occam's Razor", "definition": "Among competing explanations that equally fit the data, prefer the one with fewest assumptions. A tiebreaker, not a proof." },
+    { "term": "Post Hoc Fallacy", "definition": "Assuming that because B followed A, A caused B. Temporal sequence is not causation." },
+    { "term": "Boundary Condition", "definition": "The limits of a pattern — the conditions under which it stops working. Knowing boundaries is as valuable as knowing the pattern." }
+  ],
+  "sources": [
+    { "title": "The Structure of Scientific Revolutions", "authors": ["Thomas Kuhn"], "type": "book", "relevance": "Paradigm shifts, normal science, how knowledge frameworks evolve" },
+    { "title": "Thinking, Fast and Slow", "authors": ["Daniel Kahneman"], "type": "book", "relevance": "Cognitive biases that corrupt experimental reasoning" },
+    { "title": "The Art of Thinking Clearly", "authors": ["Rolf Dobelli"], "type": "book", "relevance": "Systematic reasoning errors, survivorship bias, post hoc fallacy" },
+    { "title": "Bad Science", "authors": ["Ben Goldacre"], "type": "book", "relevance": "Controlled trials, placebo effects, statistical misinterpretation" },
+    { "title": "Reliable by Design", "authors": ["Various — Replication Crisis Literature"], "type": "research", "relevance": "Why single studies fail and how to design for robustness" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["CAUSAL_GRAPH_LOG (F1.6)", "BRIER_SCORE_CALC (calc)", "COMPOUND_FLYWHEEL (F3.6)", "SOLUTION_BRIDGE (calc)", "Reflection_Engine (A7)"],
+    "v78_consciousnesses": ["House v2.1 (differential diagnosis via controlled comparison)", "Rogan v2.1 (hypothesis calibration and confidence checking)", "Ancient One v3.0 (long-term experiment tracking)", "Constraint Mapper (identifying experimental boundary conditions)"],
+    "master_laws": ["Law 18 (Reality — data beats opinion)", "Law 4 (Truth — test before believing)", "Law 15 (Simplicity — Occam's razor)", "Law 14 (Validation — replicate before generalizing)"],
+    "sovereign_needs_served": ["Truth (primary)", "Growth (experimental thinking accelerates learning velocity)", "Order (systematic method reduces chaos in decision-making)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS — core scientific methodology, universally validated",
+      "high_leverage": "PASS — experimental thinking applied to life decisions is among the highest-leverage cognitive skills", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 26,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}
