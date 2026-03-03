@@ -1,0 +1,208 @@
+{
+  "id": "vitality_energy",
+  "name": "Energy Management & Peak Performance",
+  "category": "Vitality",
+  "sovereign_need": "Vitality",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Four-Energy Model",
+      "description": "Performance is governed by four distinct energy types, each with its own renewal mechanics. Physical is the foundation — all others degrade when physical is compromised.",
+      "steps": [
+        "Audit current physical energy: sleep quality, movement, nutrition, recovery cadence",
+        "Audit mental energy: identify decision volume, context-switch frequency, deep work hours",
+        "Audit emotional energy: map primary drains (conflict, isolation, misalignment) vs fills (purpose, connection, progress)",
+        "Audit spiritual energy: assess alignment between daily work and stated values/goals",
+        "Identify the lowest-rated type — that is the current bottleneck",
+        "Design one intervention per type, prioritized by bottleneck"
+      ],
+      "examples": [
+        {
+          "situation": "Productive in the morning but mentally exhausted by 2PM",
+          "diagnosis": "Mental energy depleted by excessive context-switching and decision volume in AM",
+          "intervention": "Batch decisions to one 30-min window. Guard AM for deep work only."
+        },
+        {
+          "situation": "Working long hours but feeling empty and unmotivated",
+          "diagnosis": "Spiritual energy depleted — work lacks alignment with core goals",
+          "intervention": "Lucifer motivation archaeology: what do you actually want? Reconnect or redirect."
+        }
+      ],
+      "antipatterns": [
+        "Treating exhaustion as a scheduling problem (it is usually an energy-type problem)",
+        "Optimizing time without optimizing energy — produces more output of lower quality",
+        "Confusing low emotional energy with laziness",
+        "Using stimulants to override physical energy deficits rather than resolving them"
+      ]
+    },
+    {
+      "name": "Ultradian Rhythm Protocol",
+      "description": "The body operates in natural 90-120 minute performance cycles. Working with these cycles multiplies output. Fighting them produces diminishing returns and accelerated depletion.",
+      "steps": [
+        "Identify your personal peak window (typically 90-180 min after waking)",
+        "Schedule highest-cognitive-demand work exclusively in this window",
+        "Structure work in 90-minute blocks with 15-20 minute genuine recovery between",
+        "Define 'genuine recovery': walking, breathwork, stretching — NOT screen scrolling",
+        "Batch low-cognitive tasks (admin, email, scheduling) in post-peak windows",
+        "Track output quality across the day for 2 weeks — data reveals your actual rhythm"
+      ],
+      "examples": [
+        {
+          "situation": "Writer trying to produce in 20-minute gaps between meetings",
+          "diagnosis": "Work structure fighting ultradian cycles — insufficient ramp-up time",
+          "intervention": "Block one uninterrupted 90-min deep work window daily. Move all meetings to afternoon."
+        }
+      ],
+      "antipatterns": [
+        "Scheduling creative or strategic work at end of day",
+        "Using rest time for passive content consumption (phone, TV) — does not restore cognitive energy",
+        "Attempting 3+ hour blocks without recovery — performance degrades after ~90 minutes",
+        "Treating all tasks as equivalent energy cost"
+      ]
+    },
+    {
+      "name": "Sustainable Intensity Protocol",
+      "description": "High performance requires periodization — alternating sprint and recovery phases. Continuous maximum intensity is a failure of strategy, not a sign of commitment.",
+      "steps": [
+        "Define your sprint cycle: maximum 2-3 weeks of elevated intensity",
+        "Schedule one mandatory recovery period every 3-4 weeks (reduced load, not zero)",
+        "Identify your personal burnout early-warning signals (irritability, declining output quality, loss of motivation for enjoyable work)",
+        "Set a rule: if 2+ warning signals appear, mandatory recovery activates regardless of deadlines",
+        "Protect one full rest day per week — non-negotiable, not earned",
+        "Review intensity-output correlation quarterly: does more hours produce more results? (Often no.)"
+      ],
+      "examples": [
+        {
+          "situation": "Founder working 80-hour weeks for 3 months",
+          "temporal_analysis": {
+            "one_year": "Fast progress, but declining decision quality by month 3",
+            "five_year": "Burnout probable, relationships damaged, health costs compounding",
+            "ten_year": "Total output LOWER than 60-hour sustainable pace due to recovery periods required"
+          },
+          "intervention": "60-hour sustainable pace with weekly rest day. Longer sprint = more total output over decade."
+        }
+      ],
+      "antipatterns": [
+        "Equating hours worked with productivity",
+        "Treating rest as laziness rather than performance optimization",
+        "No periodization — continuous maximum effort until collapse",
+        "Ignoring early warning signals until forced to stop"
+      ]
+    },
+    {
+      "name": "Energy Audit Protocol",
+      "description": "Weekly diagnostic to identify energy drains, fills, and trajectory — before depletion becomes crisis.",
+      "steps": [
+        "Rate each energy type 1-10: Physical, Mental, Emotional, Spiritual",
+        "Identify top 3 drains from the past week (activities, people, contexts that reduced energy)",
+        "Identify top 3 fills (activities, people, contexts that restored or generated energy)",
+        "Ask: Is overall energy trending up, flat, or down over the past 4 weeks?",
+        "If trending down: activate recovery protocol before burnout",
+        "If flat: identify the highest-leverage drain to eliminate",
+        "If trending up: identify what is working and protect it"
+      ],
+      "antipatterns": [
+        "Skipping weekly audit when busiest — that is precisely when it is most needed",
+        "Only tracking output metrics without tracking the energy that produces them",
+        "Diagnosing energy problems in crisis rather than in maintenance"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "energy_audit",
+      "name": "Weekly Energy Audit",
+      "template": "Run my weekly energy audit. For each type — Physical, Mental, Emotional, Spiritual — rate 1-10 and identify top drain and top fill this week. Then tell me if I am trending toward burnout or toward peak performance, and what one intervention would have the highest leverage right now.",
+      "tags": ["audit", "weekly", "maintenance"]
+    },
+    {
+      "id": "burnout_diagnosis",
+      "name": "Burnout Risk Assessment",
+      "template": "I want to assess my burnout risk. Current state: [describe current energy, sleep, motivation, output quality]. Identify which of the four energy types is most depleted, what my early warning signals are suggesting, and what recovery protocol to activate — without stopping momentum entirely.",
+      "tags": ["burnout", "diagnosis", "recovery"]
+    },
+    {
+      "id": "deep_work_design",
+      "name": "Peak Performance Window Design",
+      "template": "Design my optimal daily structure for peak cognitive performance. My current schedule: [describe]. My peak energy window appears to be: [describe]. Identify where I am fighting my ultradian rhythm and redesign the day to protect deep work during my highest-energy window.",
+      "tags": ["deep_work", "scheduling", "optimization"]
+    },
+    {
+      "id": "sustainable_intensity",
+      "name": "Intensity Calibration",
+      "template": "I have been running at [intensity level] for [duration]. Assess whether this is sustainable and what the 10-year output projection looks like at this pace versus a sustainable alternative. Then give me a sprint-recovery cycle recommendation that maintains progress without burning out.",
+      "tags": ["intensity", "sustainability", "periodization"]
+    },
+    {
+      "id": "energy_drain_elimination",
+      "name": "Drain Identification & Elimination",
+      "template": "My energy feels consistently low despite adequate sleep. Walk me through identifying my top 3 energy drains — across physical, mental, emotional, and spiritual dimensions — and give me one elimination or mitigation strategy per drain, ranked by leverage.",
+      "tags": ["drains", "diagnosis", "elimination"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Founder Pre-Burnout Intervention",
+      "context": "Startup founder, 3 months of 80-hour weeks, noticing declining decision quality and irritability",
+      "framework_applied": "Sustainable Intensity Protocol + Four-Energy Model",
+      "analysis": "Physical energy depleted (sleep compressed). Emotional energy low (isolation, high stakes pressure). Spiritual energy intact (aligned with mission). Mental energy the acute crisis — decision quality degrading.",
+      "intervention": "Immediate: enforce 7-hour sleep floor (non-negotiable). This week: eliminate one day of meetings entirely. This month: reduce to 60-hour pace, protect Sunday completely. Review: is output volume actually decreasing at 60 hours, or is this assumption?",
+      "outcome_hypothesis": "Decision quality recovers within 2 weeks. Total monthly output equivalent or higher due to quality improvement."
+    },
+    {
+      "title": "Knowledge Worker Context-Switch Trap",
+      "context": "Consultant doing 6+ context switches daily, feeling mentally exhausted by noon",
+      "framework_applied": "Ultradian Rhythm Protocol + Mental Energy Audit",
+      "analysis": "Context-switching is the primary mental energy drain. Each switch costs 15-25 minutes of cognitive ramp-up. 6 switches = 90-150 minutes of lost productive capacity daily.",
+      "intervention": "Group all client work by client, consecutively. No interleaving. Schedule client-facing work in AM peak window. Email and admin strictly 3-5PM.",
+      "outcome_hypothesis": "Effective deep work hours increase from ~2 to ~4 per day with same clock hours."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Physical Energy", "definition": "Body-level fuel — determined by sleep, movement, nutrition, and recovery. Foundation of all other energy types." },
+    { "term": "Mental Energy", "definition": "Cognitive fuel for focus, decisions, and analysis. Finite daily supply, depleted by volume and context-switching." },
+    { "term": "Emotional Energy", "definition": "Motivational and relational fuel. Drained by conflict, isolation, meaningless work; restored by purpose, connection, progress." },
+    { "term": "Spiritual Energy", "definition": "Alignment fuel — sense that current work serves meaningful goals. Drained by inauthenticity; restored by purpose and contribution." },
+    { "term": "Ultradian Rhythm", "definition": "Natural 90-120 minute performance cycles governing cognitive capacity. Working with these cycles multiplies output." },
+    { "term": "Deep Work Window", "definition": "The period of peak cognitive performance — typically first 90-180 minutes post-waking. Highest-value time that must be protected." },
+    { "term": "Burnout", "definition": "Failure of energy management strategy, not a character flaw. Characterized by depleted physical + emotional + mental energy simultaneously." },
+    { "term": "Periodization", "definition": "Alternating sprint (high intensity) and recovery (reduced intensity) phases. Applied to cognitive performance from athletic training science." },
+    { "term": "Recovery", "definition": "Active restoration of energy — walking, breathwork, sleep, social connection. Distinct from passive rest (TV, scrolling), which does not restore cognitive energy." },
+    { "term": "Energy Drain", "definition": "Activity, context, or relationship that consistently depletes energy beyond what the activity itself demands." },
+    { "term": "Energy Fill", "definition": "Activity, context, or relationship that restores or generates energy, often beyond what would be predicted." },
+    { "term": "Context Switch Cost", "definition": "The 15-25 minute cognitive ramp-up required after switching between meaningfully different tasks. Invisible but substantial." }
+  ],
+  "sources": [
+    { "title": "The Power of Full Engagement", "authors": ["Jim Loehr", "Tony Schwartz"], "type": "book", "relevance": "Four-energy model foundation" },
+    { "title": "Deep Work", "authors": ["Cal Newport"], "type": "book", "relevance": "Ultradian rhythm protocols, deep work window architecture" },
+    { "title": "Why We Sleep", "authors": ["Matthew Walker"], "type": "book", "relevance": "Physical energy foundation — sleep as performance multiplier" },
+    { "title": "The Circadian Code", "authors": ["Satchin Panda"], "type": "book", "relevance": "Biological rhythm optimization, time-restricted protocols" },
+    { "title": "Essentialism", "authors": ["Greg McKeown"], "type": "book", "relevance": "Energy drain elimination, selective intensity" },
+    { "title": "Huberman Lab Podcast", "authors": ["Andrew Huberman"], "type": "podcast", "relevance": "Neuroscience of peak performance, ultradian rhythm research" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["Energy_Optimizer (D29)", "Health_Integration (D28)", "PSYCHOPHYSIO_FUSION (F4.5)", "Cognitive_Journal (D30)"],
+    "v78_consciousnesses": ["Xavier v2.2 (energy monitoring via Law 29)", "Ancient One v3.0 (sustainability check)", "Module 23 (Stoic + Energy Management)"],
+    "master_laws": ["Law 29 (Energy)", "Law 8 (Focus)", "Law 9 (Time — energy is time's multiplier)"],
+    "sovereign_needs_served": ["Vitality (primary)", "Order (structured energy management)", "Growth (energy enables compounding)"],
+    "4_gate_relevance": {
+      "gate_3_leverage": "Energy optimization is highest-leverage intervention when depleted — everything else degrades",
+      "gate_4_aligned": "Unsustainable intensity destroys long-term compounding — aligned with G1 only when sustainable"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 9,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL",
+    "4_gate_validation": {
+      "safe": "PASS — no harmful advice; recovery protocols emphasize gradual intervention",
+      "true": "PASS — grounded in established performance science (Loehr/Schwartz, Newport, Walker, Huberman)",
+      "high_leverage": "PASS — energy management is prerequisite for all other performance gains",
+      "aligned": "PASS — serves Vitality need; sustainability mandate serves Legacy/Growth via compound protection"
+    }
+  }
+}
