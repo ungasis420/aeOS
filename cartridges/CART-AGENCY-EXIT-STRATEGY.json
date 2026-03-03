@@ -1,0 +1,123 @@
+{
+  "id": "agency_exit_strategy",
+  "name": "Exit Strategy & Transition Architecture",
+  "category": "Agency",
+  "sovereign_need": "Agency",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Exit Trigger Framework",
+      "description": "Exits made under duress produce poor outcomes. Pre-defined exit triggers — set when thinking is clear — prevent both premature exit (noise) and delayed exit (denial). The trigger is decided before it is needed.",
+      "steps": [
+        "Define exit triggers for each major commitment: what conditions would definitively indicate it is time to leave?",
+        "Separate lagging indicators (consequences already here) from leading indicators (early signals before full consequences arrive)",
+        "Set both floor triggers (conditions bad enough that exit is mandatory) and ceiling triggers (goals achieved, time to move to next level)",
+        "Write the triggers down: unwritten triggers are vulnerable to rationalization under pressure",
+        "Review triggers periodically: conditions and goals change; triggers should update accordingly",
+        "Define the exit process: not just when to exit, but how — sequence of steps to transition out cleanly"
+      ],
+      "antipatterns": [
+        "No pre-defined triggers — forces real-time decision-making under emotional and financial pressure",
+        "Only floor triggers, no ceiling triggers — misses the signal that it is time to harvest and move on",
+        "Triggers set too high — by the time they are met, options for clean exit are exhausted"
+      ]
+    },
+    {
+      "name": "Clean Exit Architecture",
+      "description": "The quality of an exit determines the quality of what comes next. Clean exits preserve relationships, reputation, and optionality. Burned exits close options that are not yet visible.",
+      "steps": [
+        "Principle: exit as if you will interact with these people again — you almost certainly will",
+        "Transition timeline: give appropriate notice, document what you know, train successors where possible",
+        "Relationship preservation: identify the 3-5 relationships from this context worth maintaining actively — exit the role, not the relationships",
+        "Reputation audit: what will be said about how you left? Design the exit to produce the reputation you want.",
+        "Financial close: ensure all financial obligations are resolved before exit — incomplete financial exits create ongoing entanglement",
+        "Narrative design: define your own story about why you left before others define it for you"
+      ],
+      "antipatterns": [
+        "Burning the exit — closing options that are not yet visible in frustration with current conditions",
+        "No relationship preservation plan — exiting the context and all relationships simultaneously",
+        "No narrative design — allowing others to define the exit story"
+      ]
+    },
+    {
+      "name": "Next Chapter Architecture",
+      "description": "Exits without destinations produce drift. The transition between what you are leaving and what you are building is where identity and momentum are most vulnerable. Pre-built next chapter prevents the gap.",
+      "steps": [
+        "Do not exit into a vacuum: before leaving, have minimum viable clarity on the next direction",
+        "Identify the overlap period: what is the minimum viable next chapter you can build while still in the current chapter?",
+        "Financial bridge: calculate runway — how long can you operate after exit before the next chapter must generate income?",
+        "Identity bridge: your identity is not your current role — define who you are outside the role before you leave it",
+        "Quick wins in new chapter: what can you accomplish in the first 30 days after exit to build momentum and validate direction?",
+        "Re-entry option: if exit proves premature, what is the re-entry path? Knowing this reduces the psychological cost of exiting"
+      ],
+      "antipatterns": [
+        "Exiting before minimum viable next chapter is defined — maximizes drift risk",
+        "No financial bridge calculation — forces premature monetization of next chapter before it is ready",
+        "Identity attached entirely to current role — exit produces identity crisis, not just role change"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "exit_trigger_design",
+      "name": "Exit Trigger Design",
+      "template": "Design exit triggers for: [commitment — job, client, partnership, business, relationship type]. Current conditions: [describe]. Goals I came here to achieve: [describe]. Give me floor triggers (conditions bad enough to mandate exit), ceiling triggers (goals achieved, time to move on), and leading indicators for each.",
+      "tags": ["exit_triggers", "design", "floor_ceiling"]
+    },
+    {
+      "id": "clean_exit_plan",
+      "name": "Clean Exit Plan",
+      "template": "Design a clean exit plan from: [context]. Timeline I am considering: [describe]. Key relationships to preserve: [list]. Financial obligations to close: [describe]. Reputation I want to leave: [describe]. Give me the exit sequence, relationship preservation plan, and narrative design.",
+      "tags": ["clean_exit", "plan", "transition"]
+    },
+    {
+      "id": "next_chapter_architecture",
+      "name": "Next Chapter Architecture",
+      "template": "Build my next chapter architecture. What I am exiting: [describe]. What I am moving toward (even if unclear): [describe]. Financial runway after exit: [months]. Identity outside current role: [describe or help me define]. Design my overlap period, financial bridge, and 30-day momentum plan.",
+      "tags": ["next_chapter", "architecture", "transition"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Executive Exiting Corporate Role for Entrepreneurship",
+      "context": "VP at a corporation, 8 years tenure, planning to launch independent consulting practice",
+      "exit_triggers_set": "Floor: Role scope reduced OR new leadership misaligned with values. Ceiling: 18-month consulting pipeline established AND $200K ARR validated.",
+      "clean_exit_design": "6-month notice period. Documented all institutional knowledge. Maintained relationships with 12 key former colleagues. Exited with full support of leadership.",
+      "next_chapter": "Built consulting client pipeline during final 6 months at company. Had 3 signed clients on day 1 of independence. Financial bridge: 18 months runway.",
+      "outcome": "Year 1 consulting revenue: $380K. Zero identity crisis — had defined independent identity 2 years before exit."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Exit Trigger", "definition": "A pre-defined condition that indicates it is time to leave a commitment. Set when thinking is clear to prevent rationalization under pressure." },
+    { "term": "Floor Trigger", "definition": "A minimum threshold — conditions bad enough to mandate exit regardless of sunk cost or fear." },
+    { "term": "Ceiling Trigger", "definition": "A maximum threshold — goals achieved or potential realized, indicating it is time to harvest gains and move to the next level." },
+    { "term": "Clean Exit", "definition": "A transition designed to preserve relationships, reputation, and optionality. Contrasted with burned exit, which closes future options." },
+    { "term": "Financial Bridge", "definition": "The capital reserve covering expenses between exiting one income source and establishing the next. The runway that enables unhurried transition." },
+    { "term": "Overlap Period", "definition": "The phase when the next chapter is being built while still in the current one. Minimizes the gap and allows validation before full commitment." },
+    { "term": "Narrative Design", "definition": "Deliberately crafting the story of why you left before others define it. Reputation is built in exits, not just entrances." }
+  ],
+  "sources": [
+    { "title": "Transitions", "authors": ["William Bridges"], "type": "book", "relevance": "Transition architecture, endings before beginnings, identity through change" },
+    { "title": "The Great Leap", "authors": ["Various"], "type": "book", "relevance": "Exit planning, next chapter architecture" },
+    { "title": "Linchpin", "authors": ["Seth Godin"], "type": "book", "relevance": "Identity outside role, indispensability as portable asset" },
+    { "title": "The Dip", "authors": ["Seth Godin"], "type": "book", "relevance": "Strategic quitting vs. failure quitting, exit timing" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["Scenario_Planner (D18)", "Strategic_Options (D19)", "DECISION_ENGINE (D20)", "Financial_Autopilot (D31)"],
+    "v78_consciousnesses": ["Ancient One v3.0 (temporal evaluation, 10-year horizon post-exit)", "Lucifer v3.0 (fear-based delay of necessary exit)", "Meta-2.6 Decision Architecture (exit as Type 1 decision requiring full analysis)"],
+    "master_laws": ["Law 30 (Exit — always have a way out)", "Law 3 (Agency — exit capability is structural agency)", "Law 9 (Time — delayed necessary exits are expensive)", "Law 25 (Negotiation — willingness to exit is negotiating power)"],
+    "sovereign_needs_served": ["Agency (primary — exit capability is the ultimate expression of agency)", "Security (clean exits preserve financial and reputational security)", "Growth (timely exits free capital and attention for compounding opportunities)", "Legacy (burned exits damage long-term reputation)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS", "high_leverage": "PASS — exit capability is a force multiplier on all other negotiations and commitments", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 33,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

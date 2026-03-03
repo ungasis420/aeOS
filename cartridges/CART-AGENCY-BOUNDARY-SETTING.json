@@ -1,0 +1,121 @@
+{
+  "id": "agency_boundary_setting",
+  "name": "Boundary Setting & Demand Management",
+  "category": "Agency",
+  "sovereign_need": "Agency",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Boundary Architecture",
+      "description": "Boundaries are not walls — they are decision rules made in advance. Pre-decided rules eliminate real-time negotiation, which is where most boundaries collapse under social pressure.",
+      "steps": [
+        "Identify your three most violated boundaries: where do you consistently agree to things you later resent?",
+        "For each, define the rule in advance: 'I do not take calls without a scheduled agenda.' Not 'I try to avoid...'",
+        "Define the enforcement mechanism: what do you actually say when the boundary is tested?",
+        "Distinguish boundary types: time (when you are available), energy (what you agree to do), information (what you share), relationship (who has access to you)",
+        "Audit your calendar and commitments: which existing commitments violate your own boundaries?",
+        "Design the exit protocol: how do you exit a commitment that is boundary-violating without burning the relationship?"
+      ],
+      "antipatterns": [
+        "Explaining boundaries rather than stating them — explanation invites negotiation",
+        "Emotional boundaries rather than behavioral rules — 'I need you to respect me' vs. 'I do not respond to messages after 8pm'",
+        "Inconsistent enforcement — intermittent reinforcement trains others to push harder, not less"
+      ]
+    },
+    {
+      "name": "Demand Triage Protocol",
+      "description": "Not all demands on your time and attention are equal. Most feel urgent. Few are important. A triage system prevents the urgent from crowding out the important.",
+      "steps": [
+        "Classify every incoming demand: Urgent+Important (do now), Important+Not Urgent (schedule), Urgent+Not Important (delegate or decline), Neither (eliminate)",
+        "Identify your demand sources: who or what generates the majority of your non-important urgent demands?",
+        "Create a default response template for each demand category — eliminates real-time decision cost",
+        "Establish response time norms explicitly: 'I respond to non-urgent messages within 48 hours' stated publicly reduces expectation pressure",
+        "Audit the 'yes' cost: every yes to a demand is a no to something else — make that tradeoff explicit before agreeing",
+        "Design your protected time first: block deep work and recovery before accepting any demand"
+      ],
+      "antipatterns": [
+        "Treating all demands as equal — email from a stranger and a message from your most important client are not the same",
+        "No default responses — deciding case-by-case burns decision capital and produces inconsistent enforcement",
+        "Protecting nothing — availability without limit produces output without direction"
+      ]
+    },
+    {
+      "name": "High-Value Relationship Boundary Calibration",
+      "description": "Boundaries in high-stakes relationships (key clients, partners, family) require calibration — not elimination. The goal is sustainable access, not closed access.",
+      "steps": [
+        "Define the relationship value: what does this relationship contribute to your 10-year trajectory?",
+        "Define your sustainable access level: how much access can you provide without resentment or depletion?",
+        "Communicate the boundary as a service standard, not a restriction: 'I give my best work when I have focused blocks — my standard is to respond within 24 hours'",
+        "Identify the real fear: most boundary failures in high-value relationships are fear of disappointing, losing, or being judged — name that fear explicitly",
+        "Test: enforce the boundary once, observe the response. Most relationships absorb reasonable boundaries without damage.",
+        "Exit criteria: at what point does this relationship cost more in boundary violations than it contributes in value?"
+      ],
+      "antipatterns": [
+        "All-or-nothing: the choice is not 'unlimited access' or 'end the relationship' — calibration is available",
+        "Assuming others know your limits — boundaries not communicated are not boundaries",
+        "Fear-based compliance disguised as generosity — saying yes when you mean no is not generosity"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "boundary_audit",
+      "name": "Boundary Audit",
+      "template": "Audit my boundaries. The three commitments I most resent: [list]. The demands that most consistently invade my protected time: [list]. The relationships where I most frequently override my own limits: [list]. Identify my most violated boundary, the rule that would prevent the violation, and the enforcement script.",
+      "tags": ["audit", "boundaries", "enforcement"]
+    },
+    {
+      "id": "demand_triage",
+      "name": "Demand Triage Design",
+      "template": "Design my demand triage system. Primary demand sources: [list people/channels]. Current response time norms: [describe]. Protected time blocks I want to establish: [describe]. Give me a triage classification system, default response templates, and the explicit rules for my protected time.",
+      "tags": ["triage", "demands", "protection"]
+    },
+    {
+      "id": "boundary_script",
+      "name": "Boundary Enforcement Script",
+      "template": "Write a boundary enforcement script for: [specific situation — e.g., client who expects same-day responses, colleague who schedules meetings without asking, family member who expects unlimited availability]. Tone required: [warm/neutral/firm]. Relationship value: [describe]. Give me the actual words to say or write.",
+      "tags": ["script", "enforcement", "communication"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Consultant Reclaiming Deep Work Time",
+      "context": "Consultant with 6 active clients, all expecting same-day responses, unable to produce high-quality work",
+      "boundary_defined": "No meetings before 1pm. Email responded to once daily at 4pm. Stated explicitly in onboarding documents.",
+      "communication": "'My best work happens in focused morning blocks. I respond to all messages by 4pm ET — if something is genuinely urgent, call me.'",
+      "outcome": "Initial resistance from 1 of 6 clients (who churned). Remaining 5 accepted. Work quality improved measurably. Revenue per hour increased 35% due to recovered deep work capacity."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Boundary", "definition": "A pre-decided rule governing what you will and will not agree to. Effective boundaries are behavioral and specific, not emotional and general." },
+    { "term": "Demand Triage", "definition": "Classifying incoming demands by urgency and importance to prevent urgent-but-unimportant demands from crowding out important-but-non-urgent work." },
+    { "term": "Enforcement Script", "definition": "Pre-written language for communicating a boundary when tested. Eliminates real-time decision-making under social pressure." },
+    { "term": "Yes Cost", "definition": "The implicit cost of agreement: every yes is a no to something else. Making the tradeoff explicit before agreeing changes the decision." },
+    { "term": "Sustainable Access", "definition": "The level of availability you can maintain without resentment or depletion — the boundary calibration target for high-value relationships." },
+    { "term": "Protected Time", "definition": "Calendar blocks reserved for high-value, self-directed work before any external demands are accepted. The first entry in the calendar, not the last." }
+  ],
+  "sources": [
+    { "title": "Set Boundaries, Find Peace", "authors": ["Nedra Tawwab"], "type": "book", "relevance": "Boundary types, enforcement, relationship calibration" },
+    { "title": "The 4-Hour Workweek", "authors": ["Tim Ferriss"], "type": "book", "relevance": "Demand triage, batching, protected time architecture" },
+    { "title": "Essentialism", "authors": ["Greg McKeown"], "type": "book", "relevance": "Demand prioritization, saying no, protecting high-value time" },
+    { "title": "Deep Work", "authors": ["Cal Newport"], "type": "book", "relevance": "Protected deep work time, availability cost" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["Calendar_Intelligence (D7)", "Energy_Optimizer (D29)", "DECISION_ENGINE (D20)"],
+    "v78_consciousnesses": ["Xavier v2.2 (attention and energy monitoring)", "Lucifer v3.0 (fear-based compliance diagnosis)", "Constraint Mapper (self-imposed vs real constraints)"],
+    "master_laws": ["Law 8 (Focus — attention is finite)", "Law 9 (Time — time cannot be recovered)", "Law 3 (Agency — boundaries preserve optionality)", "Law 29 (Energy — sustainable access requires energy management)"],
+    "sovereign_needs_served": ["Agency (primary)", "Vitality (depletion prevention)", "Order (demand management creates structure)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS", "high_leverage": "PASS", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 30,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

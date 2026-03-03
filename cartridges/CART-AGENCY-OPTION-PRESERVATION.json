@@ -1,0 +1,121 @@
+{
+  "id": "agency_option_preservation",
+  "name": "Option Preservation & Optionality Architecture",
+  "category": "Agency",
+  "sovereign_need": "Agency",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Reversibility Matrix",
+      "description": "Every commitment exists on a spectrum from fully reversible to permanently irreversible. Most decisions are more reversible than they feel. Treating reversible decisions as irreversible is the primary cause of decision paralysis and missed opportunity.",
+      "steps": [
+        "Before any significant commitment, ask: what is the actual cost to reverse this decision in 6 months?",
+        "Classify: Type 1 (one-way door — truly irreversible or very high reversal cost) vs Type 2 (two-way door — reversible at manageable cost)",
+        "Estimate the reversal cost honestly: financial, relational, reputational, time",
+        "For Type 2 decisions: move fast, execute, observe, reverse if wrong — do not treat as Type 1",
+        "For Type 1 decisions: slow down, analyze deeply, consult broadly, decide carefully",
+        "Audit your recent decisions: which Type 2 decisions did you treat as Type 1? What did the delay cost?"
+      ],
+      "antipatterns": [
+        "Applying Type 1 analysis to Type 2 decisions — produces paralysis and missed opportunities",
+        "No reversal cost estimation — prevents accurate classification",
+        "Sunk cost fallacy: past investment making a Type 2 decision feel irreversible when it is not"
+      ]
+    },
+    {
+      "name": "Optionality Preservation Protocol",
+      "description": "Optionality is the possession of future choices. It is depleted by commitments, specialization, and debt. It is expanded by skills, networks, financial reserves, and maintained relationships. Actively managed optionality is structural agency.",
+      "steps": [
+        "Audit your current optionality: what options do you currently have that you did not have 2 years ago? What options have you lost?",
+        "Identify optionality drains: long-term commitments, financial obligations, and specialization that creates dependency",
+        "Identify optionality builders: skills, relationships, capital, reputation, geographic flexibility",
+        "For any major commitment, ask: does this expand or contract my future options? Is the gain worth the optionality cost?",
+        "Maintain warm relationships with alternatives: do not let exit options go cold before you need them",
+        "Reserve capital explicitly for optionality: an investment in an unknown future opportunity is the highest-returning asset class"
+      ],
+      "antipatterns": [
+        "Optimizing current position at the cost of all future flexibility — perfect execution of a wrong strategy",
+        "No maintained alternatives — options that go cold are not actually available when needed",
+        "Excessive specialization without adjacent skills — creates dependency, not leverage"
+      ]
+    },
+    {
+      "name": "Anti-Lock-In Design",
+      "description": "Lock-in is the gradual reduction of options through accumulated dependencies. Most lock-in is not chosen — it accumulates through inattention. Anti-lock-in design makes dependency visible and deliberate.",
+      "steps": [
+        "Map your current dependencies: who or what do you depend on that you could not easily replace?",
+        "Classify each dependency: chosen (worth the lock-in for the value received) vs. accidental (not consciously chosen, just accumulated)",
+        "For each accidental dependency: design the exit path now, before you need it",
+        "Vendor/platform lock-in: prefer open standards, portable data, and multi-vendor strategies",
+        "Income lock-in: single-employer or single-client dependency is the most common and costly lock-in pattern",
+        "Geographic lock-in: presence in a single market concentrates risk; remote capability preserves optionality"
+      ],
+      "antipatterns": [
+        "Dependencies that are invisible until they fail — map them proactively",
+        "Accepting lock-in for convenience — often the long-term cost far exceeds the short-term gain",
+        "No exit path design for current dependencies — optionality that requires months to build is not available in a crisis"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "reversibility_audit",
+      "name": "Reversibility Matrix Audit",
+      "template": "Audit my current commitments for reversibility. Major commitments (work, financial, relational, geographic): [list]. For each, classify as Type 1 (truly irreversible) or Type 2 (reversible at manageable cost) and estimate the reversal cost. Identify any Type 2 decisions I have been treating as Type 1.",
+      "tags": ["reversibility", "audit", "Type1_Type2"]
+    },
+    {
+      "id": "optionality_audit",
+      "name": "Optionality Portfolio Audit",
+      "template": "Audit my optionality portfolio. Options I have now that I did not have 2 years ago: [list]. Options I have lost in 2 years: [list]. Current optionality drains (commitments that limit future choices): [list]. Current optionality builders (skills, capital, relationships, flexibility): [list]. Identify my net optionality trajectory and the highest-leverage action to expand future options.",
+      "tags": ["optionality", "audit", "portfolio"]
+    },
+    {
+      "id": "lock_in_map",
+      "name": "Lock-In Dependency Map",
+      "template": "Map my current lock-in dependencies. Income dependencies: [describe]. Platform/vendor dependencies: [describe]. Geographic dependencies: [describe]. Relationship dependencies: [describe]. Classify each as chosen or accidental. For each accidental dependency, give me the exit path design.",
+      "tags": ["lock_in", "dependencies", "exit_path"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Consultant Eliminating Single-Client Dependency",
+      "context": "Independent consultant with 80% of revenue from one client. High income, low optionality.",
+      "lock_in_type": "Accidental income lock-in — evolved from convenience, not decision",
+      "intervention": "Mapped dependency explicitly. Set 12-month goal: no single client above 40% of revenue. Proactively developed 3 new client relationships from network.",
+      "outcome": "18 months later: largest client = 35% revenue. Subsequent rate increase negotiation — previously avoided for fear of losing the client — resulted in 25% price increase accepted without friction."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Type 1 Decision", "definition": "An irreversible or very high reversal cost commitment. Warrants deep analysis and deliberate process. Approximately 5% of decisions." },
+    { "term": "Type 2 Decision", "definition": "A reversible commitment where errors are correctable at manageable cost. Warrants fast execution and learning. Approximately 95% of decisions." },
+    { "term": "Optionality", "definition": "The possession of future choices. A structural asset that enables agency. Depleted by commitments; built by skills, capital, and relationships." },
+    { "term": "Lock-In", "definition": "Accumulated dependencies that reduce future options. Often not consciously chosen — it accumulates through inattention to reversibility." },
+    { "term": "Reversal Cost", "definition": "The actual financial, relational, reputational, and time cost of undoing a commitment. The key variable in reversibility classification." },
+    { "term": "Anti-Lock-In Design", "definition": "Proactive mapping of dependencies and deliberate design of exit paths before they are needed. Converts accidental lock-in into chosen lock-in or eliminates it." }
+  ],
+  "sources": [
+    { "title": "The Bezos Letters", "authors": ["Steve Anderson"], "type": "book", "relevance": "Type 1/Type 2 decision framework, reversibility" },
+    { "title": "Antifragile", "authors": ["Nassim Taleb"], "type": "book", "relevance": "Optionality as asset class, barbell strategy, convexity" },
+    { "title": "The Algebra of Happiness", "authors": ["Scott Galloway"], "type": "book", "relevance": "Option preservation across life stages" },
+    { "title": "Skin in the Game", "authors": ["Nassim Taleb"], "type": "book", "relevance": "Lock-in, dependence, asymmetric exposure" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["DECISION_ENGINE (D20)", "Risk_Register (D17)", "Scenario_Planner (D18)", "Strategic_Options (D19)"],
+    "v78_consciousnesses": ["Ancient One v3.0 (temporal evaluation of option value)", "Constraint Mapper (reversibility classification)", "Meta-2.6 Decision Architecture (Type 1/2 routing)"],
+    "master_laws": ["Law 3 (Agency — option preservation is the direct implementation of Law 3)", "Law 30 (Exit — always have a way out)", "Law 17 (Adaptation — optionality enables adaptation)", "Law 12 (Asymmetry — preserve upside, limit downside)"],
+    "sovereign_needs_served": ["Agency (primary — this cartridge is the direct implementation of Agency need)", "Security (lock-in elimination reduces vulnerability)", "Growth (optionality enables opportunity capture)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS", "high_leverage": "PASS — optionality is a meta-asset multiplying all other strategic moves", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 32,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}
