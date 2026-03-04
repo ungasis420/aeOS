@@ -26,7 +26,9 @@ from src.cognitive.cartridge_loader import (
     _match_triggers,
     _render_template,
     _validate_against_schema,
+    get_cartridge_index,
     load_cartridge,
+    load_cartridge_by_id,
     load_cartridges,
     load_schema,
     run_rules,
@@ -223,6 +225,93 @@ class TestLoadCartridges:
         ids = [c["cartridge_id"] for c in carts]
         assert "test-minimal" in ids
         assert "broken" not in ids
+
+
+# ---------------------------------------------------------------------------
+# Load cartridge by ID
+# ---------------------------------------------------------------------------
+
+class TestLoadCartridgeById:
+    def test_find_stoic_by_id(self):
+        result = load_cartridge_by_id("stoic", _CARTRIDGES_DIR)
+        assert result is not None
+        assert result["cartridge_id"] == "stoic"
+
+    def test_find_by_id_case_insensitive(self):
+        result = load_cartridge_by_id("STOIC", _CARTRIDGES_DIR)
+        assert result is not None
+        assert result["cartridge_id"] == "stoic"
+
+    def test_find_prefixed_id(self):
+        result = load_cartridge_by_id("CART-FIRST-PRINCIPLES", _CARTRIDGES_DIR)
+        assert result is not None
+        assert result["cartridge_id"] == "CART-FIRST-PRINCIPLES"
+
+    def test_find_prefixed_id_lowercase(self):
+        result = load_cartridge_by_id("cart-leadership", _CARTRIDGES_DIR)
+        assert result is not None
+        assert result["cartridge_id"] == "CART-LEADERSHIP"
+
+    def test_not_found_returns_none(self):
+        result = load_cartridge_by_id("nonexistent-cartridge", _CARTRIDGES_DIR)
+        assert result is None
+
+    def test_from_tmp_dir(self, tmp_cartridge_dir):
+        result = load_cartridge_by_id("test-minimal", tmp_cartridge_dir)
+        assert result is not None
+        assert result["cartridge_id"] == "test-minimal"
+
+    def test_whitespace_stripped(self):
+        result = load_cartridge_by_id("  stoic  ", _CARTRIDGES_DIR)
+        assert result is not None
+        assert result["cartridge_id"] == "stoic"
+
+    def test_empty_dir_returns_none(self, tmp_path):
+        schema_path = tmp_path / "cartridge_schema.json"
+        schema_path.write_text(json.dumps(load_schema(_SCHEMA_PATH)), encoding="utf-8")
+        result = load_cartridge_by_id("stoic", tmp_path)
+        assert result is None
+
+
+# ---------------------------------------------------------------------------
+# Cartridge index
+# ---------------------------------------------------------------------------
+
+class TestGetCartridgeIndex:
+    def test_index_from_real_dir(self):
+        index = get_cartridge_index(_CARTRIDGES_DIR)
+        assert isinstance(index, dict)
+        assert "stoic" in index
+        assert index["stoic"] == "stoic.json"
+
+    def test_index_contains_all_cartridges(self):
+        index = get_cartridge_index(_CARTRIDGES_DIR)
+        # Should have at least the 9 known cartridges.
+        assert len(index) >= 9
+        assert "CART-FIRST-PRINCIPLES" in index
+        assert "CART-LEADERSHIP" in index
+        assert "CART-ENERGY-MANAGEMENT" in index
+
+    def test_index_from_tmp_dir(self, tmp_cartridge_dir):
+        index = get_cartridge_index(tmp_cartridge_dir)
+        assert "test-minimal" in index
+        assert index["test-minimal"] == "test_minimal.json"
+
+    def test_index_empty_dir(self, tmp_path):
+        index = get_cartridge_index(tmp_path)
+        assert index == {}
+
+    def test_schema_not_in_index(self):
+        index = get_cartridge_index(_CARTRIDGES_DIR)
+        for cid, fname in index.items():
+            assert fname != "cartridge_schema.json"
+
+    def test_bad_file_skipped(self, tmp_cartridge_dir):
+        bad = tmp_cartridge_dir / "corrupt.json"
+        bad.write_text("{invalid json", encoding="utf-8")
+        index = get_cartridge_index(tmp_cartridge_dir)
+        assert "test-minimal" in index
+        assert len(index) == 1
 
 
 # ---------------------------------------------------------------------------

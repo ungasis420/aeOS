@@ -4,3 +4,4 @@ __pycache__/
 src/db/aeOS.db
 src/logs/
 *.log
+:memory:

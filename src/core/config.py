@@ -1,13 +1,22 @@
-"""db_connect.py
-SQLite connection manager for aeOS.
-Database file location: ../db/aeOS.db (relative to the scripts folder).
+"""config.py
+aeOS configuration constants and SQLite connection manager.
 """
 from __future__ import annotations
 import logging
+import os
 import sqlite3
 from pathlib import Path
 from typing import Any, Optional, Union
 logger = logging.getLogger(__name__)
+
+# ---------------------------------------------------------------------------
+# AI / LLM configuration (consumed by src.ai.ai_infer and orchestrator)
+# ---------------------------------------------------------------------------
+OLLAMA_HOST: str = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
+OLLAMA_MODEL: str = os.environ.get("OLLAMA_MODEL", "deepseek-r1:8b")
+AI_MAX_TOKENS: int = int(os.environ.get("AI_MAX_TOKENS", "2048"))
+AI_TEMPERATURE: float = float(os.environ.get("AI_TEMPERATURE", "0.7"))
+AI_TIMEOUT: int = int(os.environ.get("AI_TIMEOUT", "120"))
 # Default DB path is relative to this file (expected to live in /scripts).
 _DEFAULT_DB_PATH = (Path(__file__).resolve().parent / ".." / "db" / "aeOS.db").resolve()
 def get_connection(db_path: Union[str, Path, None] = None, timeout: float = 30.0) -> sqlite3.Connection:
