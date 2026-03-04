@@ -1,0 +1,126 @@
+{
+  "id": "growth_investment",
+  "name": "Investment Strategy & Wealth Compounding",
+  "category": "Growth",
+  "sovereign_need": "Growth",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Investment Hierarchy",
+      "description": "Not all investments are equal. Sequence by expected return and control level. Most people skip to Step 4 before maximizing Steps 1-3.",
+      "steps": [
+        "Step 1 — Eliminate high-interest debt: guaranteed return equal to interest rate. No investment reliably beats 20%+ credit card rates.",
+        "Step 2 — Invest in yourself: skills and network produce 10-100x returns. Highest expected return of any asset class early in career.",
+        "Step 3 — Tax-advantaged accounts: 401K match (100% immediate return), IRA, HSA. Floor investment before anything else.",
+        "Step 4 — Business equity: own equity in your own business before speculating in others. You have information advantage.",
+        "Step 5 — Index funds: low-cost, diversified, tax-efficient. Market returns without stock-picking risk.",
+        "Step 6 — Alternative investments: real estate, angel, private equity. Only after Steps 1-5 are maximized."
+      ],
+      "antipatterns": [
+        "Angel investing before maxing tax-advantaged accounts — skipping guaranteed return for speculative",
+        "Stock picking without edge — 90%+ of active managers underperform index over 10+ years",
+        "Real estate before emergency fund — illiquid investment before liquid safety net"
+      ]
+    },
+    {
+      "name": "Compounding Mechanics",
+      "description": "Compounding is not intuitive. Understanding the actual math changes behavior — especially around time horizon and consistency.",
+      "steps": [
+        "Rule of 72: divide 72 by your annual return to find years to double. 7% = 10.3 years. 10% = 7.2 years.",
+        "Time dominates return rate: $1,000 at 10% for 30 years = $17,449. Same investment for 40 years = $45,259. 10 extra years = 2.6x.",
+        "Consistency dominates timing: $500/month for 30 years at 8% = $754,000. Missing the 10 best days in the market over 30 years reduces return by ~50%.",
+        "Cost drag compounds: 1% annual fee on $500K over 20 years = ~$130,000 in lost compounding. Minimize fees ruthlessly.",
+        "Tax drag compounds: tax-advantaged accounts preserve compounding that taxable accounts lose annually.",
+        "Visualize your specific numbers: calculate actual projected balances at your savings rate — abstraction kills motivation"
+      ],
+      "antipatterns": [
+        "Interrupting compounding (withdrawals, pauses) — the last years are the most valuable",
+        "High-fee funds when low-cost equivalents exist — fee difference compounds into enormous cost over decades",
+        "Waiting for 'the right time' to invest — time in market beats timing the market consistently"
+      ]
+    },
+    {
+      "name": "Portfolio Architecture",
+      "description": "Portfolio design should reflect your actual risk tolerance (behavioral, not stated), time horizon, and need for liquidity — not a generic allocation.",
+      "steps": [
+        "Define your time horizon: when do you need this money? Under 3 years = capital preservation. 3-10 years = balanced. 10+ years = growth.",
+        "Define your behavioral risk tolerance: not 'how much volatility can you theoretically handle' but 'what drawdown would make you sell?'",
+        "Core holding for most long-horizon investors: low-cost total market index funds (domestic + international)",
+        "Bond allocation as volatility buffer, not return driver: rough rule — your age as bond percentage (adjust for risk tolerance)",
+        "Rebalance annually, not on market movements — prevents emotion-driven allocation drift",
+        "Caveat: consult a fee-only fiduciary advisor for personalized allocation"
+      ],
+      "antipatterns": [
+        "Stated risk tolerance ≠ behavioral risk tolerance — know which one you actually have",
+        "Overweighting domestic equities — home country bias is a documented behavioral error",
+        "Rebalancing on market movements rather than schedule — converts a system into emotional reaction"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "investment_hierarchy_audit",
+      "name": "Investment Hierarchy Audit",
+      "template": "Audit my investment hierarchy. High-interest debt: [amount and rates]. 401K match captured: [yes/no]. IRA/HSA maxed: [yes/no]. Business equity owned: [describe]. Current investments: [describe]. Identify where I am in the hierarchy, where I am skipping steps, and the highest-ROI next action.",
+      "tags": ["hierarchy", "audit", "sequence"]
+    },
+    {
+      "id": "compounding_projection",
+      "name": "Compounding Projection",
+      "template": "Project my compounding trajectory. Current investable savings: [amount]. Monthly contribution: [amount]. Expected return: [% or use 7% real]. Time horizon: [years]. Show me the Rule of 72 doubling schedule, the projected balance, and the cost of a 5-year delay in starting.",
+      "tags": ["compounding", "projection", "timeline"]
+    },
+    {
+      "id": "portfolio_review",
+      "name": "Portfolio Architecture Review",
+      "template": "Review my portfolio architecture. Current allocation: [describe]. Time horizon: [years]. Behavioral reaction to 30% drawdown: [would hold / would reduce / would sell]. Fees: [describe]. Identify allocation gaps, fee drag, and recommended rebalancing. Note: I will consult a fee-only advisor before making changes.",
+      "tags": ["portfolio", "allocation", "review"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Early Career Investment Sequencing",
+      "context": "28-year-old with $15K in high-interest debt, no 401K, $500/month available",
+      "correct_sequence": "1) Eliminate $15K debt (guaranteed 18% return). 2) Capture 401K match (100% return). 3) Build $10K emergency fund. 4) Max IRA. 5) Additional index fund investment.",
+      "incorrect_sequence_avoided": "Investing $500/month in stocks while carrying 18% debt — guaranteed negative arbitrage"
+    }
+  ],
+  "vocabulary": [
+    { "term": "Rule of 72", "definition": "Divide 72 by annual return rate to estimate years required to double an investment. Quick compounding calculator." },
+    { "term": "Index Fund", "definition": "A fund tracking a market index (e.g., S&P 500). Provides diversification at minimal cost. Outperforms most active management over long horizons." },
+    { "term": "Fee Drag", "definition": "The compounding cost of investment fees over time. 1% annual fee compounds to enormous cost over 20-30 year horizons." },
+    { "term": "Tax-Advantaged Account", "definition": "Investment accounts with tax benefits: 401K, IRA, HSA, 529. Preserves compounding that would otherwise be lost to annual taxation." },
+    { "term": "Rebalancing", "definition": "Periodically restoring portfolio to target allocation by selling outperformers and buying underperformers. Enforces buy-low-sell-high discipline." },
+    { "term": "Fiduciary", "definition": "Financial advisor legally required to act in client's best interest. Distinct from broker operating under lesser suitability standard." },
+    { "term": "Behavioral Risk Tolerance", "definition": "The actual drawdown percentage at which an investor will sell, as opposed to stated tolerance. The binding constraint in real market conditions." },
+    { "term": "Home Country Bias", "definition": "Documented behavioral tendency to overweight domestic equities. Reduces diversification without improving expected returns." }
+  ],
+  "sources": [
+    { "title": "The Little Book of Common Sense Investing", "authors": ["John Bogle"], "type": "book", "relevance": "Index fund case, fee drag, long-term compounding" },
+    { "title": "The Psychology of Money", "authors": ["Morgan Housel"], "type": "book", "relevance": "Behavioral finance, compounding patience, wealth building" },
+    { "title": "A Random Walk Down Wall Street", "authors": ["Burton Malkiel"], "type": "book", "relevance": "Market efficiency, index fund superiority" },
+    { "title": "I Will Teach You to Be Rich", "authors": ["Ramit Sethi"], "type": "book", "relevance": "Investment hierarchy, automation, practical sequencing" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["Finance_Insights (D1)", "Financial_Autopilot (D31)", "DECISION_ENGINE (D20)"],
+    "v78_consciousnesses": ["Ancient One v3.0 (compounding time horizon)", "Rogan v2.1 (reality check on return expectations)", "Constraint Mapper (behavioral vs stated risk tolerance)"],
+    "master_laws": ["Law 19 (Compound — investment is compound interest made tangible)", "Law 24 (Resources)", "Law 18 (Reality — market returns are not controllable)"],
+    "sovereign_needs_served": ["Growth (primary)", "Security (wealth stack)", "Legacy (generational compounding)"],
+    "caveat": "Strategic framework only. Not financial advice. Consult a fee-only fiduciary advisor for personalized investment decisions.",
+    "4_gate_validation": {
+      "safe": "PASS — caveat embedded; no specific securities recommendations",
+      "true": "PASS — index fund superiority and compounding mechanics are well-established",
+      "high_leverage": "PASS — investment sequencing hierarchy prevents common high-cost errors",
+      "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 23,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

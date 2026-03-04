@@ -1,0 +1,220 @@
+{
+  "id": "truth_cognitive_bias_defense",
+  "name": "Cognitive Bias Defense & Debiasing Protocols",
+  "category": "Truth",
+  "sovereign_need": "Truth",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "The Big Five Bias Detection System",
+      "description": "There are hundreds of catalogued cognitive biases, but five account for the vast majority of real-world decision errors. Mastering detection and correction of these five produces 80% of the debiasing benefit. Knowing the name of a bias does not protect you from it — you need a detection trigger and a correction protocol for each.",
+      "steps": [
+        "Bias 1 — Confirmation Bias: You seek evidence supporting what you already believe. TRIGGER: You feel 'right' without having looked for disconfirming evidence. CORRECTION: Before concluding, actively seek 3 pieces of evidence against your position.",
+        "Bias 2 — Anchoring: The first number or frame you encounter dominates your estimate. TRIGGER: You are making a numerical estimate shortly after receiving a reference number. CORRECTION: Generate your estimate BEFORE seeing anyone else's. If already anchored, explicitly re-anchor from a different starting point.",
+        "Bias 3 — Availability Heuristic: You judge probability by how easily examples come to mind. TRIGGER: You are estimating frequency or probability based on examples you can recall. CORRECTION: Ask for base rate data. Vivid or recent examples are overweighted; mundane or distant examples are underweighted.",
+        "Bias 4 — Sunk Cost Fallacy: You continue investing because of past investment, not future expected value. TRIGGER: You catch yourself saying 'but we have already invested X.' CORRECTION: Ask 'if I had NOT already invested, would I start now at the current cost?' If no, stop.",
+        "Bias 5 — Dunning-Kruger Effect: Competence in a domain is required to accurately assess competence in that domain. TRIGGER: Strong confidence in a domain where you have limited experience. CORRECTION: Seek calibrating feedback from domain experts. Your confidence level means nothing without a track record to validate it."
+      ],
+      "examples": [
+        {
+          "situation": "CEO continuing to invest in a failing product line",
+          "biases_detected": {
+            "sunk_cost": "We have already invested $2M — we cannot walk away now.",
+            "confirmation_bias": "CEO only reads positive customer feedback; ignores churn data.",
+            "anchoring": "Original market size estimate of $500M (from pitch deck 3 years ago) still being used despite market shrinking."
+          },
+          "debiased_analysis": "Sunk cost correction: the $2M is gone regardless. Question becomes: 'Would I invest the NEXT $500K in this product if I had never spent the previous $2M?' Answer: No. Confirmation correction: forced review of churn data — 40% monthly churn. Anchoring correction: current market analysis shows $120M addressable market, not $500M.",
+          "outcome": "Wound down product line. Redirected remaining budget to product line with positive unit economics. Saved $1.5M in projected losses."
+        }
+      ],
+      "antipatterns": [
+        "Knowing bias names without having detection triggers — intellectual knowledge of biases provides almost zero protection",
+        "Believing you are 'less biased than average' — this IS the bias (bias blind spot)",
+        "Applying debiasing only to others' reasoning — your own reasoning is where biases do the most damage",
+        "Using 'that is just a bias' to dismiss arguments you disagree with — bias detection is for improving your own thinking, not winning debates"
+      ]
+    },
+    {
+      "name": "Pre-Mortem Debiasing Protocol",
+      "description": "Gary Klein's pre-mortem technique is the most effective single debiasing intervention. By imagining failure before committing to action, it unlocks dissenting information that optimism bias and groupthink suppress. Works for teams and individuals.",
+      "steps": [
+        "State the decision or plan clearly",
+        "Imagine: it is 12 months from now. This decision has failed spectacularly. It is a total disaster.",
+        "Write down at least 5 specific reasons WHY it failed — generate concrete failure pathways, not vague risks",
+        "For each failure pathway: what early warning signal would appear in the first 30 days?",
+        "Rank failure pathways by probability. Address the top 3 with specific preventive actions or decision criteria ('if X happens by week 4, we pivot').",
+        "Critical: this works because it gives permission to express doubt. In normal planning, optimism bias suppresses legitimate concerns."
+      ],
+      "examples": [
+        {
+          "situation": "Team unanimously enthusiastic about launching new product feature",
+          "pre_mortem_conducted": true,
+          "failure_pathways_surfaced": [
+            "Users do not discover the feature — buried in navigation (3 team members secretly worried about this but did not raise it)",
+            "Feature cannibilizes existing revenue stream instead of creating new revenue (finance concern, suppressed by engineering enthusiasm)",
+            "Launch timing conflicts with enterprise client renewal cycle — biggest clients distracted (sales team knew, did not feel comfortable raising in 'all-in' planning meeting)",
+            "Technical debt from rush implementation creates 6 months of bug-fixing (engineering concern, overridden by 'ship fast' culture)"
+          ],
+          "interventions": "Added prominent feature discovery flow. Modeled cannibalization risk before launch. Delayed launch 3 weeks to avoid client renewal conflict. Allocated post-launch engineering sprint for technical debt.",
+          "outcome": "Pre-mortem surfaced 4 legitimate concerns that unanimous enthusiasm had suppressed. Three of the four would have caused significant damage."
+        }
+      ],
+      "antipatterns": [
+        "Optimism bias preventing genuine pre-mortem — 'but I do not think it will fail' defeats the purpose; that is exactly the bias the technique corrects",
+        "Shallow pre-mortem — listing vague risks ('it might not work') instead of specific failure pathways with mechanisms",
+        "Pre-mortem without response plan — identifying risks without mitigations is analysis without action",
+        "Doing the pre-mortem after committing resources — must happen BEFORE the commitment decision"
+      ]
+    },
+    {
+      "name": "Decision Hygiene Checklist",
+      "description": "Daniel Kahneman's research shows that systematic decision processes produce better outcomes than intuition in most complex, uncertain environments. Decision hygiene is a set of structural practices that reduce bias without requiring superhuman self-awareness.",
+      "steps": [
+        "1. Define the decision criteria BEFORE evaluating options — what does 'good' look like? Writing criteria after seeing options introduces anchoring and halo effects.",
+        "2. Evaluate each option independently before comparing — holistic comparison activates narrative construction; independent scoring on pre-set criteria reduces halo effect.",
+        "3. Seek disagreement: assign one person (or force yourself) to argue AGAINST the favored option. Make dissent safe and expected.",
+        "4. Use base rates: before specific analysis, look at how similar decisions typically turn out. Most people skip this step and pay dearly.",
+        "5. Delay intuition: make the analytical case first, THEN check your intuition. If they disagree, investigate why — do not default to either.",
+        "6. Create decision records: write down the reasoning, confidence level, and predicted outcome BEFORE implementing. Future review reveals systematic patterns in your decision errors."
+      ],
+      "examples": [
+        {
+          "situation": "Hiring manager selecting between 3 final candidates",
+          "without_hygiene": "Manager interviews all three, gets a 'gut feeling' about Candidate A (who reminds them of themselves), rationalizes the decision with post-hoc criteria.",
+          "with_hygiene": {
+            "step_1": "Wrote 5 decision criteria and weightings BEFORE interviews (technical depth: 30%, collaboration evidence: 25%, problem-solving: 20%, culture fit: 15%, growth potential: 10%)",
+            "step_2": "Scored each candidate independently on each criterion immediately after each interview. Did not compare candidates until all interviews complete.",
+            "step_3": "Asked team member to devil's advocate the top-scored candidate",
+            "step_4": "Checked base rate: what is this team's historical success rate with candidates matching this profile?",
+            "step_5": "Analytical score pointed to Candidate B. Gut said Candidate A. Investigation revealed: gut preference was similarity bias (Candidate A went to same university).",
+            "step_6": "Selected Candidate B. Documented reasoning and predicted 12-month outcome for future calibration."
+          }
+        }
+      ],
+      "antipatterns": [
+        "Defining criteria after seeing options — reverse-engineers justification for the pre-selected choice",
+        "Holistic evaluation — 'considering everything, I prefer X' activates every bias simultaneously",
+        "Punishing dissent — if disagreement is unsafe, groupthink is guaranteed",
+        "Trusting intuition in unfamiliar domains — intuition is only reliable where you have extensive, rapid-feedback experience"
+      ]
+    },
+    {
+      "name": "Motivated Reasoning Defense",
+      "description": "Motivated reasoning is the unconscious tendency to arrive at conclusions you WANT to be true, then construct justifications. It is not lying — it is self-deception. The reasoning feels genuine, which makes it more dangerous than deliberate bias. Julia Galef's 'scout mindset' is the antidote.",
+      "steps": [
+        "Apply the Identity Test: would your conclusion change if you had different group affiliations, financial interests, or identity commitments? If your political, professional, or personal identity predicts your conclusion, motivated reasoning is likely present.",
+        "Apply the Selective Skepticism Test: are you applying different standards of evidence to conclusions you like vs. conclusions you dislike? If you demand rigorous proof for claims you find threatening but accept thin evidence for claims you find comforting — that is motivated reasoning.",
+        "Apply the Outsider Test: what would a person with no stake in this question conclude from the same evidence? Remove your skin in the game and re-evaluate.",
+        "Apply the Update Test: when was the last time you changed your mind about something important in this domain? If you cannot recall a significant update, your beliefs may be identity-protected rather than evidence-based.",
+        "Apply the Steel Man Test: can you articulate the strongest version of the opposing view well enough that an opponent would say 'yes, that is my argument'? If not, you have not genuinely engaged with it.",
+        "Practice 'scout mindset': your goal is accurate maps of reality, not winning arguments. A wrong belief corrected is a victory, not a defeat."
+      ],
+      "examples": [
+        {
+          "situation": "Founder refusing to consider pivoting despite declining metrics",
+          "motivated_reasoning_indicators": {
+            "identity_test": "Founder's entire identity is 'the person building X.' Pivoting feels like personal failure, not strategic adjustment.",
+            "selective_skepticism": "Applies harsh scrutiny to negative metrics ('the data is noisy, sample is small') but accepts positive signals uncritically ('that one customer loved it').",
+            "outsider_test": "An outside advisor looking at the same metrics would recommend pivot or shutdown within 60 days.",
+            "update_test": "Founder has not updated core thesis in 18 months despite accumulating contradictory evidence."
+          },
+          "intervention": "Separate identity from strategy. 'You are a capable founder' and 'this product needs to pivot' can both be true. Use decision hygiene: write down what metrics WOULD justify a pivot, and check them honestly.",
+          "outcome": "Founder acknowledged motivated reasoning, defined pivot criteria, and executed pivot when criteria were met. New direction achieved product-market fit within 6 months."
+        }
+      ],
+      "antipatterns": [
+        "Believing you are uniquely objective — the first symptom of motivated reasoning",
+        "Confusing strong feelings with strong evidence — emotional conviction is not epistemic justification",
+        "Attacking the person who points out your motivated reasoning — shooting the messenger is the bias protecting itself",
+        "Binary thinking about rationality — the goal is not perfect objectivity but systematic reduction of self-deception"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "bias_scan",
+      "name": "Big Five Bias Scan",
+      "template": "Scan my reasoning about [decision/belief] for the Big Five biases: confirmation bias, anchoring, availability heuristic, sunk cost, and Dunning-Kruger. For each bias detected, identify the specific trigger and provide the correction protocol. How would my conclusion change if I debiased?",
+      "tags": ["bias_detection", "debiasing", "big_five"]
+    },
+    {
+      "id": "pre_mortem",
+      "name": "Pre-Mortem Analysis",
+      "template": "Run a pre-mortem on my plan: [describe plan]. It is 12 months from now and this has failed spectacularly. Generate 5+ specific failure pathways with mechanisms. Rank by probability. For the top 3: what early warning signal appears in the first 30 days, and what preventive action should I take now?",
+      "tags": ["pre_mortem", "failure_pathways", "risk"]
+    },
+    {
+      "id": "decision_hygiene",
+      "name": "Decision Hygiene Check",
+      "template": "Apply decision hygiene to my upcoming decision: [describe]. Help me: define criteria and weights before evaluating options, identify the base rate for similar decisions, construct the devil's advocate case against my preferred option, and create a decision record with predicted outcome for future calibration.",
+      "tags": ["decision_hygiene", "process", "calibration"]
+    },
+    {
+      "id": "motivated_reasoning_check",
+      "name": "Motivated Reasoning Detector",
+      "template": "Check my conclusion that [belief/decision] for motivated reasoning. Apply the 5 tests: Identity (would my group affiliations predict this?), Selective Skepticism (am I applying different evidence standards?), Outsider (what would a neutral observer conclude?), Update (when did I last change my mind here?), Steel Man (can I articulate the best opposing argument?). Where am I most likely self-deceiving?",
+      "tags": ["motivated_reasoning", "scout_mindset", "self_deception"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Investment Committee Implementing Decision Hygiene",
+      "context": "Angel investment group making inconsistent decisions — outcomes did not correlate with conviction level at time of investment",
+      "framework_applied": "Decision Hygiene Checklist + Big Five Bias Detection",
+      "problems_identified": [
+        "Anchoring on founder's stated valuation before conducting independent analysis",
+        "Halo effect from founder charisma overriding financial metrics",
+        "Confirmation bias — after seeing a compelling demo, members only asked supportive questions",
+        "No base rate analysis — never checked what percentage of similar startups at this stage succeed"
+      ],
+      "hygiene_implementation": [
+        "Blind scoring: members rate each criterion independently before group discussion",
+        "Base rate requirement: every deal memo must include the base rate success probability for the relevant reference class",
+        "Mandatory devil's advocate: one member assigned to argue against every deal, rotated each session",
+        "Decision record: confidence level and predicted outcome written down for every investment, reviewed quarterly"
+      ],
+      "outcome": "After 12 months: portfolio return improved 40%. More importantly, hit rate (% of investments that returned >1x) improved from 22% to 41%. The process, not better deal flow, drove the improvement."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Cognitive Bias", "definition": "A systematic pattern of deviation from rational judgment. Not random error — predictable, consistent, and exploitable. Knowing the name does not protect you; having a detection trigger and correction protocol does." },
+    { "term": "Confirmation Bias", "definition": "Seeking, interpreting, and remembering evidence that confirms existing beliefs. The most pervasive cognitive bias and the hardest to self-detect." },
+    { "term": "Anchoring Bias", "definition": "Over-reliance on the first piece of information encountered when making estimates or decisions. Robust even when the anchor is known to be arbitrary." },
+    { "term": "Availability Heuristic", "definition": "Judging probability by the ease with which examples come to mind. Vivid, recent, or emotional events are overweighted; mundane statistical realities are underweighted." },
+    { "term": "Sunk Cost Fallacy", "definition": "Continuing to invest because of past investment rather than future expected value. The past cost is irrecoverable; only future costs and benefits are decision-relevant." },
+    { "term": "Dunning-Kruger Effect", "definition": "The less competent you are in a domain, the less accurately you can assess your own competence. Peak overconfidence occurs at low-to-moderate skill levels." },
+    { "term": "Motivated Reasoning", "definition": "Unconsciously constructing justifications for conclusions you want to be true. Feels like genuine reasoning, making it more dangerous than deliberate bias." },
+    { "term": "Scout Mindset", "definition": "Julia Galef's term for the orientation of wanting to see reality accurately, even when it is uncomfortable. The opposite of soldier mindset (defending existing beliefs)." },
+    { "term": "Pre-Mortem", "definition": "Gary Klein's technique: imagine the decision has failed, then work backward to identify why. Unlocks dissenting information suppressed by optimism bias." },
+    { "term": "Decision Hygiene", "definition": "Daniel Kahneman's term for structural practices that reduce bias in decisions without requiring superhuman self-awareness. Process-level debiasing." },
+    { "term": "Bias Blind Spot", "definition": "The tendency to see cognitive biases in others' reasoning but not in your own. Meta-bias that protects all other biases from self-correction." },
+    { "term": "Groupthink", "definition": "The tendency for cohesive groups to suppress dissent and converge on a consensus that feels unanimous but is actually unexamined. Pre-mortem and devil's advocate are structural countermeasures." }
+  ],
+  "sources": [
+    { "title": "Thinking, Fast and Slow", "authors": ["Daniel Kahneman"], "type": "book", "relevance": "Comprehensive cognitive bias catalog, System 1/System 2, decision hygiene" },
+    { "title": "Noise: A Flaw in Human Judgment", "authors": ["Daniel Kahneman", "Olivier Sibony", "Cass Sunstein"], "type": "book", "relevance": "Decision hygiene, reducing variability in judgment" },
+    { "title": "The Scout Mindset", "authors": ["Julia Galef"], "type": "book", "relevance": "Motivated reasoning defense, scout vs. soldier mindset" },
+    { "title": "Sources of Power", "authors": ["Gary Klein"], "type": "book", "relevance": "Pre-mortem technique, naturalistic decision making" },
+    { "title": "Predictably Irrational", "authors": ["Dan Ariely"], "type": "book", "relevance": "Anchoring, sunk costs, framing effects in real-world decisions" },
+    { "title": "Fooled by Randomness", "authors": ["Nassim Taleb"], "type": "book", "relevance": "Narrative fallacy, survivorship bias, randomness mistaken for skill" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["BIAS_DETECTOR (calc)", "CONTRADICTION_DETECTOR (cognitive)", "DECISION_ENGINE (cognitive)", "BRIER_SCORE_CALC (calc)", "COMPOUND_FLYWHEEL (F3.6)", "Reflection_Engine (A7)"],
+    "v78_consciousnesses": ["Deadpool v2.2 (assumption-busting, irreverent challenge to sacred cows)", "Rogan v2.1 (confidence calibration, motivated reasoning detection)", "House v2.1 (diagnostic skepticism, differential diagnosis of decision errors)", "Constraint Mapper (distinguishing real constraints from bias-manufactured ones)", "META-0.5.1 (system-level bias pattern recognition)"],
+    "master_laws": ["Law 4 (Truth — the truth does not care about your feelings)", "Law 18 (Reality — update your map or walk off a cliff)", "Law 14 (Validation — verify especially when you feel certain)", "Law 15 (Simplicity — the simplest explanation consistent with evidence wins)"],
+    "sovereign_needs_served": ["Truth (primary)", "Security (biased decisions create unrecognized risk exposure)", "Growth (debiased thinking compounds — every future decision benefits)", "Agency (someone controlled by their biases is not sovereign)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS — grounded in Kahneman, Klein, Galef, Ariely — core decision science",
+      "high_leverage": "PASS — cognitive bias defense is a meta-skill that improves every decision across every domain", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 29,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

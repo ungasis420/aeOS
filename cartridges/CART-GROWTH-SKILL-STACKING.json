@@ -1,0 +1,129 @@
+{
+  "id": "growth_skill_stacking",
+  "name": "Skill Stacking & Capability Compounding",
+  "category": "Growth",
+  "sovereign_need": "Growth",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Rare & Valuable Skill Stack",
+      "description": "Top 1% in one skill is hard. Top 25% in three complementary skills is achievable and creates rarer combinations. The intersection is where unique value lives.",
+      "steps": [
+        "Inventory current skills — rate each 1-10 vs. general population",
+        "Identify your top 3-5 skills at 7+ level",
+        "Map intersections: what problems can only someone with THIS combination solve?",
+        "Identify the one adjacent skill that would make your current stack 10x more valuable",
+        "Invest 80% of learning time in deepening existing stack, 20% in adjacent expansion",
+        "Articulate your stack as a unique problem-solving capability, not a list of tools"
+      ],
+      "examples": [
+        {
+          "situation": "Engineer who is also a strong communicator and understands business strategy",
+          "stack_value": "Can translate technical tradeoffs to business decisions — rare intersection commanding premium",
+          "next_skill": "Sales or negotiation — completes the full value chain from build to sell"
+        }
+      ],
+      "antipatterns": [
+        "Collecting credentials without deepening any single skill to genuine competence",
+        "Adding skills that duplicate existing stack rather than create new intersections",
+        "Chasing trending skills without connecting them to existing strengths"
+      ]
+    },
+    {
+      "name": "Deliberate Practice Protocol",
+      "description": "Naive repetition produces experience, not mastery. Deliberate practice targets specific weaknesses with immediate feedback. Mastery is a function of practice quality, not hours.",
+      "steps": [
+        "Define the specific sub-skill to improve — not 'get better at writing' but 'improve opening paragraphs'",
+        "Find or create immediate feedback mechanism — coach, peer review, measurable output",
+        "Practice at the edge of current ability — not comfortable repetition",
+        "Isolate the weakness: full-context practice embeds errors; isolated drills fix them",
+        "Track improvement with concrete metrics — subjective 'feels better' is insufficient",
+        "After mastery of sub-skill, reintegrate into full performance"
+      ],
+      "antipatterns": [
+        "Practicing what you are already good at — reinforces strengths, neglects weaknesses",
+        "No feedback loop — practicing errors until they become habits",
+        "Volume without specificity — 10,000 hours of naive practice does not produce expertise"
+      ]
+    },
+    {
+      "name": "Skill Compounding Timeline",
+      "description": "Skills compound when each new capability multiplies the value of existing ones. The sequence matters as much as the skills themselves.",
+      "steps": [
+        "Map your 3-year skill trajectory: what stack do you want in 36 months?",
+        "Identify dependencies: which skills unlock other skills? (Writing unlocks teaching; teaching unlocks leverage)",
+        "Sequence acquisition by dependency — foundational skills first",
+        "Calculate compounding: Skill A alone = value X. Skill A + B = value 3X. A + B + C = value 10X",
+        "Identify your current multiplier skill — the one that amplifies everything else",
+        "Protect learning time as non-negotiable — skill compounding requires consistent investment"
+      ],
+      "antipatterns": [
+        "Random skill acquisition without trajectory — produces breadth without depth or intersection",
+        "Stopping at competence rather than continuing to mastery — competent is table stakes, mastery is leverage",
+        "No multiplier skill — stacks without amplification compound linearly, not exponentially"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "stack_audit",
+      "name": "Skill Stack Audit",
+      "template": "Audit my skill stack. Current skills and self-rated level (1-10): [list]. Career/business goals: [describe]. Identify my current intersection value, the single skill that would most amplify my stack, and my 3-year compounding trajectory.",
+      "tags": ["audit", "stack", "trajectory"]
+    },
+    {
+      "id": "deliberate_practice_design",
+      "name": "Deliberate Practice Design",
+      "template": "Design a deliberate practice protocol for: [skill]. Current level: [describe]. Specific weakness within this skill: [describe]. Time available: [hours/week]. Give me a targeted practice structure with feedback mechanism and progress metrics.",
+      "tags": ["deliberate_practice", "mastery", "protocol"]
+    },
+    {
+      "id": "skill_compounding_plan",
+      "name": "3-Year Skill Compounding Plan",
+      "template": "Build my 3-year skill compounding plan. Current stack: [list]. Target position/outcome in 3 years: [describe]. Sequence the skill acquisitions by dependency and compounding value, and identify my current multiplier skill.",
+      "tags": ["compounding", "trajectory", "planning"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Designer Adding Business Acumen",
+      "context": "Senior designer at plateau — technically excellent but not advancing",
+      "stack_value_before": "Design skill alone — executes well, dependent on others for strategy",
+      "adjacent_skill_added": "Business strategy + financial literacy",
+      "stack_value_after": "Can design AND make the business case — now operates at leadership level",
+      "outcome": "Moved from senior IC to Head of Design within 18 months"
+    }
+  ],
+  "vocabulary": [
+    { "term": "Skill Stack", "definition": "A combination of complementary skills whose intersection creates rare, high-value capabilities not available from any single skill." },
+    { "term": "Deliberate Practice", "definition": "Structured practice targeting specific weaknesses with immediate feedback. Produces mastery; naive repetition does not." },
+    { "term": "Multiplier Skill", "definition": "A skill that amplifies the value of all other skills in the stack — typically communication, sales, or systems thinking." },
+    { "term": "Skill Compounding", "definition": "Each new skill multiplies rather than merely adds to the value of existing skills when properly sequenced at intersections." },
+    { "term": "Adjacent Skill", "definition": "A skill that shares context with existing stack skills, allowing faster acquisition and creating new high-value intersections." },
+    { "term": "T-Shaped Skills", "definition": "Deep expertise in one area (vertical bar) combined with broad competence across adjacent areas (horizontal bar). Foundation of effective skill stacking." }
+  ],
+  "sources": [
+    { "title": "So Good They Can't Ignore You", "authors": ["Cal Newport"], "type": "book", "relevance": "Rare and valuable skill development, deliberate practice" },
+    { "title": "Peak: Secrets from the New Science of Expertise", "authors": ["Anders Ericsson"], "type": "book", "relevance": "Deliberate practice protocol, mastery mechanics" },
+    { "title": "Range", "authors": ["David Epstein"], "type": "book", "relevance": "Skill stacking, breadth enabling depth, late specialization advantage" },
+    { "title": "How to Fail at Almost Everything and Still Win Big", "authors": ["Scott Adams"], "type": "book", "relevance": "Skill stack intersection strategy" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["Skill_Gap_Analyzer (D25)", "Career_Strategy cartridge", "COMPOUND_FLYWHEEL (F3.6)"],
+    "v78_consciousnesses": ["Ancient One v3.0 (compounding timeline)", "Meta-2.2 Career Architect (capability stacking)", "Xavier v2.2 (trajectory alignment)"],
+    "master_laws": ["Law 19 (Compound — skills compound)", "Law 11 (Leverage — multiplier skills)", "Law 9 (Time — sequence matters)"],
+    "sovereign_needs_served": ["Growth (primary)", "Agency (rare skills = negotiating power)", "Legacy (compounded expertise outlasts any single role)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS", "high_leverage": "PASS", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 20,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

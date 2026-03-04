@@ -1,0 +1,209 @@
+{
+  "id": "security_threat_modeling",
+  "name": "Threat Modeling & Adversarial Thinking",
+  "category": "Security",
+  "sovereign_need": "Security",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "STRIDE Threat Model",
+      "description": "Systematic enumeration of threat categories across any system — digital, physical, or social. Forces adversarial thinking before threats materialize.",
+      "steps": [
+        "Define the asset: what are you protecting? (data, reputation, capital, access, identity)",
+        "Map all entry points: who or what touches this asset?",
+        "Apply STRIDE categories to each entry point:",
+        "  S — Spoofing: can an attacker impersonate a legitimate actor?",
+        "  T — Tampering: can data or systems be modified without detection?",
+        "  R — Repudiation: can an actor deny actions they took?",
+        "  I — Information Disclosure: can sensitive data be exposed?",
+        "  D — Denial of Service: can availability be disrupted?",
+        "  E — Elevation of Privilege: can an actor gain unauthorized access?",
+        "Rate each identified threat: likelihood (1-5) × impact (1-5) = risk score",
+        "Prioritize mitigations by risk score — address top 3 first"
+      ],
+      "examples": [
+        {
+          "situation": "Consultant storing client data in cloud service",
+          "stride_scan": {
+            "spoofing": "Attacker gains access via phishing → credential theft. Risk: 4×5=20.",
+            "information_disclosure": "Cloud provider breach exposes client data. Risk: 2×5=10.",
+            "tampering": "Unauthorized modification of deliverables before client review. Risk: 1×4=4."
+          },
+          "priority_mitigations": "1) MFA on all accounts. 2) Client data encrypted at rest. 3) Separate credentials per client engagement."
+        }
+      ],
+      "antipatterns": [
+        "Threat modeling only digital systems — social engineering is often highest-probability vector",
+        "Identifying threats without prioritizing by risk score — all threats are not equal",
+        "One-time threat model — threat landscape evolves, model must be reviewed quarterly"
+      ]
+    },
+    {
+      "name": "Attack Surface Reduction",
+      "description": "Every capability, account, connection, and permission is potential attack surface. Minimum viable surface is maximum security.",
+      "steps": [
+        "Inventory all accounts, services, devices, and permissions currently active",
+        "Apply zero-trust principle: does each item need to exist for current operations?",
+        "Eliminate: unused accounts, expired services, unnecessary permissions, dormant devices",
+        "Isolate: separate high-value assets from general-use systems",
+        "Minimize: request least-privilege permissions on all remaining items",
+        "Document: maintain current inventory — unknown surface cannot be protected"
+      ],
+      "antipatterns": [
+        "Accumulating accounts and services without periodic pruning",
+        "Admin-level permissions for routine tasks",
+        "Single account accessing both high-value and low-security systems",
+        "Undocumented access — you cannot protect what you cannot enumerate"
+      ]
+    },
+    {
+      "name": "Pre-Mortem Adversarial Analysis",
+      "description": "Imagine the worst has already happened. Work backward to identify how. More effective than forward-looking risk analysis for finding non-obvious attack vectors.",
+      "steps": [
+        "State the failure: 'It is 12 months from now. [Asset] has been compromised/lost/destroyed.'",
+        "Brainstorm freely: how did this happen? Generate minimum 5 distinct pathways.",
+        "Include non-technical vectors: social engineering, insider threat, physical access, supply chain",
+        "Rank pathways by realistic probability given current controls",
+        "For the top 3 pathways: what single control would have prevented each?",
+        "Implement those controls before moving forward"
+      ],
+      "examples": [
+        {
+          "situation": "Solo operator pre-mortem on business identity theft",
+          "failure_pathways": [
+            "Email account compromised via password reuse → all accounts reset by attacker",
+            "Domain registrar account hijacked → website and email redirected",
+            "Accountant targeted via spear phishing → financial account access obtained",
+            "Phone number ported by social engineering → 2FA bypassed on all accounts",
+            "Physical device stolen from coffee shop → unencrypted drive accessed"
+          ],
+          "top_controls": "1) Unique passwords + hardware MFA on email. 2) Domain registrar account lock. 3) Separate email for financial accounts not used elsewhere."
+        }
+      ],
+      "antipatterns": [
+        "Only imagining technical failures — human and physical vectors are higher probability",
+        "Stopping at 1-2 failure pathways — the non-obvious ones are in positions 4-7",
+        "Pre-mortem without implementing identified controls — analysis without action"
+      ]
+    },
+    {
+      "name": "Layered Defense Protocol",
+      "description": "No single control is sufficient. Security requires overlapping layers such that failure of any one layer does not result in total compromise.",
+      "steps": [
+        "Layer 1 — Prevention: controls that stop attacks before they occur (MFA, encryption, access controls)",
+        "Layer 2 — Detection: controls that identify when an attack is occurring (alerts, monitoring, anomaly detection)",
+        "Layer 3 — Response: pre-planned actions when a breach is detected (isolation, recovery, notification)",
+        "Layer 4 — Recovery: ability to restore full function after compromise (backups, redundancy, documentation)",
+        "Verify each layer independently — a gap in any layer weakens the stack",
+        "Test recovery layer regularly — an untested backup is not a backup"
+      ],
+      "antipatterns": [
+        "Prevention-only security — detection and response are equally critical",
+        "Untested backups — most people discover their backup failed during the restore",
+        "No documented response plan — decision quality under attack stress is low",
+        "Single-layer dependency: 'We have a firewall' as complete security posture"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "stride_scan",
+      "name": "STRIDE Threat Scan",
+      "template": "Run a STRIDE threat model on: [system/asset/process]. For each of the 6 threat categories, identify the most realistic attack vector, rate likelihood (1-5) × impact (1-5), and give me the top 3 risk scores with recommended mitigations.",
+      "tags": ["STRIDE", "threat_model", "risk_scoring"]
+    },
+    {
+      "id": "attack_surface_audit",
+      "name": "Attack Surface Audit",
+      "template": "Audit my attack surface. Current accounts/services/devices: [list]. Apply zero-trust evaluation: identify what should be eliminated, what should be isolated, and what permissions should be reduced. Prioritize by risk exposure.",
+      "tags": ["attack_surface", "zero_trust", "audit"]
+    },
+    {
+      "id": "pre_mortem_adversarial",
+      "name": "Adversarial Pre-Mortem",
+      "template": "Run an adversarial pre-mortem on [asset or system]. Assume it has been compromised 12 months from now. Generate 5+ realistic failure pathways including social, physical, and technical vectors. Rank by probability. Identify the top 3 controls that would have prevented the most likely failures.",
+      "tags": ["pre_mortem", "adversarial", "failure_pathways"]
+    },
+    {
+      "id": "layered_defense_review",
+      "name": "Defense Layer Assessment",
+      "template": "Assess my layered defense posture for [asset]. Current controls: [list]. Identify gaps in each layer — Prevention, Detection, Response, Recovery — and the single highest-leverage addition to my weakest layer.",
+      "tags": ["layered_defense", "gap_analysis", "controls"]
+    },
+    {
+      "id": "social_engineering_vectors",
+      "name": "Social Engineering Threat Map",
+      "template": "Map the social engineering threat vectors relevant to my situation: [role/business/public profile]. Identify the 3 most realistic human-factor attacks targeting me specifically, and give me one behavioral or technical control per vector.",
+      "tags": ["social_engineering", "human_factor", "phishing"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Solo Operator Digital Security Hardening",
+      "context": "Consultant with high-value client data, no dedicated IT, working across multiple devices",
+      "framework_applied": "Attack Surface Reduction + Layered Defense Protocol",
+      "findings": "47 active accounts, 12 using same password pattern, no MFA on 8 critical accounts, no encrypted backup of client work",
+      "interventions": [
+        "Password manager deployed — all passwords unique and complex",
+        "Hardware MFA key on email, domain registrar, and financial accounts",
+        "Encrypted daily backup to separate physical location",
+        "Client data isolated to encrypted volume, not synced to general cloud"
+      ],
+      "outcome": "Attack surface reduced from 47 exposed accounts to 6 hardened critical accounts. Recovery capability established."
+    },
+    {
+      "title": "Business Pre-Mortem Preventing Supply Chain Attack",
+      "context": "Small software firm conducting pre-mortem before enterprise client onboarding",
+      "framework_applied": "Pre-Mortem Adversarial Analysis",
+      "non_obvious_pathway_found": "Attacker targets junior developer's personal GitHub (not company account) which has read access to private repos via SSH key",
+      "intervention": "Audit all developer SSH keys and OAuth tokens. Revoke personal account access to company repos. All access via company-managed accounts only.",
+      "outcome": "Closed vector that would not have appeared in standard technical security review."
+    }
+  ],
+  "vocabulary": [
+    { "term": "STRIDE", "definition": "Threat classification framework: Spoofing, Tampering, Repudiation, Information Disclosure, Denial of Service, Elevation of Privilege." },
+    { "term": "Attack Surface", "definition": "The total set of entry points through which an attacker could attempt to compromise an asset. Smaller surface = lower exposure." },
+    { "term": "Threat Vector", "definition": "A specific pathway or method an attacker could use to reach and compromise an asset." },
+    { "term": "Zero-Trust", "definition": "Security principle: no user, device, or service is trusted by default. All access must be explicitly authorized and continuously verified." },
+    { "term": "Least Privilege", "definition": "Granting only the minimum permissions required for a task. Limits blast radius if any account or system is compromised." },
+    { "term": "Layered Defense", "definition": "Security architecture using overlapping controls so that failure of any single layer does not result in total compromise." },
+    { "term": "Pre-Mortem", "definition": "Prospective analysis technique: assume failure has occurred, work backward to identify causes. More effective than forward-looking risk assessment for non-obvious vectors." },
+    { "term": "Social Engineering", "definition": "Attacks targeting human psychology rather than technical systems. Typically highest-probability vector for sophisticated attackers." },
+    { "term": "Risk Score", "definition": "Likelihood × Impact. Prioritization metric for threat mitigations. Focuses effort on highest-consequence realistic threats." },
+    { "term": "Blast Radius", "definition": "The scope of damage if a particular asset or account is compromised. Isolation limits blast radius." },
+    { "term": "Supply Chain Attack", "definition": "Compromise via a trusted third party — vendor, contractor, or tool — rather than direct attack on the target." },
+    { "term": "Defense in Depth", "definition": "Synonym for layered defense. Multiple independent security controls protecting the same asset." }
+  ],
+  "sources": [
+    { "title": "The Art of Invisibility", "authors": ["Kevin Mitnick"], "type": "book", "relevance": "Social engineering, practical operational security" },
+    { "title": "Threat Modeling: Designing for Security", "authors": ["Adam Shostack"], "type": "book", "relevance": "STRIDE framework, systematic threat modeling" },
+    { "title": "Security Engineering", "authors": ["Ross Anderson"], "type": "book", "relevance": "Layered defense, attack surface analysis" },
+    { "title": "The Gift of Fear", "authors": ["Gavin de Becker"], "type": "book", "relevance": "Threat intuition, pre-attack signal recognition" },
+    { "title": "NIST Cybersecurity Framework", "authors": ["NIST"], "type": "framework", "relevance": "Identify, Protect, Detect, Respond, Recover — layered defense structure" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["ADVERSARIAL_FIREWALL (F2.6)", "CRYPTO_STATE (F0.3)", "ZK_PROOF_ENGINE (F6.1)", "SOVEREIGN_IDENTITY (F6.2)", "Audit_Trail (A6)"],
+    "v78_consciousnesses": ["House v2.1 (differential diagnosis of threat vectors)", "Rogan v2.1 (confidence calibration on threat likelihood)", "Deadpool v2.2 (assumption challenging — what threats are we ignoring?)", "Constraint Mapper (hard security constraints vs perceived ones)"],
+    "master_laws": ["Law 2 (Silence — privacy is absolute)", "Law 6 (Defense — security is a state of being)", "Law 14 (Validation — trust but verify)", "Law 18 (Reality — attackers do not care about your assumptions)"],
+    "sovereign_needs_served": ["Security (primary)", "Agency (compromise destroys optionality)", "Truth (accurate threat assessment, not security theater)"],
+    "4_gate_relevance": {
+      "gate_1_safe": "Primary cartridge for Gate 1 enforcement — threat modeling is the mechanism behind 'Is it Safe?'",
+      "gate_2_true": "Rogan confidence calibration on threat likelihood prevents both paranoia and complacency"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 11,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL",
+    "4_gate_validation": {
+      "safe": "PASS — defensive posture only; no offensive security techniques included",
+      "true": "PASS — STRIDE and layered defense are industry-standard frameworks",
+      "high_leverage": "PASS — pre-mortem adversarial analysis is highest-leverage security intervention for non-technical operators",
+      "aligned": "PASS — directly serves Security need; Law 2 and Law 6 compliance"
+    }
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "id": "creation_product_design",
+  "name": "Product Design",
+  "category": "Creation",
+  "sovereign_need": "Creation",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Jobs-to-Be-Done (JTBD) Framework",
+      "description": "People don't buy products — they hire them to do a job. Understanding the job, not the product, reveals true design requirements and competitive positioning.",
+      "steps": [
+        "Identify the functional job: what concrete task is the customer trying to accomplish?",
+        "Identify the emotional job: how does the customer want to feel during and after? What social signal do they want to send?",
+        "Identify the circumstances: when does the need arise? What triggers the hire? What context constraints exist?",
+        "Map the current solution: what are they 'firing' to hire your product? (The competitor is often a workaround, not a direct rival)",
+        "Find the struggling moments: where does the current solution fail? That gap is your design target.",
+        "Validate JTBD with customer interviews: ask about the last time they did X, not hypotheticals. Behavior is more reliable than stated preference."
+      ],
+      "examples": [
+        {
+          "product": "Milkshake (McDonald's case study — Christensen)",
+          "assumed_job": "Satisfy hunger, taste good",
+          "actual_job": "Boring morning commute — needed something to do for 20 minutes, filling enough to hold through morning, one-handed",
+          "design_implication": "Thicker milkshakes (last longer), fruit chunks (surprise entertainment), faster ordering (commuters in a hurry)"
+        }
+      ],
+      "antipatterns": [
+        "Building features users ask for rather than jobs they need done — users describe symptoms, not causes",
+        "Demographic-based personas without circumstance mapping — same person hires different products in different situations",
+        "Feature parity with competitors — if they're all missing the same job, differentiation comes from finding it"
+      ]
+    },
+    {
+      "name": "Problem-Solution Fit Before Product-Market Fit",
+      "description": "Most failed products solve a problem nobody has, or have the right problem with the wrong solution. Validate in sequence: problem exists → solution works → market is large enough.",
+      "steps": [
+        "Problem validation: interview 10-15 potential users. Do they experience this problem? How often? How do they currently solve it? What do they pay (time or money) to solve it?",
+        "Problem severity test: is this a 'hair on fire' problem (urgent, painful, frequent) or a 'nice to have'? Hair on fire = people will try imperfect solutions. Nice-to-have = they won't switch.",
+        "Solution validation: show a mockup, prototype, or description. Do they understand it immediately? Does it obviously solve their problem? Would they pay?",
+        "Willingness to pay test: 'We're thinking of charging $X.' Watch reaction — not just words. Early adopters who won't pay won't become paying customers later.",
+        "Market size reality check: how many people have this problem at this severity? Is the addressable market large enough to build a business?"
+      ],
+      "antipatterns": [
+        "Skipping problem validation and going straight to building",
+        "Surveying instead of interviewing — surveys produce socially desirable answers; interviews produce behavioral truth",
+        "Counting 'I would use this' as validation — intention ≠ behavior"
+      ]
+    },
+    {
+      "name": "Minimum Viable Product (MVP) Design",
+      "description": "The MVP is the smallest thing you can build that tests the most critical assumption. It is not a bad version of the full product — it is a specific experiment.",
+      "steps": [
+        "State the single most critical assumption your business depends on: 'Users will pay $X for Y'",
+        "Design the smallest possible test of that assumption — often not code at all: a landing page, a manual service, a prototype",
+        "Define success criteria before building: what result would validate the assumption? What would invalidate it?",
+        "Build only what is needed to run the test — cut everything else",
+        "Run the test with real users, not friends. Real willingness to pay requires real strangers.",
+        "Interpret results honestly: did this validate or invalidate the assumption? What is the next most critical assumption?"
+      ],
+      "mvp_types": [
+        { "type": "Landing page MVP", "tests": "Whether anyone wants this at all — measures interest before building", "example": "Dropbox video before a line of code was written" },
+        { "type": "Concierge MVP", "tests": "Whether the outcome delivers value — manual delivery simulates the product", "example": "Airbnb founders renting their own apartment manually" },
+        { "type": "Wizard of Oz MVP", "tests": "Whether users will use the interface — humans operate the 'AI' or 'automation' behind the scenes", "example": "Zappos — manually bought shoes from local stores to fulfill orders before building inventory system" },
+        { "type": "Single-feature MVP", "tests": "Whether one core feature creates enough value to retain users", "example": "Facebook news feed only; Twitter text-only" }
+      ],
+      "antipatterns": [
+        "Building a full product as the MVP — defeats the purpose; delays learning",
+        "MVP without defined success criteria — cannot interpret results",
+        "Testing with friendly users — they give false positives"
+      ]
+    },
+    {
+      "name": "UX Hierarchy of Needs",
+      "description": "Maslow applied to product design: users cannot appreciate delightful design if the product is unreliable or confusing. Fix lower tiers first.",
+      "hierarchy": [
+        { "level": 1, "name": "Functional", "description": "Does it work? Does it do what it claims?", "failure_mode": "Product doesn't function → no amount of design fixes this" },
+        { "level": 2, "name": "Reliable", "description": "Does it work consistently? Is it available when needed?", "failure_mode": "Intermittent failures destroy trust faster than consistent failure" },
+        { "level": 3, "name": "Usable", "description": "Can users accomplish their goal without friction, confusion, or errors?", "failure_mode": "Confusing UI causes abandonment even when the product works" },
+        { "level": 4, "name": "Pleasurable", "description": "Does using it feel good? Is there delight, personality, satisfaction?", "failure_mode": "Delight without usability is lipstick on a confusing product" }
+      ],
+      "steps": [
+        "Audit your product against each level: where is the lowest unsatisfied tier?",
+        "Invest at the lowest unsatisfied tier before adding features at higher tiers",
+        "Common trap: shipping visual redesigns (level 4) while core features are broken (level 1-2)",
+        "User research maps to tiers: usability testing reveals level 3 failures; NPS and reviews reveal level 4 ceiling"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "jtbd_discovery",
+      "name": "JTBD Discovery",
+      "template": "Help me identify the jobs-to-be-done for [product/feature]. What functional and emotional jobs might users be hiring this for? What are they currently firing to hire it? Where does the current solution fail them? What interview questions would surface the real job?",
+      "tags": ["JTBD", "discovery", "user_research", "positioning"]
+    },
+    {
+      "id": "problem_validation",
+      "name": "Problem Validation Design",
+      "template": "I'm building [product idea] to solve [problem]. Design a problem validation process: What 10 questions would you ask in user interviews? What would strong validation look like vs. weak validation? What 'hair on fire' indicators should I look for?",
+      "tags": ["validation", "problem", "interviews", "PMF"]
+    },
+    {
+      "id": "mvp_design",
+      "name": "MVP Design",
+      "template": "Design an MVP for: [product or feature]. My most critical assumption is: [assumption]. What is the smallest test? What type of MVP fits (landing page, concierge, wizard of oz, single feature)? What are the success criteria before I build more?",
+      "tags": ["MVP", "assumption", "experiment", "build"]
+    },
+    {
+      "id": "ux_audit",
+      "name": "UX Hierarchy Audit",
+      "template": "Audit my product against the UX hierarchy: [describe product and current state]. Is it functional? Reliable? Usable? Pleasurable? Where is the lowest unsatisfied tier? What should I fix before anything else?",
+      "tags": ["UX", "audit", "hierarchy", "priority"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "B2B SaaS Feature Prioritization",
+      "context": "Product team debating between 3 new features for a project management tool. All have user requests.",
+      "framework_applied": "JTBD + UX Hierarchy",
+      "analysis": "JTBD interviews revealed users' actual job: 'Prove to my manager that my team is making progress without having a status meeting.' None of the 3 proposed features addressed this. UX audit revealed search was broken (level 1 failure). Current roadmap was adding delightful features while core function failed.",
+      "intervention": "Fix search first. Then build one-click status report. Deprioritize all 3 originally proposed features.",
+      "outcome": "NPS increased 18 points in 6 weeks after search fix alone."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Jobs-to-Be-Done (JTBD)", "definition": "Framework treating products as hired to fulfill a job. The job exists independent of the product; products compete for the hire." },
+    { "term": "Problem-Solution Fit", "definition": "Validation that your solution adequately solves a real, painful problem. Precedes Product-Market Fit." },
+    { "term": "Product-Market Fit (PMF)", "definition": "State where a product satisfies strong market demand. Indicators: high retention, organic growth, users angry if it disappeared." },
+    { "term": "MVP (Minimum Viable Product)", "definition": "Smallest experiment that tests the most critical assumption. Not a bad product — a specific test." },
+    { "term": "Hair-on-Fire Problem", "definition": "A problem so urgent and painful that users will tolerate imperfect solutions to address it. Opposite of a 'nice-to-have.'" },
+    { "term": "Concierge MVP", "definition": "Manual delivery of a service to simulate what the product would do. Tests whether the outcome creates value before automation is built." },
+    { "term": "Wizard of Oz MVP", "definition": "Human-powered backend behind an automated-looking interface. Tests UI adoption before backend is built." },
+    { "term": "Usability Testing", "definition": "Observing real users attempting to complete tasks. Reveals confusion and friction that surveys and analytics miss." }
+  ],
+  "sources": [
+    { "title": "Competing Against Luck", "authors": ["Clayton Christensen"], "type": "book", "relevance": "JTBD theory — foundational" },
+    { "title": "The Lean Startup", "authors": ["Eric Ries"], "type": "book", "relevance": "MVP, build-measure-learn, validated learning" },
+    { "title": "Inspired", "authors": ["Marty Cagan"], "type": "book", "relevance": "Product discovery, problem validation, product management craft" },
+    { "title": "The Mom Test", "authors": ["Rob Fitzpatrick"], "type": "book", "relevance": "User interview technique — getting truth instead of compliments" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["DECISION_ENGINE (D20)", "Finance_Insights (D1)", "Pattern_Recognition_Engine"],
+    "v78_consciousnesses": [
+      "House v2.1 (problem diagnosis before solution — JTBD = differential diagnosis applied to products)",
+      "Rogan v2.1 (validation check — 'I would use this' is not evidence)",
+      "Module 30 Sales (offer design parallels JTBD — same user truth-finding applies)",
+      "Constraint Mapper (MVP design = identifying minimum required, not maximum desired)"
+    ],
+    "master_laws": [
+      "Law 23 (Iteration — MVP is v1.0 that is supposed to teach)",
+      "Law 21 (Action — ship the test, not the vision)",
+      "Law 14 (Validation — problem-solution fit must be validated, not assumed)",
+      "Law 11 (Leverage — fix lowest UX tier first for highest-leverage improvement)"
+    ],
+    "sovereign_needs_served": ["Creation (primary — building products that actually work)", "Growth (validated products compound; unvalidated products burn capital)"],
+    "4_gate_relevance": {
+      "gate_2_true": "JTBD and problem validation ensure the product is built on real user truth",
+      "gate_3_leverage": "UX hierarchy audit routes investment to highest-leverage tier"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 34,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "cluster": "Creation (34-35)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL",
+    "4_gate_validation": {
+      "safe": "PASS",
+      "true": "PASS — JTBD, lean startup, and UX hierarchy are established, well-replicated frameworks",
+      "high_leverage": "PASS — problem validation before building prevents capital destruction on wrong solutions",
+      "aligned": "PASS — Laws 23, 21, 14, 11; Creation and Growth needs"
+    }
+  }
+}

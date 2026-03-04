@@ -1,0 +1,18 @@
+{
+  "cartridge_id": "CART-DECISION-MAKING",
+  "domain": "decision-making",
+  "version": "1.0",
+  "rule_count": 10,
+  "rules": [
+    {"id": "DEC-001", "name": "Reversibility First", "principle": "Before analyzing any decision, classify it: reversible (move fast) or irreversible (move carefully). Most are reversible.", "insight_template": "Is {decision} a one-way or two-way door? What is the actual cost of reversing it if wrong?"},
+    {"id": "DEC-002", "name": "10-10-10 Test", "principle": "Ask how you will feel about this decision in 10 minutes, 10 months, and 10 years.", "insight_template": "Looking at {decision} from 10 years ahead — does today's hesitation even matter?"},
+    {"id": "DEC-003", "name": "Pre-Mortem", "principle": "Before committing, imagine it is 12 months later and the decision failed. What killed it?", "insight_template": "If {decision} fails completely in 12 months, what is the most likely cause?"},
+    {"id": "DEC-004", "name": "Asymmetric Upside", "principle": "Only make bets where upside is at least 3x downside. Ideal is 10x.", "insight_template": "What is the realistic best case vs worst case of {decision}? What is the ratio?"},
+    {"id": "DEC-005", "name": "WRAP Framework", "principle": "Widen options, Reality-test assumptions, Attain distance, Prepare to be wrong.", "insight_template": "For {decision} — what options are you not considering? What assumption, if wrong, changes everything?"},
+    {"id": "DEC-006", "name": "Vanishing Options", "principle": "Ask: if none of these options were available, what would you do? Usually reveals a better path.", "insight_template": "If every option currently on the table for {decision} disappeared, what would you do instead?"},
+    {"id": "DEC-007", "name": "Opportunity Cost", "principle": "Every yes is a no to everything else. Name what you are giving up.", "insight_template": "If you say yes to {decision}, what are you automatically saying no to?"},
+    {"id": "DEC-008", "name": "Decide by Deadline", "principle": "Set a decision deadline and honor it. Delayed decisions have hidden costs that compound.", "insight_template": "What is the cost of not deciding on {decision} for another 30 days?"},
+    {"id": "DEC-009", "name": "Separate Deciding from Executing", "principle": "Make the decision cleanly first, then plan execution. Mixing them corrupts both.", "insight_template": "Have you actually decided on {decision} or are you still in analysis disguised as planning?"},
+    {"id": "DEC-010", "name": "Track Record Audit", "principle": "Your past decisions in similar situations are your best predictor. Review them.", "insight_template": "What does your track record on similar decisions to {decision} actually tell you?"}
+  ]
+}

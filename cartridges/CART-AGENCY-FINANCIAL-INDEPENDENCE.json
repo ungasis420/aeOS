@@ -1,0 +1,126 @@
+{
+  "id": "agency_financial_independence",
+  "name": "Financial Independence Architecture",
+  "category": "Agency",
+  "sovereign_need": "Agency",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Financial Independence Stack",
+      "description": "Financial independence is not a single threshold — it is a stack of progressively expanding freedom levels. Each level unlocks new agency. Most people aim only at the final level and never reach any.",
+      "steps": [
+        "Level 1 — Financial Safety: 6 months expenses in liquid savings. No high-interest debt. Covers basic protection from disruption.",
+        "Level 2 — Financial Stability: income covers all expenses with meaningful surplus. Multiple income streams beginning to form. No financial emergency possible.",
+        "Level 3 — Financial Flexibility: passive or semi-passive income covers 20-30% of expenses. Can take selective risks (turn down bad clients, take sabbatical, pursue opportunities).",
+        "Level 4 — Financial Independence (FI): passive income covers all expenses. Work is optional. Typically 25x annual expenses invested (4% withdrawal rate).",
+        "Level 5 — Financial Freedom: passive income significantly exceeds expenses. Capital allocation at scale. Generational impact possible.",
+        "Identify your current level and the specific gap to the next level — not the final level"
+      ],
+      "antipatterns": [
+        "Targeting Level 4/5 while neglecting Level 1/2 — the base is not optional",
+        "Lifestyle inflation that moves the target faster than the portfolio grows",
+        "Single income stream dependence — one failure point is not a stack"
+      ]
+    },
+    {
+      "name": "FI Number Calculation",
+      "description": "Financial independence has a specific number. Most people avoid calculating it because the number feels large. Knowing the number creates a target; not knowing it creates a fog.",
+      "steps": [
+        "Calculate your annual expenses: actual spending over last 12 months, not estimated",
+        "Determine your FI target: annual expenses × 25 (4% safe withdrawal rate). This is your FI number.",
+        "Calculate your current gap: FI number minus current investable assets",
+        "Calculate years to FI at current savings rate: use compound growth calculator with conservative 7% real return",
+        "Identify the highest-leverage variable: savings rate (controlled by you) matters more than return rate",
+        "Model the impact of savings rate changes: increasing savings rate from 20% to 40% roughly halves your FI timeline"
+      ],
+      "antipatterns": [
+        "Using estimated expenses rather than actual — consistently understates the real number",
+        "Ignoring inflation — a static FI number erodes over time",
+        "Optimizing return rate over savings rate — return is not controlled; savings rate is"
+      ]
+    },
+    {
+      "name": "Income Architecture for Independence",
+      "description": "Financial independence is reached faster with multiple income streams that include at least one with leverage. Salary alone, regardless of amount, produces linear progress.",
+      "steps": [
+        "Audit current income sources: salary, consulting, business, investments, royalties, rental",
+        "Identify leverage ratio of each: time-for-money (1:1) vs. leveraged (1:many)",
+        "Build one leveraged income stream before optimizing any existing streams — the multiplier effect dominates",
+        "Sequence: earned income (high flow) → invest surplus → build business income → acquire assets → live on asset income",
+        "Protect the primary income engine during transition — do not quit the salary before the replacement is proven",
+        "Calculate your crossover point: the moment passive income exceeds expenses — this is financial independence"
+      ],
+      "antipatterns": [
+        "Quitting salary before replacement income is established — destroys the safety stack",
+        "Multiple income streams all at 1:1 leverage — diversification without leverage is just multiple jobs",
+        "No investment of surplus — earned income without investment never becomes passive income"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "fi_stack_audit",
+      "name": "Financial Independence Stack Audit",
+      "template": "Audit my financial independence stack. Monthly expenses: [amount]. Emergency fund: [months]. High-interest debt: [amount]. Income sources and leverage ratio: [list]. Current investable assets: [amount]. Identify my current FI level, my FI number, my current gap, and the highest-leverage action to advance to the next level.",
+      "tags": ["FI", "stack", "audit"]
+    },
+    {
+      "id": "fi_number",
+      "name": "FI Number Calculation",
+      "template": "Calculate my FI number and timeline. Annual expenses (actual): [amount]. Current investable assets: [amount]. Monthly savings rate: [amount]. Expected return: [% or use 7%]. Show me: FI number, current gap, years to FI at current rate, and the impact of increasing savings rate by 10%.",
+      "tags": ["FI_number", "timeline", "calculation"]
+    },
+    {
+      "id": "income_architecture",
+      "name": "Income Architecture Design",
+      "template": "Design my income architecture for financial independence. Current income: [describe]. Skills and assets I could leverage: [describe]. Time available outside primary income: [hours/week]. Target FI timeline: [years]. Give me a sequenced income architecture with leverage ratios and transition timing.",
+      "tags": ["income", "architecture", "leverage"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Accelerating from Level 2 to Level 3",
+      "context": "Salaried professional at Level 2 (stable, no debt, small savings). Annual expenses $60K. FI number $1.5M. Current assets $200K.",
+      "gap": "$1.3M",
+      "intervention": "Built productized consulting service alongside salary generating $2K/month passive. Increased savings rate from 20% to 35% by eliminating lifestyle inflation.",
+      "result": "FI timeline reduced from 22 years to 14 years. Level 3 (flexibility) reached in 4 years — enough passive income to turn down low-value work."
+    }
+  ],
+  "vocabulary": [
+    { "term": "FI Number", "definition": "Annual expenses multiplied by 25. The investable asset level at which a 4% annual withdrawal covers all expenses indefinitely." },
+    { "term": "Safe Withdrawal Rate", "definition": "The percentage of portfolio withdrawn annually with high historical probability of not depleting capital over a 30-year horizon. Conventionally 4%." },
+    { "term": "Crossover Point", "definition": "The moment passive income exceeds monthly expenses. The definition of financial independence reached." },
+    { "term": "Savings Rate", "definition": "Percentage of income saved and invested. The most controllable variable in FI timeline. Increasing from 20% to 40% roughly halves the timeline." },
+    { "term": "Leveraged Income", "definition": "Income generated at a ratio greater than 1:1 effort-to-output. Content, software, and productized services are examples. The structural prerequisite for financial independence." },
+    { "term": "Lifestyle Inflation", "definition": "The tendency to increase spending proportionally with income increases. Eliminates the savings rate gains from income growth." },
+    { "term": "Financial Flexibility (Level 3)", "definition": "The stage where passive income covers 20-30% of expenses. Unlocks genuine agency: ability to decline bad opportunities without financial panic." }
+  ],
+  "sources": [
+    { "title": "Your Money or Your Life", "authors": ["Vicki Robin", "Joe Dominguez"], "type": "book", "relevance": "FI framework, crossover point, life energy concept" },
+    { "title": "The Simple Path to Wealth", "authors": ["JL Collins"], "type": "book", "relevance": "FI number, index fund path to independence" },
+    { "title": "Early Retirement Extreme", "authors": ["Jacob Lund Fisker"], "type": "book", "relevance": "High savings rate, systems thinking for FI" },
+    { "title": "Die With Zero", "authors": ["Bill Perkins"], "type": "book", "relevance": "Optimal spending across life stages, FI calibration" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["Financial_Autopilot (D31)", "Finance_Insights (D1)", "Revenue_Forecast (D2)", "DECISION_ENGINE (D20)"],
+    "v78_consciousnesses": ["Ancient One v3.0 (compounding timeline, 10-year horizon)", "Module 11 Cash Flow Primacy", "Constraint Mapper (self-imposed vs real financial constraints)"],
+    "master_laws": ["Law 3 (Agency — FI is the structural foundation of agency)", "Law 19 (Compound — FI is applied compound interest)", "Law 9 (Time — timeline is the key variable)", "Law 24 (Resources — capital is the prerequisite)"],
+    "sovereign_needs_served": ["Agency (primary — FI is structural agency)", "Security (financial safety stack)", "Legacy (FI enables mission-driven work)", "Growth (reinvestment accelerates trajectory)"],
+    "caveat": "Strategic framework only. Not financial advice. Consult a fee-only fiduciary for personalized financial planning.",
+    "4_gate_validation": {
+      "safe": "PASS — caveat embedded; no specific investment recommendations",
+      "true": "PASS — 4% withdrawal rate and 25x multiplier are well-documented",
+      "high_leverage": "PASS — FI architecture directly produces structural agency",
+      "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 31,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

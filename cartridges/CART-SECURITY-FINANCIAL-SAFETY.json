@@ -1,0 +1,216 @@
+{
+  "id": "security_financial_safety",
+  "name": "Financial Safety & Cash Flow Primacy",
+  "category": "Security",
+  "sovereign_need": "Security",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Cash Flow Primacy Protocol",
+      "description": "Cash flow is oxygen. Revenue is vanity, profit is sanity, cash flow is reality. A business or individual that runs out of cash fails regardless of every other metric.",
+      "steps": [
+        "Calculate current monthly burn rate (total outflows — fixed + variable)",
+        "Calculate current monthly cash inflows (collected, not invoiced)",
+        "Determine runway: cash_in_bank / monthly_burn = months of survival",
+        "Establish minimum safety threshold: 3 months runway = ALERT, 6 months = healthy, 12 months = secure",
+        "Identify the single fastest action to extend runway if below threshold",
+        "Set weekly cash monitoring cadence — not monthly, not quarterly"
+      ],
+      "examples": [
+        {
+          "situation": "Consultant with $180K annual revenue but consistently cash-stressed",
+          "diagnosis": "Collections lag: invoicing net-60 while expenses are immediate. Runway looks fine on paper; cash is the crisis.",
+          "intervention": "Switch to 50% upfront payment terms. Offer 3% discount for immediate payment. Resolve within 30 days."
+        },
+        {
+          "situation": "Startup with 8 months runway considering scaling costs",
+          "diagnosis": "Below 12-month threshold. Scaling before secure runway violates Law 24.",
+          "intervention": "Extend runway to 12+ months before any scaling spend. Fix unit economics first."
+        }
+      ],
+      "antipatterns": [
+        "Tracking revenue booked instead of cash collected",
+        "Scaling before cash flow positive at current size",
+        "Net-60 or net-90 payment terms without factoring impact on personal runway",
+        "Treating a line of credit as runway (debt is not cash flow)",
+        "Confusing profitability with solvency — profitable businesses fail from cash flow problems"
+      ]
+    },
+    {
+      "name": "Financial Safety Stack",
+      "description": "Financial security is not a single number — it is a stack of layered protections, each serving a different threat. Build from the bottom up.",
+      "steps": [
+        "Layer 1 — Emergency Fund: 6 months of personal living expenses in liquid, low-risk account. Untouchable except genuine emergency.",
+        "Layer 2 — Business Runway: 6 months operating expenses for any active business. Separate from personal.",
+        "Layer 3 — Income Diversification: minimum 2 income sources. Single-source income is a single point of failure.",
+        "Layer 4 — Liability Protection: entity structure (LLC minimum) separating personal assets from business risk.",
+        "Layer 5 — Insurance Floor: health, professional liability (E&O), umbrella policy. Cheapest catastrophic protection available.",
+        "Layer 6 — Debt Elimination or Management: high-interest debt destroys compound growth. Eliminate before investing.",
+        "Layer 7 — Investment Compounding: only begins after Layers 1-6 are stable."
+      ],
+      "examples": [
+        {
+          "situation": "Freelancer with $50K savings but no entity structure, single client providing 80% of income",
+          "diagnosis": "Layers 1-2 partially funded. Layer 3 critical failure (concentration risk). Layer 4 missing.",
+          "intervention": "Form LLC immediately. Actively develop second client to below 50% concentration. Emergency fund adequate."
+        }
+      ],
+      "antipatterns": [
+        "Investing in Layer 7 before Layers 1-3 are secure",
+        "Treating home equity as emergency fund (illiquid)",
+        "Skipping entity structure to avoid complexity — one lawsuit eliminates personal assets",
+        "Single client concentration above 50% of revenue",
+        "Emergency fund in investments subject to market volatility"
+      ]
+    },
+    {
+      "name": "Unit Economics Validation",
+      "description": "A business that loses money on every transaction cannot be saved by volume. Validate unit economics before scaling anything.",
+      "steps": [
+        "Calculate Customer Acquisition Cost (CAC): total sales + marketing spend / new customers acquired",
+        "Calculate Lifetime Value (LTV): average revenue per customer × gross margin × average customer lifespan",
+        "Calculate LTV:CAC ratio — target 3:1 minimum, 5:1+ healthy",
+        "Calculate payback period: CAC / monthly gross profit per customer — target < 12 months",
+        "If LTV:CAC < 3:1: do NOT scale. Fix offer, pricing, or retention first.",
+        "If payback period > 18 months: cash flow risk even with positive LTV:CAC"
+      ],
+      "examples": [
+        {
+          "situation": "SaaS with $500 CAC, $50/month subscription, 60% gross margin, 18-month average lifespan",
+          "calculation": "LTV = $50 × 0.60 × 18 = $540. LTV:CAC = 540/500 = 1.08. Payback = 500/(50×0.60) = 16.7 months.",
+          "diagnosis": "Critical: LTV:CAC of 1.08 means barely breaking even per customer. Scaling destroys cash.",
+          "intervention": "Before scaling: increase price, improve retention, or reduce CAC. Target LTV:CAC of 3:1 minimum."
+        }
+      ],
+      "antipatterns": [
+        "Scaling marketing before validating LTV:CAC",
+        "Celebrating revenue growth while LTV:CAC deteriorates",
+        "Calculating LTV without including churn rate",
+        "Ignoring payback period when evaluating cash impact of growth"
+      ]
+    },
+    {
+      "name": "Downside Protection Protocol",
+      "description": "Before any significant financial decision, define the worst realistic outcome and verify it is survivable. Asymmetric bets require survivable downsides.",
+      "steps": [
+        "Define the decision and capital at risk (time, money, reputation — quantify all three)",
+        "Identify worst realistic outcome (not worst imaginable — realistic)",
+        "Ask: if worst case occurs, do I survive financially and professionally?",
+        "If yes: evaluate upside. If no: the bet is too large regardless of upside.",
+        "Calculate asymmetry ratio: upside value / downside risk. Minimum 3:1 to proceed.",
+        "Define exit trigger in advance: at what point do I cut losses? Write it down before starting."
+      ],
+      "examples": [
+        {
+          "situation": "Considering leaving stable job for startup before having 12 months runway",
+          "downside": "Startup fails in 6 months. No savings. No income. 6-month gap on resume.",
+          "survivability": "Financially survivable only with 12+ months personal runway. Below that: catastrophic.",
+          "intervention": "Build to 12-month runway before leaving. Or negotiate part-time transition. Or validate startup revenue while employed."
+        }
+      ],
+      "antipatterns": [
+        "Evaluating upside before confirming downside survivability",
+        "All-or-nothing bets where failure is catastrophic",
+        "No pre-defined exit trigger — holding losers indefinitely",
+        "Treating non-financial costs (time, health, relationships) as free"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "cash_flow_audit",
+      "name": "Cash Flow Health Check",
+      "template": "Run a cash flow health check. My current monthly inflows (collected): [amount]. Monthly fixed costs: [amount]. Monthly variable costs: [amount]. Cash in bank: [amount]. Calculate my runway, identify my biggest cash flow risk, and tell me what single action would most improve my cash position in the next 30 days.",
+      "tags": ["cash_flow", "audit", "runway"]
+    },
+    {
+      "id": "financial_safety_stack",
+      "name": "Safety Stack Assessment",
+      "template": "Assess my financial safety stack. Current situation: Emergency fund: [amount/months]. Business runway: [amount/months]. Income sources: [list]. Entity structure: [type or none]. Insurance: [types held]. Debt: [types and rates]. Identify my weakest layer and the highest-leverage action to strengthen it.",
+      "tags": ["safety", "protection", "assessment"]
+    },
+    {
+      "id": "unit_economics",
+      "name": "Unit Economics Validation",
+      "template": "Validate my unit economics before I scale. CAC: [amount]. Average monthly revenue per customer: [amount]. Gross margin: [%]. Average customer lifespan: [months]. Calculate LTV, LTV:CAC ratio, and payback period. Tell me whether my economics support scaling or require repair first.",
+      "tags": ["unit_economics", "LTV", "CAC", "scaling"]
+    },
+    {
+      "id": "downside_protection",
+      "name": "Decision Downside Assessment",
+      "template": "I am considering [decision]. Capital at risk: [time/money/reputation]. Walk me through downside protection analysis: worst realistic outcome, survivability check, asymmetry ratio, and pre-defined exit trigger. Then tell me whether to proceed, modify, or decline.",
+      "tags": ["downside", "risk", "decision"]
+    },
+    {
+      "id": "income_concentration",
+      "name": "Income Concentration Risk",
+      "template": "Assess my income concentration risk. Revenue sources: [list with percentages]. Identify single points of failure above 40% concentration, the realistic loss scenario if that source disappears, and two concrete actions to diversify within 90 days.",
+      "tags": ["concentration", "diversification", "risk"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Consultant Cash Flow Crisis Prevention",
+      "context": "6-figure consultant, profitable on paper, repeatedly stressed about cash",
+      "framework_applied": "Cash Flow Primacy Protocol",
+      "root_cause": "Net-45 payment terms + irregular project timing = 2-month cash gaps between projects",
+      "intervention": "50% upfront on all engagements. Retainer agreements for recurring clients. 6-month personal emergency fund maintained separately from business account.",
+      "outcome": "Same revenue, zero cash stress. Cash flow problem was a terms problem, not a revenue problem."
+    },
+    {
+      "title": "Pre-Scale Unit Economics Repair",
+      "context": "E-commerce brand with $2M revenue, planning $500K marketing investment to scale",
+      "framework_applied": "Unit Economics Validation",
+      "diagnosis": "LTV:CAC = 1.8:1. Scaling at this ratio burns $500K to generate $900K LTV — net negative after operating costs.",
+      "intervention": "Pause scale. Improve retention by 20% (email sequence, loyalty program). Recheck in 90 days.",
+      "outcome": "90-day retention improvement brings LTV:CAC to 3.4:1. Scale investment now generates positive return."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Cash Runway", "definition": "Cash in bank divided by monthly burn rate. Months of survival without new revenue. Minimum safe threshold: 6 months." },
+    { "term": "Burn Rate", "definition": "Monthly net cash outflow. Total expenses minus total cash collected. The speed at which a reserve depletes." },
+    { "term": "CAC (Customer Acquisition Cost)", "definition": "Total sales and marketing spend divided by number of new customers acquired in the period." },
+    { "term": "LTV (Lifetime Value)", "definition": "Total gross profit expected from a customer over their relationship with the business. LTV = revenue × gross margin × lifespan." },
+    { "term": "LTV:CAC Ratio", "definition": "Efficiency of customer acquisition. 3:1 minimum viable. 5:1+ healthy. Below 1:1 means losing money on each customer acquired." },
+    { "term": "Payback Period", "definition": "Months required to recover CAC from gross profit per customer. Under 12 months is healthy. Over 18 months creates cash flow risk even with positive LTV:CAC." },
+    { "term": "Unit Economics", "definition": "Revenue and cost structure of a single transaction or customer. Must be positive before scaling — volume amplifies unit economics in both directions." },
+    { "term": "Concentration Risk", "definition": "Dependence on a single client, revenue stream, or channel above ~40% of total. A single point of failure at business scale." },
+    { "term": "Asymmetry Ratio", "definition": "Upside value divided by downside risk. Minimum 3:1 to proceed with a significant decision. Below 1:1: avoid entirely." },
+    { "term": "Exit Trigger", "definition": "Pre-defined condition at which a position or decision is abandoned. Must be set before entering a commitment, not during." },
+    { "term": "Financial Safety Stack", "definition": "Layered financial protections built in order: emergency fund → business runway → income diversification → liability protection → insurance → debt elimination → investment." },
+    { "term": "Downside Survivability", "definition": "The test of whether worst realistic outcome of a decision leaves the Sovereign financially and professionally functional. Non-survivable downsides disqualify a bet regardless of upside." }
+  ],
+  "sources": [
+    { "title": "$100M Offers", "authors": ["Alex Hormozi"], "type": "book", "relevance": "Cash flow primacy, unit economics, speed to first dollar" },
+    { "title": "Profit First", "authors": ["Mike Michalowicz"], "type": "book", "relevance": "Cash flow management systems, account separation" },
+    { "title": "The Intelligent Investor", "authors": ["Benjamin Graham"], "type": "book", "relevance": "Margin of safety, downside protection" },
+    { "title": "Zero to One", "authors": ["Peter Thiel"], "type": "book", "relevance": "Unit economics, concentration before diversification" },
+    { "title": "Skin in the Game", "authors": ["Nassim Nicholas Taleb"], "type": "book", "relevance": "Asymmetric risk, downside survivability" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["Finance_Insights (D1)", "Revenue_Forecast (D2)", "Expense_Analytics (D3)", "Financial_Autopilot (D31)", "DECISION_ENGINE (D20)"],
+    "v78_consciousnesses": ["House v2.1 (ROI-ranked diagnosis)", "Rogan v2.1 (Law 18 reality check on financial claims)", "Ancient One v3.0 (temporal cash flow projection)", "Constraint Mapper (hard vs self-imposed financial limits)"],
+    "master_laws": ["Law 24 (Resources — never start a war you cannot fund)", "Law 12 (Asymmetry — 3:1 minimum ratio)", "Law 18 (Reality — economics do not care about optimism)", "Law 3 (Agency — financial independence preserves options)"],
+    "sovereign_needs_served": ["Security (primary)", "Agency (financial independence = optionality)", "Growth (stable base enables compounding)"],
+    "4_gate_relevance": {
+      "gate_2_true": "All financial projections grounded in actual cash collected, not revenue booked",
+      "gate_3_leverage": "Unit economics validation before scaling is highest-leverage financial intervention",
+      "gate_4_aligned": "Law 24 compliance — runway check mandatory before any scaling recommendation"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 10,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL",
+    "4_gate_validation": {
+      "safe": "PASS — conservative safety-first framing; no leveraged speculation advice",
+      "true": "PASS — grounded in established financial principles; LTV:CAC formulas standard",
+      "high_leverage": "PASS — cash flow primacy is highest-leverage financial intervention for most operators",
+      "aligned": "PASS — directly serves Security need; enables all other Sovereign Needs via stable base"
+    }
+  }
+}

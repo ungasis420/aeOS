@@ -1,0 +1,122 @@
+{
+  "id": "growth_network_building",
+  "name": "Network Building & Relationship Capital",
+  "category": "Growth",
+  "sovereign_need": "Growth",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Relationship Capital Architecture",
+      "description": "Networks are not collections of contacts — they are stores of relationship capital. Capital is built through consistent value delivery and depleted through extraction. Architecture determines long-term network value.",
+      "steps": [
+        "Map current network by tier: Tier 1 (10-20 deep relationships — real mutual investment), Tier 2 (50-150 warm relationships — periodic meaningful contact), Tier 3 (500+ loose connections — aware of each other)",
+        "Audit Tier 1: are these the right people for your 10-year trajectory? Are you investing in them?",
+        "Identify network gaps: what expertise, access, or perspective is missing from your Tier 1?",
+        "Define your value proposition: what do you consistently offer that makes people want you in their Tier 1?",
+        "Build toward 3-5 new Tier 1 relationships per year — quality over volume",
+        "Maintain Tier 2 with systematic low-friction touchpoints — sharing relevant content, congratulations, introductions"
+      ],
+      "antipatterns": [
+        "Transactional networking — connecting only when you need something depletes capital rapidly",
+        "Optimizing for Tier 3 (followers, LinkedIn connections) while neglecting Tier 1",
+        "No defined value proposition — taking more than you give produces weak relationships",
+        "Networking events without follow-up — weak ties never convert to relationship capital"
+      ]
+    },
+    {
+      "name": "Give First Protocol",
+      "description": "Relationship capital is built by giving before asking. Consistent givers build disproportionately strong networks because they are rare. The sequence is: give → trust builds → ask becomes natural.",
+      "steps": [
+        "Before any interaction ask: what can I give this person? (Information, introduction, recognition, time, resources)",
+        "Give without expectation of immediate return — capital builds in aggregate, not per transaction",
+        "Specialize your giving: what can you offer that others cannot? (Your specific expertise, your specific network access)",
+        "Make introductions liberally — connecting two people who should know each other costs you nothing and builds capital with both",
+        "Follow up on things people mention — remembering details and acting on them is rare and memorable",
+        "Publish your knowledge — giving at scale without linear time cost"
+      ],
+      "antipatterns": [
+        "Keeping score on individual interactions — relationship capital is portfolio-level, not transaction-level",
+        "Generic giving — forwarding articles anyone could find is low value; specific, personalized giving is high value",
+        "Giving without visibility — value delivered that is not perceived does not build capital"
+      ]
+    },
+    {
+      "name": "Strategic Network Positioning",
+      "description": "Where you sit in a network determines what information and opportunities reach you. Structural position matters as much as relationship quality.",
+      "steps": [
+        "Identify the key nodes in your field: who do the most influential people in your domain all know?",
+        "Identify bridge opportunities: where are two valuable but disconnected communities you could bridge?",
+        "Position yourself at information intersections: people who connect different worlds receive more diverse, earlier-arriving information",
+        "Build weak ties deliberately: strong ties share redundant information; weak ties provide novel information and opportunities",
+        "Become a connector: facilitate introductions between your Tier 1 — connectors become structurally irreplaceable",
+        "Audit your network diversity: same-industry, same-background networks produce echo chambers and limited opportunity"
+      ],
+      "antipatterns": [
+        "Only building within your current industry — limits opportunity discovery and creates echo chamber",
+        "No weak ties — strong-tie-only networks are warm but informationally redundant",
+        "Never making introductions — connectors are structurally central; non-connectors are peripheral"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "network_audit",
+      "name": "Network Audit",
+      "template": "Audit my network. Tier 1 (deep, mutual investment): [list 10-20]. Tier 2 (warm, periodic contact): [estimate count and describe]. Current gaps: [expertise or access I lack]. Identify whether my Tier 1 is aligned with my 10-year goals, my biggest network gap, and the highest-leverage relationship to build next.",
+      "tags": ["audit", "tiers", "gaps"]
+    },
+    {
+      "id": "value_proposition",
+      "name": "Network Value Proposition",
+      "template": "Define my network value proposition. My expertise: [describe]. My network access: [describe]. What I can offer that most cannot: [describe or help me identify]. Build my give-first strategy for the next 90 days.",
+      "tags": ["value_proposition", "give_first", "strategy"]
+    },
+    {
+      "id": "relationship_maintenance",
+      "name": "Relationship Maintenance System",
+      "template": "Design a relationship maintenance system for my network. Tier 1 size: [number]. Tier 2 size: [number]. Time available for relationship maintenance: [hours/week]. Give me a lightweight, systematic touchpoint cadence that maintains capital without becoming a second job.",
+      "tags": ["maintenance", "system", "cadence"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Consultant Building a Referral Network",
+      "context": "Independent consultant relying on cold outreach for new business",
+      "framework_applied": "Give First Protocol + Relationship Capital Architecture",
+      "intervention": "Identified 20 non-competing consultants serving same client profile. Began making introductions between clients and these consultants, sharing relevant research, providing feedback on their content.",
+      "outcome": "Within 12 months, 60% of new business came from referrals from this network. Cold outreach effectively eliminated."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Relationship Capital", "definition": "The accumulated goodwill, trust, and reciprocity stored in a relationship. Built through consistent giving; depleted through extraction." },
+    { "term": "Weak Ties", "definition": "Acquaintance-level connections. Research shows weak ties deliver more novel information and job opportunities than strong ties." },
+    { "term": "Network Bridge", "definition": "A person connecting two otherwise disconnected communities. Bridges receive diverse information early and hold structural power." },
+    { "term": "Dunbar's Number", "definition": "Cognitive limit of ~150 stable social relationships. Tier 1 (10-20) and Tier 2 (~150) map to this natural architecture." },
+    { "term": "Give First", "definition": "Networking philosophy of delivering value before making requests. Builds capital and creates reciprocity without transactional dynamics." },
+    { "term": "Structural Hole", "definition": "A gap between two unconnected network clusters. Filling structural holes by bridging communities creates disproportionate influence." }
+  ],
+  "sources": [
+    { "title": "Never Eat Alone", "authors": ["Keith Ferrazzi"], "type": "book", "relevance": "Give first, relationship architecture, systematic maintenance" },
+    { "title": "Give and Take", "authors": ["Adam Grant"], "type": "book", "relevance": "Giver advantage in networks, long-term capital building" },
+    { "title": "The Tipping Point", "authors": ["Malcolm Gladwell"], "type": "book", "relevance": "Connector role, weak ties, network position" },
+    { "title": "Structural Holes", "authors": ["Ronald Burt"], "type": "book", "relevance": "Network positioning, bridge value, information advantage" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["Relationship_Intelligence (D26)", "People_Analytics (D23)", "COMPOUND_FLYWHEEL (F3.6)"],
+    "v78_consciousnesses": ["Ancient One v3.0 (relationship capital compounds over decades)", "Lucifer v3.0 (authentic motivation for networking)"],
+    "master_laws": ["Law 27 (Networking — network is net worth)", "Law 19 (Compound — relationship capital compounds)", "Law 21 (Action — give first requires consistent action)"],
+    "sovereign_needs_served": ["Growth (primary)", "Influence (network is influence infrastructure)", "Agency (strong network creates options)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS", "high_leverage": "PASS", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 21,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

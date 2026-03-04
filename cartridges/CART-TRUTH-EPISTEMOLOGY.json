@@ -1,0 +1,191 @@
+{
+  "id": "truth_epistemology",
+  "name": "Epistemology & Knowledge Validation",
+  "category": "Truth",
+  "sovereign_need": "Truth",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Epistemic Status Classification",
+      "description": "Not all beliefs deserve equal confidence. Classifying what you know, what you think you know, and what you are guessing prevents false certainty from corrupting decisions. The failure mode is not ignorance — it is unrecognized ignorance.",
+      "steps": [
+        "Take any belief you are acting on and classify it: KNOWN (directly verified, repeatable evidence), BELIEVED (strong indirect evidence, not personally verified), ASSUMED (inherited or default belief, never tested), UNKNOWN (acknowledged gap)",
+        "For each BELIEVED item: what is the source? How would you verify it directly?",
+        "For each ASSUMED item: when did you acquire this assumption? Has it ever been tested against reality?",
+        "Identify the 3 assumptions most load-bearing in your current strategy — these are your epistemic single points of failure",
+        "Design a falsification test for each: what evidence would change your mind?",
+        "Upgrade or discard: move items between categories as evidence arrives — epistemic status is dynamic, not permanent"
+      ],
+      "examples": [
+        {
+          "situation": "Entrepreneur assuming product-market fit based on early traction",
+          "epistemic_audit": {
+            "known": "50 users signed up in first week",
+            "believed": "Users find the product valuable (based on sign-ups, not usage data)",
+            "assumed": "Sign-ups correlate with willingness to pay",
+            "unknown": "Actual retention rate, price sensitivity, competitive alternatives users considered"
+          },
+          "intervention": "Reclassify 'product-market fit' from KNOWN to ASSUMED. Design direct test: offer paid tier to existing users and measure conversion before scaling."
+        }
+      ],
+      "antipatterns": [
+        "Treating assumptions as knowledge — the most dangerous epistemic error",
+        "Confidence as proxy for accuracy — high confidence is uncorrelated with correctness without calibration",
+        "Social proof as verification — many people believing something does not make it known",
+        "Anchoring on first information received — epistemic status should be based on evidence quality, not chronology"
+      ]
+    },
+    {
+      "name": "Source Reliability Hierarchy",
+      "description": "All sources are not equal. A rigorous hierarchy of evidence prevents low-quality information from driving high-stakes decisions. The effort to evaluate sources should scale with the stakes of the decision.",
+      "steps": [
+        "Tier 1 — Direct observation and personal experiment: highest reliability for your specific context",
+        "Tier 2 — Systematic evidence: meta-analyses, replicated studies, large-sample data with transparent methodology",
+        "Tier 3 — Expert consensus: agreement among people with relevant domain expertise and track records",
+        "Tier 4 — Single studies or expert opinion: useful signal but not reliable alone",
+        "Tier 5 — Anecdote, testimony, and narrative: lowest evidential value; high persuasive value (which is exactly why it is dangerous)",
+        "For any belief driving a major decision: what tier of evidence supports it? If below Tier 3, seek higher-quality evidence before committing."
+      ],
+      "examples": [
+        {
+          "situation": "Deciding whether to adopt a new business strategy based on a podcast interview with a successful founder",
+          "source_tier": "Tier 5 — single anecdote from survivorship-biased sample",
+          "upgrade_path": "Find systematic data on the strategy's success rate across many businesses. Check if the strategy worked because of the specific tactic or because of confounding factors (timing, market, prior reputation).",
+          "corrected_action": "Treat the podcast as hypothesis generation (interesting idea to test), not evidence (proven approach to adopt)."
+        }
+      ],
+      "antipatterns": [
+        "Narrative persuasiveness substituting for evidence quality — stories feel more true than statistics but carry less information",
+        "Authority substitution — 'expert said it' is Tier 4, not Tier 1",
+        "Treating absence of evidence as evidence of absence — unknown is not the same as false",
+        "Equal-weight averaging of all sources — a meta-analysis and a blog post are not peers"
+      ]
+    },
+    {
+      "name": "Calibration Training Protocol",
+      "description": "Calibration is the skill of having confidence levels that match actual accuracy. A well-calibrated person who says they are 80% sure is right 80% of the time. Most people are chronically overconfident. Calibration is trainable.",
+      "steps": [
+        "Start tracking predictions: for any important belief or forecast, state your confidence level (50%-99%) and write it down",
+        "Record outcomes: when reality reveals the answer, log whether you were right or wrong",
+        "After 50+ predictions, plot your calibration curve: of the things you said you were 90% sure about, what percentage were actually correct?",
+        "Identify your bias direction: most people discover they are overconfident (90% confident predictions are right only 70% of the time)",
+        "Adjust: if your 90% predictions hit 70%, start saying 70% when you feel 90% sure. Recalibrate the feeling.",
+        "Practice with low-stakes questions first: trivia, sports predictions, weather estimates. Transfer the skill to high-stakes domains."
+      ],
+      "examples": [
+        {
+          "situation": "Operator tracking 100 business predictions over 6 months",
+          "finding": "Predictions rated 90% confident were correct 62% of the time. Predictions rated 70% confident were correct 68% of the time — meaning '90% sure' and '70% sure' were functionally identical.",
+          "calibration_adjustment": "Mentally subtract 20 points from any gut-level confidence. Reserve 90%+ for claims with direct evidence. Begin treating 'I feel very sure' as a 70% signal, not 90%.",
+          "outcome": "After 3 months of adjustment, calibration curve improved to within 5 points across all confidence levels."
+        }
+      ],
+      "antipatterns": [
+        "Never stating confidence levels — prevents calibration feedback loop entirely",
+        "Binary thinking (sure vs. unsure) instead of probabilistic thinking — the world is not binary",
+        "Updating confidence based on emotional state rather than new evidence",
+        "Refusing to assign probabilities to uncertain events — false precision is bad, but refusing to estimate is worse"
+      ]
+    },
+    {
+      "name": "Falsification-First Inquiry",
+      "description": "Karl Popper's core insight: you cannot prove a theory true by finding confirming evidence — you can only fail to disprove it. Seeking disconfirming evidence is the highest-value epistemic behavior and the one humans are worst at.",
+      "steps": [
+        "State the belief clearly and specifically enough that it could be wrong — vague beliefs cannot be falsified",
+        "Ask: what evidence would convince me this is false? If you cannot answer, the belief is unfalsifiable and not knowledge.",
+        "Actively seek that disconfirming evidence — do not wait for it to arrive",
+        "Pre-commit to your update: 'If I find X, I will change my belief to Y.' Write it down before searching.",
+        "Steel-man the opposing view: what is the strongest possible case against your belief?",
+        "If the belief survives genuine falsification attempts, your confidence is earned. If it does not — update."
+      ],
+      "examples": [
+        {
+          "situation": "Manager believes their team's low output is due to lack of motivation",
+          "falsification_test": "If motivation is the cause, then providing incentives should increase output. Design a 30-day experiment with clear incentive and measure output change.",
+          "result": "Incentives produced no output change. Root cause investigation revealed unclear requirements and blocked dependencies — a process problem, not a motivation problem.",
+          "lesson": "The initial belief felt obviously true. Falsification test prevented a motivation-focused intervention that would have failed and demoralized the team."
+        }
+      ],
+      "antipatterns": [
+        "Confirmation bias — seeking only evidence that supports the belief",
+        "Moving the goalposts — when disconfirming evidence arrives, redefining what would count as disproof",
+        "Unfalsifiable framing — 'it would have worked if not for X' makes any failure compatible with the theory",
+        "Emotional attachment to beliefs — treating challenges to beliefs as personal attacks"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "epistemic_audit",
+      "name": "Epistemic Status Audit",
+      "template": "Audit the epistemic status of my key beliefs about: [domain/situation]. For each major belief I am acting on, classify it as KNOWN, BELIEVED, ASSUMED, or UNKNOWN. Identify my most load-bearing assumptions and design a falsification test for each.",
+      "tags": ["epistemology", "audit", "assumptions"]
+    },
+    {
+      "id": "source_evaluation",
+      "name": "Source Reliability Evaluation",
+      "template": "Evaluate the evidence supporting my decision to: [decision]. For each piece of evidence, classify its source tier (1-5). Identify where I am relying on Tier 4-5 evidence for high-stakes elements, and suggest upgrade paths to higher-tier evidence.",
+      "tags": ["sources", "evidence", "reliability"]
+    },
+    {
+      "id": "calibration_check",
+      "name": "Confidence Calibration Check",
+      "template": "I believe [claim] with [X]% confidence. Help me calibrate: what is the base rate for similar claims being true? What evidence am I weighting most heavily? Am I anchored on vivid examples rather than systematic data? What would well-calibrated confidence look like here?",
+      "tags": ["calibration", "confidence", "probability"]
+    },
+    {
+      "id": "falsification_design",
+      "name": "Falsification Test Design",
+      "template": "Design a falsification test for my belief that: [belief]. What specific evidence would disprove it? What is the strongest steel-man argument against it? What experiment or data collection would most efficiently test it?",
+      "tags": ["falsification", "testing", "popper"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Investor Epistemic Audit Preventing Overcommitment",
+      "context": "Angel investor about to make largest investment to date based on strong conviction about market timing",
+      "framework_applied": "Epistemic Status Classification + Calibration Training",
+      "findings": "Core thesis ('market is ready now') classified as ASSUMED — based on 3 anecdotes from founders, not systematic market data. Investor's historical calibration: claims rated 90% confident were correct 55% of the time.",
+      "intervention": "Downgraded confidence from 90% to 60%. Sought Tier 2 evidence (market size data, adoption curves from analogous markets). Reduced investment size to match actual confidence level.",
+      "outcome": "Market timing was off by 18 months. Reduced position size preserved capital for the correct timing window."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Epistemology", "definition": "The study of knowledge — what counts as knowledge, how it is acquired, and how to distinguish justified belief from assumption." },
+    { "term": "Epistemic Status", "definition": "The classification of a belief by evidence quality: KNOWN (verified), BELIEVED (strong indirect evidence), ASSUMED (untested default), UNKNOWN (acknowledged gap)." },
+    { "term": "Calibration", "definition": "The alignment between stated confidence and actual accuracy. A calibrated person who says 80% is right 80% of the time." },
+    { "term": "Falsifiability", "definition": "A belief is falsifiable if there exists possible evidence that would prove it wrong. Unfalsifiable beliefs are not knowledge — they are ideology." },
+    { "term": "Confirmation Bias", "definition": "The tendency to seek, interpret, and remember evidence that confirms existing beliefs while ignoring disconfirming evidence." },
+    { "term": "Base Rate", "definition": "The background frequency of an event in a relevant reference class. Ignoring base rates is one of the most common reasoning errors." },
+    { "term": "Steel Man", "definition": "The strongest possible version of an opposing argument. The opposite of a straw man. Required for genuine falsification attempts." },
+    { "term": "Overconfidence Bias", "definition": "The systematic tendency to rate one's confidence higher than one's accuracy warrants. The most pervasive and costly cognitive bias." },
+    { "term": "Epistemic Humility", "definition": "Accurate assessment of the limits of one's knowledge. Not false modesty — precise understanding of what you know and do not know." },
+    { "term": "Evidence Hierarchy", "definition": "Ranking of evidence quality from direct observation (highest) through systematic studies to anecdote (lowest). Decision stakes should match evidence tier." }
+  ],
+  "sources": [
+    { "title": "The Logic of Scientific Discovery", "authors": ["Karl Popper"], "type": "book", "relevance": "Falsifiability as the demarcation criterion for knowledge" },
+    { "title": "Superforecasting", "authors": ["Philip Tetlock", "Dan Gardner"], "type": "book", "relevance": "Calibration training, probabilistic thinking, foxes vs. hedgehogs" },
+    { "title": "Thinking, Fast and Slow", "authors": ["Daniel Kahneman"], "type": "book", "relevance": "Overconfidence bias, base rate neglect, System 1 vs. System 2" },
+    { "title": "The Scout Mindset", "authors": ["Julia Galef"], "type": "book", "relevance": "Truth-seeking vs. belief-defending, motivated reasoning" },
+    { "title": "Rationality: From AI to Zombies", "authors": ["Eliezer Yudkowsky"], "type": "book", "relevance": "Bayesian epistemology, calibration, belief updating" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["CONTRADICTION_DETECTOR (cognitive)", "BRIER_SCORE_CALC (calc)", "BIAS_DETECTOR (calc)", "DECISION_ENGINE (cognitive)", "Reflection_Engine (A7)"],
+    "v78_consciousnesses": ["House v2.1 (differential diagnosis — falsification applied to problems)", "Rogan v2.1 (confidence calibration, epistemic humility)", "Ancient One v3.0 (long-term knowledge compounding)", "META-0.5.1 (system-level epistemic awareness)"],
+    "master_laws": ["Law 18 (Reality — the map is not the territory)", "Law 14 (Validation — trust but verify)", "Law 4 (Truth — seek disconfirming evidence)", "Law 15 (Simplicity — Occam's razor as epistemic tool)"],
+    "sovereign_needs_served": ["Truth (primary)", "Security (false beliefs create unrecognized vulnerabilities)", "Growth (calibrated confidence enables better risk-taking)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS — grounded in Popper, Tetlock, Kahneman — foundational epistemology",
+      "high_leverage": "PASS — epistemology is the meta-skill underlying all other truth-seeking", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 25,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "id": "truth_media_literacy",
+  "name": "Media Literacy & Information Defense",
+  "category": "Truth",
+  "sovereign_need": "Truth",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Source Motivation Analysis",
+      "description": "Every piece of information you consume was created by someone with a motive. Understanding the incentive structure behind information production is the first filter for truth. The question is not 'is this true?' but 'why is this being presented to me, and who benefits?'",
+      "steps": [
+        "Identify the source: who created this content? Not the platform — the actual creator.",
+        "Identify the business model: how does this source make money? Advertising = incentive for clicks and outrage. Subscription = incentive for perceived value. Selling something = incentive to manufacture need.",
+        "Identify the incentive: what does the source gain if you believe this? Attention, purchases, votes, status, ideological alignment?",
+        "Check for conflicts of interest: does the source have a financial or reputational stake in the conclusion?",
+        "Apply the Cui Bono test: who benefits if this narrative is widely believed? That is not proof of falsehood, but it is a flag for deeper scrutiny.",
+        "Separate the factual claim from the framing: the same data can be framed to support opposite conclusions. Extract the raw data and evaluate it independently."
+      ],
+      "examples": [
+        {
+          "situation": "Financial news outlet publishes 'Why You Should Buy Gold Now' article",
+          "source_motivation_analysis": {
+            "source": "Financial media site, ad-supported",
+            "business_model": "Advertising revenue driven by pageviews. Alarming financial content drives clicks.",
+            "conflict_of_interest": "Sidebar contains advertisements from gold dealers. Article may be sponsored content or affiliate-linked.",
+            "cui_bono": "Gold dealers benefit. Media company benefits (clicks). Reader benefits only if the claim is true.",
+            "factual_claim_extracted": "Gold has outperformed stocks in the last 6 months (verifiable fact). Therefore gold will continue to outperform (unverifiable prediction presented as implication)."
+          },
+          "calibrated_response": "Verify the factual claim independently. Discard the prediction. Seek data on gold's long-term performance vs. stocks (base rate). Treat the article as hypothesis generation, not investment advice."
+        }
+      ],
+      "antipatterns": [
+        "Consuming information without considering source incentives — the default mode for most media consumption",
+        "Assuming bias means falsehood — biased sources can report true facts; the framing is where the manipulation occurs",
+        "Trusting sources because they confirm your existing beliefs — motivated reasoning makes biased sources feel credible",
+        "Ad hominem dismissal — 'the source is biased, therefore everything they say is false' is as flawed as uncritical acceptance"
+      ]
+    },
+    {
+      "name": "Narrative vs. Data Separation",
+      "description": "Narratives are how humans make sense of data, but narratives are not data. Every narrative involves selection (what to include), framing (how to present it), and omission (what to exclude). Learning to extract raw data from narrative packaging is a core truth-seeking skill.",
+      "steps": [
+        "When reading any claim: identify the raw data points separately from the narrative connecting them",
+        "Check for cherry-picking: are the selected data points representative, or are they the most dramatic/supportive of the narrative?",
+        "Look for what is missing: what data would weaken this narrative? Its absence is informative.",
+        "Reverse the framing: present the same data in the opposite light. If both framings seem equally plausible, the data does not support the original narrative as strongly as presented.",
+        "Check the time window: almost any trend can be made to look positive or negative by selecting the start and end dates. Ask for the longest available time series.",
+        "Demand denominator data: percentages without denominators are meaningless. '50% increase' from 2 to 3 is very different from 200,000 to 300,000."
+      ],
+      "examples": [
+        {
+          "situation": "Headline: 'Crime surges 40% in downtown area'",
+          "narrative_decomposition": {
+            "raw_data": "Reported crimes increased from 50 to 70 in one quarter",
+            "missing_context": "Previous quarter was historically low due to COVID lockdowns. Current quarter matches pre-pandemic baseline. 'Surge' is regression to the mean.",
+            "cherry_pick": "Selected comparison to anomalous low quarter rather than 5-year average",
+            "denominator_missing": "Downtown population increased 15% in same period. Per-capita crime rate may have decreased.",
+            "reversed_framing": "Same data: 'Downtown crime returns to pre-pandemic normal as neighborhood revitalizes'"
+          },
+          "lesson": "The data (50 to 70) is real. The narrative ('surge') is an editorial choice. Same data, opposite stories."
+        }
+      ],
+      "antipatterns": [
+        "Treating headlines as summaries — headlines are marketing, not abstracts. They maximize engagement, not accuracy.",
+        "Accepting narrative framing without checking the underlying data — stories feel true regardless of data quality",
+        "Percentage without base — a 300% increase from 1 to 4 is meaningless; a 300% increase from 100,000 to 400,000 is significant",
+        "Confusing anecdote for data — a powerful personal story is one data point, not a pattern"
+      ]
+    },
+    {
+      "name": "Information Ecosystem Hygiene",
+      "description": "Your information diet shapes your model of reality. Algorithmic feeds optimize for engagement, not truth. Without deliberate curation, your worldview will be shaped by what is most emotionally provocative, not what is most accurate.",
+      "steps": [
+        "Audit your information inputs: list every source you consume regularly (apps, accounts, newsletters, podcasts, people)",
+        "Classify each by signal-to-noise ratio: what percentage of the content changes your beliefs or decisions vs. what percentage is noise?",
+        "Eliminate pure-noise sources: entertainment disguised as information is the most dangerous category because it feels productive",
+        "Add adversarial sources: deliberately include 2-3 high-quality sources that challenge your default worldview. Not clickbait opposition — steelmanned disagreement.",
+        "Limit real-time information: unless you trade for a living, minute-by-minute news provides no decision-relevant information. Batch information consumption to weekly or daily digests.",
+        "Apply the 'what would I do differently?' test: if this information would not change any decision or action, it is entertainment, not intelligence."
+      ],
+      "examples": [
+        {
+          "situation": "Operator consuming 3 hours of Twitter/X, 2 podcasts, and 4 newsletters daily",
+          "information_audit": {
+            "twitter": "Signal-to-noise ratio: ~5%. 95% is reaction, hot takes, and performative conflict. Decision-relevant content: near zero.",
+            "podcasts": "1 high-signal industry podcast (changes decisions monthly). 1 general interest podcast (entertaining but no decision impact in 6 months).",
+            "newsletters": "2 provide actionable intelligence. 2 are news summaries available elsewhere."
+          },
+          "intervention": "Cut Twitter to 15 min/day (specific accounts only, not feed). Drop the entertainment podcast and 2 redundant newsletters. Add 1 adversarial newsletter from a different ideological perspective. Net: 4 hours saved per day, signal-to-noise ratio increased 5x."
+        }
+      ],
+      "antipatterns": [
+        "Consuming news as a habit rather than a decision input — information without action is entertainment with anxiety",
+        "Echo chamber construction — surrounding yourself with sources that only confirm existing beliefs",
+        "Volume as virtue — reading more does not mean knowing more if signal-to-noise is low",
+        "Confusing being informed with being effective — the most-informed person in the room is rarely the most effective"
+      ]
+    },
+    {
+      "name": "Manipulation Pattern Recognition",
+      "description": "Propaganda, advertising, and persuasion share common manipulation patterns. Recognizing these patterns in real-time is a trainable skill that converts you from target to observer. You do not need to be a manipulation expert — you need to recognize the 5 patterns that account for 90% of manipulation attempts.",
+      "steps": [
+        "Pattern 1 — Emotional Hijack: content designed to trigger fear, outrage, or excitement BEFORE you can think. Detection: strong immediate emotional response to a headline or claim. Pause. Emotional activation is not evidence.",
+        "Pattern 2 — False Dichotomy: 'you are either with us or against us.' Detection: only two options presented when reality contains a spectrum. Ask: what are the options NOT being presented?",
+        "Pattern 3 — Social Proof Fabrication: 'everyone is doing/saying/believing X.' Detection: vague quantifiers without data. Ask: how many is 'everyone'? Who counted?",
+        "Pattern 4 — Authority Laundering: citing credentials irrelevant to the claim. A Nobel physicist's opinion on economics carries no more weight than any layperson's. Detection: ask 'is this person's expertise relevant to THIS specific claim?'",
+        "Pattern 5 — Anchoring Attack: leading with an extreme position to make the actual ask seem reasonable by comparison. Detection: the first number or position in any negotiation or argument is the anchor. Ask: would I find this reasonable if the anchor had not been set?",
+        "Meta-pattern: if the content makes you want to share it before you have verified it, that is the manipulation working. Virality is engineered, not earned."
+      ],
+      "antipatterns": [
+        "Believing you are immune to manipulation — the most manipulable state is confidence in your own objectivity",
+        "Dismissing all persuasion as manipulation — legitimate arguments also use framing and emphasis; the difference is whether the raw data supports the conclusion",
+        "Pattern recognition becoming paranoia — not everything is manipulation; sometimes a claim is just true",
+        "Only recognizing manipulation in sources you disagree with — your preferred sources use the same techniques"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "source_motivation_scan",
+      "name": "Source Motivation Scan",
+      "template": "Analyze the information source: [source/article/claim]. Who created it? What is their business model? Who benefits if this narrative is believed? What conflicts of interest exist? Separate the factual claims from the framing.",
+      "tags": ["source_analysis", "cui_bono", "conflict_of_interest"]
+    },
+    {
+      "id": "narrative_decomposition",
+      "name": "Narrative Decomposition",
+      "template": "Decompose this narrative: [claim/article/argument]. Extract the raw data points. Identify what is cherry-picked, what is missing, and what framing choices were made. Reverse the framing — what would the opposite narrative look like using the same data?",
+      "tags": ["narrative", "framing", "cherry_picking"]
+    },
+    {
+      "id": "information_diet_audit",
+      "name": "Information Diet Audit",
+      "template": "Audit my information diet. Sources I consume regularly: [list]. For each, rate the signal-to-noise ratio and whether it changes my decisions. Identify what to cut, what to keep, and what adversarial sources to add for better epistemic balance.",
+      "tags": ["information_diet", "signal_noise", "curation"]
+    },
+    {
+      "id": "manipulation_detection",
+      "name": "Manipulation Pattern Detection",
+      "template": "Analyze this content for manipulation patterns: [content/argument/ad]. Check for: emotional hijack, false dichotomy, social proof fabrication, authority laundering, and anchoring attacks. What is the content trying to make me feel, believe, or do? Is the underlying claim supported independently of the manipulation technique?",
+      "tags": ["manipulation", "propaganda", "critical_thinking"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Executive Detecting Vendor Manipulation in Enterprise Sales",
+      "context": "CTO evaluating enterprise software vendor pitch that 'felt compelling' but created unease",
+      "framework_applied": "Manipulation Pattern Recognition + Source Motivation Analysis",
+      "patterns_detected": [
+        "Emotional Hijack: 'Your competitors are already using this — you cannot afford to fall behind' (fear of missing out)",
+        "Social Proof Fabrication: 'Leading companies across every industry are adopting this' (no specific data, no denominator)",
+        "Anchoring Attack: Enterprise pricing quoted at $500K/year, then 'discounted' to $200K for 'early adopters' (anchor was never the real price)",
+        "False Dichotomy: 'You can modernize now or be disrupted later' (ignored option: modernize with a different tool, or later at lower cost)"
+      ],
+      "calibrated_response": "Stripped away manipulation patterns. Evaluated tool purely on: does it solve a problem we actually have? What is the ROI on the actual price? Who are the specific references (not 'leading companies')? Result: tool solved a real problem but at 3x the justified price. Negotiated from actual value, not anchored price."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Signal-to-Noise Ratio", "definition": "The proportion of useful, decision-relevant information to irrelevant filler in any information source. Most sources have ratios below 10%." },
+    { "term": "Cui Bono", "definition": "Latin: 'who benefits?' The first question to ask about any information presented to you. Does not prove falsehood but identifies incentive structures." },
+    { "term": "Cherry-Picking", "definition": "Selecting only the data points that support a pre-determined conclusion while ignoring contradictory evidence. The most common form of statistical deception." },
+    { "term": "Framing Effect", "definition": "The same information presented in different frames produces different reactions. 'A 90% survival rate' and 'a 10% mortality rate' are identical facts with opposite emotional impacts." },
+    { "term": "Echo Chamber", "definition": "An information environment where you only encounter views that reinforce your existing beliefs. Feels comfortable and informed but produces epistemic degradation." },
+    { "term": "Emotional Hijack", "definition": "Content designed to trigger strong emotion (fear, outrage, excitement) before rational evaluation. The most effective manipulation technique because it bypasses deliberate thought." },
+    { "term": "False Dichotomy", "definition": "Presenting only two options when more exist. Forces a choice between the manipulator's preferred option and an obviously bad alternative." },
+    { "term": "Authority Laundering", "definition": "Using credentials in one domain to lend credibility to claims in an unrelated domain. A common technique in advertising and political rhetoric." },
+    { "term": "Anchoring", "definition": "The first piece of information presented biases all subsequent evaluation. Extremely robust cognitive effect exploited in pricing, negotiation, and argumentation." },
+    { "term": "Manufactured Consent", "definition": "Chomsky's concept: media systems that produce the appearance of public agreement through structural incentives rather than explicit censorship." }
+  ],
+  "sources": [
+    { "title": "Manufacturing Consent", "authors": ["Noam Chomsky", "Edward Herman"], "type": "book", "relevance": "Structural analysis of media incentives, propaganda model" },
+    { "title": "Influence: The Psychology of Persuasion", "authors": ["Robert Cialdini"], "type": "book", "relevance": "Social proof, authority, scarcity — persuasion mechanisms used in manipulation" },
+    { "title": "The Demon-Haunted World", "authors": ["Carl Sagan"], "type": "book", "relevance": "Baloney detection kit, critical thinking applied to media and claims" },
+    { "title": "Trust Me, I'm Lying", "authors": ["Ryan Holiday"], "type": "book", "relevance": "Inside mechanics of media manipulation, how news is manufactured" },
+    { "title": "Calling Bullshit", "authors": ["Carl Bergstrom", "Jevin West"], "type": "book", "relevance": "Quantitative media literacy, statistical manipulation detection" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["BIAS_DETECTOR (calc)", "CONTRADICTION_DETECTOR (cognitive)", "ADVERSARIAL_FIREWALL (F2.6)", "SOLUTION_BRIDGE (calc)", "Reflection_Engine (A7)"],
+    "v78_consciousnesses": ["Deadpool v2.2 (irreverent assumption-busting, narrative deconstruction)", "Rogan v2.1 (source credibility assessment, confidence calibration)", "House v2.1 (diagnostic skepticism — what are they not telling you?)", "Constraint Mapper (separating real constraints from manufactured urgency)"],
+    "master_laws": ["Law 4 (Truth — verify before believing)", "Law 2 (Silence — not all information deserves your attention)", "Law 18 (Reality — distinguish real signals from manufactured ones)", "Law 6 (Defense — information defense is as critical as physical defense)"],
+    "sovereign_needs_served": ["Truth (primary)", "Security (media manipulation is a vector for financial and reputational exploitation)", "Agency (information sovereignty requires media literacy)"],
+    "4_gate_validation": {
+      "safe": "PASS", "true": "PASS — grounded in Chomsky, Cialdini, Sagan, Bergstrom — established media literacy scholarship",
+      "high_leverage": "PASS — media literacy is a daily-use skill affecting every information interaction", "aligned": "PASS"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 28,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL"
+  }
+}

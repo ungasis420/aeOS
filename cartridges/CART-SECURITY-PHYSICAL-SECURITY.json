@@ -1,0 +1,185 @@
+{
+  "id": "security_physical_security",
+  "name": "Physical Security & Environmental Threat Awareness",
+  "category": "Security",
+  "sovereign_need": "Security",
+  "version": "1.0.0",
+  "author": "human",
+  "verified": true,
+  "effectiveness": null,
+  "frameworks": [
+    {
+      "name": "Environmental Threat Assessment",
+      "description": "Physical security begins with accurate situational awareness. Most people either over-index on rare dramatic threats or ignore realistic everyday ones. Calibrated assessment drives proportionate response.",
+      "steps": [
+        "Define assets requiring physical protection: person, home, office, devices, documents, vehicles",
+        "Identify realistic threat actors for your specific context: opportunistic criminals, targeted theft, stalkers, corporate espionage, domestic threats",
+        "For each asset-threat pair, rate: likelihood (1-5) × impact (1-5) = risk score",
+        "Identify your current physical environment risk profile: home neighborhood, travel patterns, workplace, public exposure",
+        "Compare current controls to risk scores — identify gaps",
+        "Prioritize controls by risk score, not by fear salience"
+      ],
+      "antipatterns": [
+        "Preparing for low-probability dramatic threats while ignoring high-probability mundane ones",
+        "Same security posture regardless of environment — hotel vs home vs high-risk travel require different controls",
+        "No baseline awareness — cannot detect anomalies without knowing what normal looks like"
+      ]
+    },
+    {
+      "name": "Layered Physical Defense Protocol",
+      "description": "Physical security mirrors digital: overlapping layers so no single failure results in total compromise. Each layer buys time and increases attacker cost.",
+      "steps": [
+        "Layer 1 — Deterrence: visible controls that discourage attack before it begins (lighting, cameras, signage, presence)",
+        "Layer 2 — Delay: controls that slow physical breach (locks, reinforced doors/windows, safes, cable locks for devices)",
+        "Layer 3 — Detection: systems that identify breach in progress (alarms, motion sensors, monitoring)",
+        "Layer 4 — Response: pre-planned actions on detection (safe room, escape route, emergency contacts, law enforcement)",
+        "Layer 5 — Recovery: ability to restore function after incident (backups of documents, insurance, spare credentials)",
+        "Audit each layer independently — a gap in detection makes deterrence and delay irrelevant if response is triggered late"
+      ],
+      "antipatterns": [
+        "Deterrence without detection — attacker who accepts the deterrence risk faces no further barrier",
+        "No pre-planned response — decision quality under physical stress is severely degraded",
+        "Device security without physical device security — encryption is bypassed by device theft"
+      ]
+    },
+    {
+      "name": "Device Physical Security Protocol",
+      "description": "Physical access to a device often bypasses all digital security controls. The device is the weakest link when physical security is neglected.",
+      "steps": [
+        "Full disk encryption enabled on all devices — renders stolen device data inaccessible",
+        "Screen lock with strong PIN/passphrase — not biometric-only in high-risk contexts (biometric can be compelled)",
+        "Never leave devices unattended in public — cable lock for laptops in shared workspaces",
+        "Screen privacy filter for sensitive work in public spaces",
+        "BIOS/firmware password to prevent boot from external media",
+        "Remote wipe capability configured and tested on all mobile devices",
+        "Sensitive work never conducted on shared or untrusted devices"
+      ],
+      "antipatterns": [
+        "Full disk encryption disabled for convenience — one theft exposes everything",
+        "Biometric-only unlock in travel or high-risk contexts — compellable by authorities or coercion",
+        "No remote wipe configured — discovered only when needed, too late to set up",
+        "Sensitive documents printed and left on desks or in unsecured filing"
+      ]
+    },
+    {
+      "name": "Travel Security Protocol",
+      "description": "Travel dramatically expands physical attack surface. Different environments, reduced familiarity, and predictable patterns create opportunities that do not exist at home or office.",
+      "steps": [
+        "Pre-travel: research destination threat profile; notify relevant parties of itinerary",
+        "Device hygiene: travel with minimal-data devices where possible; full encryption; recent backup before departure",
+        "Accommodation: verify room security (door, window locks); use secondary door lock; safe for passport and valuables",
+        "In transit: maintain physical possession of devices; do not use public USB charging (juice jacking risk); VPN on all public wifi",
+        "Pattern disruption: vary routes and timing for repeated destinations; avoid predictable routines that enable surveillance",
+        "Emergency protocol: know local emergency numbers, nearest embassy/consulate, have out-of-band communication method"
+      ],
+      "antipatterns": [
+        "Same device with full personal data for international travel — border inspection risk",
+        "Public USB charging ports — direct hardware attack vector",
+        "Predictable hotel/route patterns for frequent travelers — enables targeted surveillance",
+        "No out-of-band emergency communication plan"
+      ]
+    }
+  ],
+  "prompts": [
+    {
+      "id": "physical_threat_assessment",
+      "name": "Physical Threat Assessment",
+      "template": "Run a physical security threat assessment for my situation. Assets: [home/office/devices/person]. My context: [urban/suburban/travel frequency/public profile]. Identify my top 3 realistic physical threat scenarios, rate each by likelihood × impact, and give me the highest-leverage control per scenario.",
+      "tags": ["threat_assessment", "physical", "risk_scoring"]
+    },
+    {
+      "id": "layered_defense_audit",
+      "name": "Physical Defense Layer Audit",
+      "template": "Audit my physical security layers for [home/office]. Current controls per layer: Deterrence: [list]. Delay: [list]. Detection: [list]. Response: [plan or none]. Recovery: [plan or none]. Identify my weakest layer and the single highest-leverage addition.",
+      "tags": ["layered_defense", "audit", "gaps"]
+    },
+    {
+      "id": "device_physical_security",
+      "name": "Device Physical Security Checklist",
+      "template": "Review my device physical security. Devices: [list types]. Current controls: [encryption status, screen lock type, remote wipe status]. Identify gaps and give me a prioritized hardening checklist.",
+      "tags": ["devices", "encryption", "physical_security"]
+    },
+    {
+      "id": "travel_security_brief",
+      "name": "Travel Security Brief",
+      "template": "Create a travel security brief for: [destination, duration, purpose]. My threat concerns: [general/specific]. Devices I am bringing: [list]. Give me pre-travel, in-transit, and on-the-ground security protocols proportionate to the destination risk profile.",
+      "tags": ["travel", "protocol", "brief"]
+    },
+    {
+      "id": "home_security_review",
+      "name": "Home Security Review",
+      "template": "Review my home physical security. Current setup: [locks, alarm, cameras, lighting — describe]. Primary concerns: [opportunistic theft / targeted / domestic / other]. Identify my highest-exposure vulnerabilities and top 3 improvements by ROI.",
+      "tags": ["home", "review", "hardening"]
+    }
+  ],
+  "examples": [
+    {
+      "title": "Remote Worker Device Security Gap",
+      "context": "Consultant working from coffee shops with client data on laptop",
+      "framework_applied": "Device Physical Security Protocol",
+      "findings": "No disk encryption, no screen privacy filter, no cable lock, biometric-only unlock",
+      "interventions": [
+        "FileVault/BitLocker enabled — theft renders data inaccessible",
+        "Privacy filter installed — shoulder surfing eliminated",
+        "Cable lock for all public workspace sessions",
+        "PIN fallback added to biometric unlock"
+      ],
+      "outcome": "Physical device theft no longer constitutes data breach. Compelled unlock requires PIN knowledge attacker does not have."
+    },
+    {
+      "title": "High-Profile Traveler Pattern Disruption",
+      "context": "Executive with predictable weekly travel pattern between two cities",
+      "framework_applied": "Travel Security Protocol",
+      "findings": "Same hotel, same car service, same restaurant pattern every trip — trivially surveyable",
+      "interventions": [
+        "Rotate hotels across 3 properties in target city",
+        "Vary car service providers and pickup locations",
+        "Travel device with minimal data — full device wiped and restored from backup after international trips"
+      ],
+      "outcome": "Surveillance cost increased significantly. Pattern-based targeting no longer viable."
+    }
+  ],
+  "vocabulary": [
+    { "term": "Situational Awareness", "definition": "Continuous, calibrated perception of one's physical environment — what is normal, what is anomalous, and what requires response." },
+    { "term": "Deterrence", "definition": "Visible security controls that discourage attack before it begins by increasing perceived cost to the attacker." },
+    { "term": "Delay", "definition": "Physical controls that slow breach — locks, reinforced entry points, safes. Buys time for detection and response." },
+    { "term": "Full Disk Encryption", "definition": "Encryption of all data on a device's storage. Renders device data inaccessible without credentials, regardless of physical access." },
+    { "term": "Juice Jacking", "definition": "Attack via malicious USB charging port or cable that installs malware or exfiltrates data while the device charges." },
+    { "term": "Remote Wipe", "definition": "Capability to erase all data from a lost or stolen device via remote command. Requires prior configuration." },
+    { "term": "Pattern Disruption", "definition": "Varying routines, routes, and habits to prevent adversarial surveillance from building a predictable profile." },
+    { "term": "Safe Room", "definition": "Pre-designated secure location within a building for use during a physical security incident. Requires prior planning." },
+    { "term": "Border Inspection Risk", "definition": "Legal authority of border agents in many jurisdictions to inspect and copy device contents. Mitigated by travel devices with minimal data." },
+    { "term": "Compelled Unlock", "definition": "Legal or coercive requirement to unlock a device. Biometric unlock is generally more vulnerable to compulsion than PIN/passphrase." },
+    { "term": "BIOS Password", "definition": "Firmware-level password preventing device boot from external media. Blocks attacks that bypass the operating system entirely." },
+    { "term": "Physical Attack Surface", "definition": "All physical entry points and access opportunities for an adversary — doors, devices, documents, predictable patterns." }
+  ],
+  "sources": [
+    { "title": "The Gift of Fear", "authors": ["Gavin de Becker"], "type": "book", "relevance": "Threat intuition, pre-attack signal recognition, proportionate response" },
+    { "title": "Left of Bang", "authors": ["Patrick Van Horne", "Jason Riley"], "type": "book", "relevance": "Situational awareness, anomaly detection, environmental threat assessment" },
+    { "title": "Protective Intelligence", "authors": ["various"], "type": "framework", "relevance": "Executive protection, travel security, pattern disruption" },
+    { "title": "Security Engineering", "authors": ["Ross Anderson"], "type": "book", "relevance": "Physical-digital security intersection, layered defense" },
+    { "title": "EFF Surveillance Self-Defense", "authors": ["EFF"], "type": "guide", "relevance": "Device physical security, border inspection protocols" }
+  ],
+  "integration_hooks": {
+    "aeos_modules": ["ADVERSARIAL_FIREWALL (F2.6)", "CRYPTO_STATE (F0.3)", "Health_Integration (D28)", "Cognitive_Journal (D30)"],
+    "v78_consciousnesses": ["House v2.1 (differential diagnosis of physical threat vectors)", "Rogan v2.1 (calibrated threat likelihood — not paranoia, not naivety)", "Ancient One v3.0 (pattern recognition across time — when did security degrade?)"],
+    "master_laws": ["Law 6 (Defense — security is a state of being)", "Law 2 (Silence — physical exposure enables digital exposure)", "Law 9 (Time — security incidents are time-irreversible)"],
+    "sovereign_needs_served": ["Security (primary)", "Agency (physical safety preserves freedom of movement and action)", "Vitality (physical safety is prerequisite for peak performance)"],
+    "4_gate_relevance": {
+      "gate_1_safe": "Physical security cartridge directly supports Gate 1 — identifies real-world safety risks",
+      "gate_2_true": "Calibrated threat assessment prevents both false confidence and unproductive paranoia"
+    }
+  },
+  "metadata": {
+    "cartridge_number": 13,
+    "total_cartridges": 36,
+    "phase": "Phase 1 (Core Intelligence)",
+    "status": "READY_FOR_SOVEREIGN_APPROVAL",
+    "4_gate_validation": {
+      "safe": "PASS — defensive posture only; proportionate controls framework prevents fear-driven overreaction",
+      "true": "PASS — grounded in established security practice and published protective intelligence frameworks",
+      "high_leverage": "PASS — device encryption and travel protocol are highest-leverage controls for most operators",
+      "aligned": "PASS — directly serves Security need; Law 6 and Law 2 compliance"
+    }
+  }
+}

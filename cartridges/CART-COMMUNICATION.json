@@ -1,0 +1,18 @@
+{
+  "cartridge_id": "CART-COMMUNICATION",
+  "domain": "communication",
+  "version": "1.0",
+  "rule_count": 10,
+  "rules": [
+    {"id": "COM-001", "name": "Bottom Line Up Front", "principle": "State the conclusion first, then the evidence. Never make people wait for the point.", "insight_template": "What is the single sentence answer to {question} before you explain anything?"},
+    {"id": "COM-002", "name": "Audience Calibration", "principle": "Every message has one primary recipient. Optimize for them, not the room.", "insight_template": "Who is the one person whose understanding matters most in {situation}? What do they need to hear?"},
+    {"id": "COM-003", "name": "Silence as Signal", "principle": "Uncomfortable silence is information. Resist filling it prematurely.", "insight_template": "In your last difficult conversation about {topic}, what did the silences tell you?"},
+    {"id": "COM-004", "name": "Precision Over Volume", "principle": "One precise sentence outperforms three vague paragraphs every time.", "insight_template": "Can you reduce your message about {topic} to a single precise sentence without losing meaning?"},
+    {"id": "COM-005", "name": "Emotional Labeling", "principle": "Name the emotion in the room before addressing the content. It clears the channel.", "insight_template": "What emotion is present but unspoken in your current situation with {person}?"},
+    {"id": "COM-006", "name": "Question Quality", "principle": "The quality of your questions determines the quality of your intelligence.", "insight_template": "What is the one question about {situation} you have been afraid to ask directly?"},
+    {"id": "COM-007", "name": "Written Clarity Test", "principle": "If you cannot write it clearly, you do not understand it clearly.", "insight_template": "Write the core of your {argument} in three sentences. What gets cut?"},
+    {"id": "COM-008", "name": "Mirroring", "principle": "Repeat the last 3 words of what someone said as a question. It unlocks depth.", "insight_template": "What has {person} said repeatedly that you have not reflected back to them yet?"},
+    {"id": "COM-009", "name": "Frame Control", "principle": "Whoever sets the frame controls the conversation. Set it deliberately.", "insight_template": "What frame is currently operating in your negotiation about {topic}? Is it yours or theirs?"},
+    {"id": "COM-010", "name": "Feedback Specificity", "principle": "Vague feedback is noise. Specific behavioral feedback is signal.", "insight_template": "What specific behavior — not trait — do you need to address with {person}?"}
+  ]
+}

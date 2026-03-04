@@ -1,0 +1,18 @@
+{
+  "cartridge_id": "CART-AGENCY",
+  "domain": "agency",
+  "version": "1.0",
+  "rule_count": 10,
+  "rules": [
+    {"id": "AGN-001", "name": "Optionality Preservation", "principle": "Never make a decision that reduces future options without extreme justification.", "insight_template": "Before committing to {decision}, map what options it closes permanently vs temporarily."},
+    {"id": "AGN-002", "name": "BATNA First", "principle": "Develop your walk-away alternative before entering any negotiation or commitment.", "insight_template": "What is your best alternative if {situation} doesn't work out? Strengthen that first."},
+    {"id": "AGN-003", "name": "Reversibility Test", "principle": "Type 1 decisions (irreversible) deserve 10x more analysis than Type 2 (reversible).", "insight_template": "Is {decision} a one-way or two-way door? If two-way, move fast."},
+    {"id": "AGN-004", "name": "Constraint Audit", "principle": "Most constraints are self-imposed beliefs, not hard reality. Audit before accepting.", "insight_template": "Which constraints around {problem} are facts vs assumptions you haven't tested?"},
+    {"id": "AGN-005", "name": "Exit Strategy", "principle": "Always design the exit before entering.", "insight_template": "How would you exit {commitment} cleanly if needed in 6 months?"},
+    {"id": "AGN-006", "name": "Dependency Reduction", "principle": "Every single point of dependency is a vulnerability. Systematically reduce them.", "insight_template": "What single person, platform, or resource could collapse {plan}? Remove that dependency."},
+    {"id": "AGN-007", "name": "Financial Floor", "principle": "Agency without financial floor is fragile. Establish minimum viable security first.", "insight_template": "What is the minimum monthly number that gives you genuine choice? Are you there?"},
+    {"id": "AGN-008", "name": "Time Sovereignty", "principle": "Protect calendar sovereignty as fiercely as financial sovereignty.", "insight_template": "What recurring commitment in your schedule are you tolerating but resent?"},
+    {"id": "AGN-009", "name": "Identity Lock", "principle": "Do not let any single role, employer, or relationship define your full identity.", "insight_template": "If {role} disappeared tomorrow, who are you and what do you do?"},
+    {"id": "AGN-010", "name": "Proactive Optionality", "principle": "Build options before you need them. Reactive option-building is always more expensive.", "insight_template": "What option — skill, relationship, asset — should you be building now before you need it?"}
+  ]
+}
